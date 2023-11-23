@@ -44,7 +44,7 @@ export default function Home() {
           // width="50rem"
           // height="50rem"
 
-          //style={{ borderRadius: '0px', boxShadow: 'none' }} // style of chatbot container
+          style={{ borderRadius: '0px', boxShadow: 'none' }} // style of chatbot container
 
           //bubbleStyle={{ marginTop: "2rem" }} // able to change spacing between bubbles
 
@@ -74,7 +74,7 @@ export default function Home() {
               id: '2',
               options: [
                 { value: 1, label: 'Games', trigger: '4' },
-                { value: 2, label: 'EdTech', trigger: '3' },
+                { value: 2, label: (<div style={{ color: 'red' }}>Styling test</div>), trigger: '3' },
               ],
               hideInput: true
             },
