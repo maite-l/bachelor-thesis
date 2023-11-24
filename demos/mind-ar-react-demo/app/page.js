@@ -11,6 +11,10 @@ import { Cube } from './cube';
 import { GlassesBasic } from './glasses-basic';
 import { GlassesComponents } from './glasses-components';
 
+import { OccludedCube } from './occluded-cube';
+import { Head } from './occluder';
+import { HeadOccluder } from './occluder-components';
+
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -30,11 +34,25 @@ export default function Home() {
           {/* imported cube */}
           {/* <Cube /> */}
 
+          {/* occluded cube */}
+          {/* <OccludedCube /> */}
+
+
+
           {/* glasses model, loaded by GLTFLoader */}
           {/* <GlassesBasic />  */}
 
           {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
           <GlassesComponents />
+
+
+
+          {/* head model */}
+          {/* <Head /> */}
+
+
+          {/* head model made up of components to be able to adjust so it occludes */}
+          <HeadOccluder />
 
         </ARAnchor>
       </ARView>

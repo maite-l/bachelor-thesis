@@ -8,7 +8,7 @@ import { useGLTF } from "@react-three/drei";
 export function GlassesComponents(props) {
     const { nodes, materials } = useGLTF("/glasses.gltf");
     return (
-        <group {...props} dispose={null} scale={[4.5, 4.5, 4.5]} position={[0, 0, -0.2]}>
+        <group {...props} dispose={null} scale={[4.5, 4.5, 4.5]} position={[0, 0, -0.2]} renderOrder={3}>
             <mesh
                 castShadow
                 receiveShadow
