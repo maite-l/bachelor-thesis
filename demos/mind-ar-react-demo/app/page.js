@@ -1,6 +1,5 @@
 'use client';
 
-import styles from './page.module.css'
 import React from "react";
 import { createRoot } from "react-dom/client";
 
@@ -15,47 +14,70 @@ import { OccludedCube } from './occluded-cube';
 import { Head } from './occluder';
 import { HeadOccluder } from './occluder-components';
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>React AR Mind Demo</h1>
-      <ARView>
-        <ARAnchor target={1} // Target (image or face) to be anchored to
-        >
-          <ambientLight intensity={0.1} />
-          <directionalLight color="white" position={[0, 0, 5]} />
+import html2canvas from 'html2canvas';
 
-          {/* simple cube */}
-          {/* <mesh>
+export default function Home() {
+  const handleImageDownload = async () => {
+    const element = document.getElementById('print'),
+      canvas = await html2canvas(element),
+      data = canvas.toDataURL('image/jpg'),
+      link = document.createElement('a');
+
+    link.href = data;
+    link.download = 'downloaded-image.jpg';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <main>
+      <h1>React AR Mind Demo</h1>
+      <button type="button" onClick={handleImageDownload}>Download</button>
+      <div style={{ transform: "scaleX(-1)" }}>
+        <ARView
+          gl={{ preserveDrawingBuffer: true }}
+          id="print"
+          flipUserCamera={false}
+        >
+          <ARAnchor target={1} // Target (image or face) to be anchored to
+          >
+            <ambientLight intensity={0.1} />
+            <directionalLight color="white" position={[0, 0, 5]} />
+
+            {/* simple cube */}
+            {/* <mesh>
             <boxGeometry attach="geometry" args={[0.2, 0.2, 0.2]} />
             <meshStandardMaterial attach="material" color="hotpink"/>
           </mesh> */}
 
-          {/* imported cube */}
-          {/* <Cube /> */}
+            {/* imported cube */}
+            {/* <Cube /> */}
 
-          {/* occluded cube */}
-          {/* <OccludedCube /> */}
-
-
-
-          {/* glasses model, loaded by GLTFLoader */}
-          {/* <GlassesBasic />  */}
-
-          {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
-          <GlassesComponents />
+            {/* occluded cube */}
+            {/* <OccludedCube /> */}
 
 
 
-          {/* head model */}
-          {/* <Head /> */}
+            {/* glasses model, loaded by GLTFLoader */}
+            {/* <GlassesBasic />  */}
+
+            {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
+            <GlassesComponents />
 
 
-          {/* head model made up of components to be able to adjust so it occludes */}
-          <HeadOccluder />
 
-        </ARAnchor>
-      </ARView>
+            {/* head model */}
+            {/* <Head /> */}
+
+
+            {/* head model made up of components to be able to adjust so it occludes */}
+            <HeadOccluder />
+
+          </ARAnchor>
+        </ARView>
+      </div>
     </main >
   )
 }
