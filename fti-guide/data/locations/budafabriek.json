@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "question": "text text",
+        "options": [
+            {
+                "id": 1,
+                "text": "text",
+                "next_question": 2
+            },
+            {
+                "id": 2,
+                "text": "text",
+                "next_question": 2
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "question": "fun fact here",
+        "options": [
+            {
+                "id": 1,
+                "text": "text",
+                "next_question": 3
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "question": "another fun fact here",
+        "options": [
+            {
+                "id": 1,
+                "text": "text",
+                "end": true
+            }
+        ]
+    }
+]

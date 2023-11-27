@@ -1,0 +1,28 @@
+[
+    {
+        "location": "budafabriek",
+        "events": [
+            {
+                "name": "het Gamer Toernooi",
+                "startTime": "2023-11-27T10:00:00",
+                "endTime": "2023-11-27T16:00:00",
+                "location": "Atelier 1"
+            },
+            {
+                "name": "het Gamer Toernooi 2",
+                "startTime": "2023-11-28T16:00:00",
+                "endTime": "2023-11-27T18:00:00",
+                "location": "Atelier 2"
+            },
+            {
+                "name": "Iets anders",
+                "startTime": "2023-11-29T16:00:00",
+                "endTime": "2023-11-30T18:00:00",
+                "location": "Nog ergens anders"
+            }
+        ]
+    },
+    {
+        "location": "leieboorden"
+    }
+]
