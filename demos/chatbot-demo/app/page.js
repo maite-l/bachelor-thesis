@@ -20,6 +20,16 @@ export default function Home() {
     userFontColor: '#4a4a4a',
   };
 
+  const handleStepChange = (step) => {
+    // Execute your function based on the step ID or any other condition
+    console.log(`Step changed to ${step}`);
+
+    const existingArray = JSON.parse(localStorage.getItem('yourKey')) || [];
+    const newArray = [...existingArray, 'newElement'];
+    localStorage.setItem('yourKey', JSON.stringify(newArray));
+
+    return step;
+  };
 
   return (
     <main className={styles.main}>
@@ -74,14 +84,14 @@ export default function Home() {
               id: '2',
               options: [
                 { value: 1, label: 'Games', trigger: '4' },
-                { value: 2, label: (<div style={{ color: 'red' }}>Styling test</div>), trigger: '3' },
+                { value: 2, label: 'EdTech', trigger: '3' },
               ],
               hideInput: true
             },
             {
               id: '3',
               message: 'Wrong answer, try again.',
-              trigger: '2',
+              trigger: () => handleStepChange(2),
               hideInput: true
             },
             {
@@ -104,7 +114,7 @@ export default function Home() {
                 </div>
               ),
               end: true,
-              hideInput: true
+              hideInput: true,
             },
           ]}
         />
