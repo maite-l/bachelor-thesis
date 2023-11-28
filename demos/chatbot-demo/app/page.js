@@ -30,6 +30,7 @@ export default function Home() {
 
     return step;
   };
+  
 
   return (
     <main className={styles.main}>
@@ -45,12 +46,15 @@ export default function Home() {
           footerStyle={{ display: 'none' }} // hide footer even though we put hideInput on true in every step, to avoid it showing up for a split second
 
           // make chatbot full height to make up for stuff we hide  
-          contentStyle={{ height: '100%' }}
+          contentStyle={{ 
+            width: '20rem',
+            height: '30rem' 
+          }}
 
           // smooth scroll to bottom of chatbot
           enableSmoothScroll="true"
 
-          // width and height of container
+          // width and height of container (doesn't work on mobile)
           // width="50rem"
           // height="50rem"
 
@@ -83,7 +87,7 @@ export default function Home() {
             {
               id: '2',
               options: [
-                { value: 1, label: 'Games', trigger: '4' },
+                { value: 1, label: 'Games', trigger: '4', className: 'primary-option' },
                 { value: 2, label: 'EdTech', trigger: '3' },
               ],
               hideInput: true
@@ -107,9 +111,9 @@ export default function Home() {
                     width="300"
                     height="300"
                     style={{ border: '0' }}
-                    allowfullscreen=""
+                    allowFullScreen=""
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
+                    referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
               ),
