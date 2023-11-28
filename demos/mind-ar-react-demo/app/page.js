@@ -31,6 +31,35 @@ export default function Home() {
     document.body.removeChild(link);
   };
 
+  const windowWidth = window.innerWidth;
+  let scale = 1;
+  let offset = 0;
+  if (windowWidth < 320) {
+    scale = 4;
+    offset = 2.2;
+  } else if (windowWidth < 375) {
+    scale = 2.8;
+    offset = 1.8;
+  } else if (windowWidth < 425) {
+    scale = 2.5;
+    offset = 1.4;
+  } else if (windowWidth < 550) {
+    scale = 2.2;
+    offset = 1.4;
+  } else if (windowWidth < 650) {
+    scale = 1.8;
+    offset = 0.5;
+  } else if (windowWidth < 800) {
+    scale = 1.7;
+    offset = 0.4;
+  } else if (windowWidth < 1000) {
+    scale = 1.4;
+    offset = 0.3;
+  } else if (windowWidth >= 1000) {
+    scale = 1;
+    offset = 0;
+  }
+
   return (
     <main>
       <h1>React AR Mind Demo</h1>
@@ -63,17 +92,20 @@ export default function Home() {
             {/* glasses model, loaded by GLTFLoader */}
             {/* <GlassesBasic />  */}
 
-            {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
-            <GlassesComponents />
-
 
 
             {/* head model */}
             {/* <Head /> */}
 
 
-            {/* head model made up of components to be able to adjust so it occludes */}
-            <HeadOccluder />
+            <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
+              {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
+              <GlassesComponents />
+              {/* head model made up of components to be able to adjust so it occludes */}
+              <HeadOccluder />
+
+              {/* <Cube /> */}
+            </group>
 
           </ARAnchor>
         </ARView>
