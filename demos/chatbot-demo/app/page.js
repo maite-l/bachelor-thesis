@@ -4,9 +4,28 @@ import styles from './page.module.css'
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 
+export function CustomOptions({ options, triggerNextStep }) {
+  const handleOptionClick = (option) => {
+    triggerNextStep({ value: option.value, trigger: option.trigger });
+  };
+
+  return (
+    <div>
+      {options.map((option, index) => (
+        <div
+          key={index}
+          onClick={() => handleOptionClick(option)}
+          style={{ background: option.primary ? 'blue' : 'green', margin: '5px' }}
+        >
+          {option.value}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+
 export default function Home() {
-
-
   // use theme with themeprovider from styled-components to change colours and fonts
   const theme = {
     background: '#000000',
@@ -30,7 +49,6 @@ export default function Home() {
 
     return step;
   };
-  
 
   return (
     <main className={styles.main}>
@@ -46,9 +64,9 @@ export default function Home() {
           footerStyle={{ display: 'none' }} // hide footer even though we put hideInput on true in every step, to avoid it showing up for a split second
 
           // make chatbot full height to make up for stuff we hide  
-          contentStyle={{ 
+          contentStyle={{
             width: '20rem',
-            height: '30rem' 
+            height: '30rem'
           }}
 
           // smooth scroll to bottom of chatbot
@@ -66,16 +84,16 @@ export default function Home() {
           bubbleOptionStyle={{ border: '2px #EF6C00 solid', backgroundColor: 'transparent', color: '#EF6C00' }}
 
           // will have to be the same styling as bubbleStyle with the colours of the bot in the theme
-          customStyle={{
-            backgroundColor: '#EF6C00',
-            display: 'flex',
-            flexDirection: 'column',
-            color: '#fff',
-            fontFamily: 'Helvetica Neue',
-            fontSize: '15px',
-            borderRadius: '15px 15px 15px 0px',
-            width: "max-content",
-          }}
+          // customStyle={{
+          //   backgroundColor: '#EF6C00',
+          //   display: 'flex',
+          //   flexDirection: 'column',
+          //   color: '#fff',
+          //   fontFamily: 'Helvetica Neue',
+          //   fontSize: '15px',
+          //   borderRadius: '15px 15px 15px 0px',
+          //   width: "max-content",
+          // }}
 
           steps={[
             {
@@ -86,17 +104,14 @@ export default function Home() {
             },
             {
               id: '2',
-              options: [
-                { value: 1, label: 'Games', trigger: '4', className: 'primary-option' },
-                { value: 2, label: 'EdTech', trigger: '3' },
-              ],
-              hideInput: true
+              component: <CustomOptions options={[{ value: 'games', trigger: 3, primary: true}, {value: 'edtech', trigger: 4}]} />,
+              replace: true,
             },
             {
               id: '3',
               message: 'Wrong answer, try again.',
               trigger: () => handleStepChange(2),
-              hideInput: true
+              hideInput: true,
             },
             {
               id: '4',
