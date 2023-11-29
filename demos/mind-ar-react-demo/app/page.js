@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 
 // import of the library
@@ -15,22 +15,68 @@ import { Head } from './occluder';
 import { HeadOccluder } from './occluder-components';
 
 import html2canvas from 'html2canvas';
+import domtoimage from 'dom-to-image';
+
 
 export default function Home() {
-  const handleImageDownload = async () => {
-    const element = document.getElementById('print'),
-      canvas = await html2canvas(element),
-      data = canvas.toDataURL('image/jpg'),
-      link = document.createElement('a');
+  const handleTakeImage = async () => {
+    const ARView = document.getElementById('ARView');
 
-    link.href = data;
-    link.download = 'downloaded-image.jpg';
+    // Get the video and filter elements
+    const video = ARView.querySelector('video');
+    const filter = ARView.querySelector('canvas');
 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // html2canvas to get the video as an image (dom-to-image doesn't support video element)
+    const canvasV = await html2canvas(video);
+    const dataV = canvasV.toDataURL('image/jpg');
+
+    // dom-to-image to get the filter as an image (html2canvas doesn't support transparency in canvas element)
+    const dataF = await domtoimage.toPng(filter);
+
+    // create a container div to hold the images
+    const container = document.createElement('div');
+    // add styling to position the images on top of each other
+    container.style.display = 'grid';
+    container.style.overflow = 'hidden';
+    container.style.gridTemplateColumns = '1fr';
+    container.style.gridTemplateRows = '1fr';
+    container.style.justifyContent = 'center';
+    container.style.alignItems = 'center';
+    container.style.justifyItems = 'center';
+    container.style.transform = 'scaleX(-1)';
+    container.classList.add('image');
+
+    // Create img elements for the images
+    const imgV = document.createElement('img');
+    imgV.src = dataV;
+    imgV.style.gridColumn = '1';
+    imgV.style.gridRow = '1';
+    const imgF = document.createElement('img');
+    imgF.src = dataF;
+    imgF.style.gridColumn = '1';
+    imgF.style.gridRow = '1';
+
+    // Append images to the container
+    container.appendChild(imgV);
+    container.appendChild(imgF);
+
+    // Append the container to the body
+    document.body.appendChild(container);
   };
 
+  const handleImageDownload = async () => {
+    const image = document.querySelector('.image');
+    console.log(image);
+    const canvas = await html2canvas(image);
+    const data = canvas.toDataURL('image/jpg');
+    const link = document.createElement('a');
+    link.href = data;
+    link.download = 'image.jpg';
+    link.click();
+  };
+
+
+  // determine scale and offset based on window width (could use better solution)
   const windowWidth = window.innerWidth;
   let scale = 1;
   let offset = 0;
@@ -44,7 +90,7 @@ export default function Home() {
     scale = 2.5;
     offset = 1.4;
   } else if (windowWidth < 550) {
-    scale = 2.2;
+    scale = 2;
     offset = 1.4;
   } else if (windowWidth < 650) {
     scale = 1.8;
@@ -63,17 +109,23 @@ export default function Home() {
   return (
     <main>
       <h1>React AR Mind Demo</h1>
+      <button type="button" onClick={handleTakeImage}>Download</button>
       <button type="button" onClick={handleImageDownload}>Download</button>
-      <div style={{ transform: "scaleX(-1)" }}>
+      <div style={{ transform: "scaleX(-1)", display: "flex", justifyContent: "center" }}>
         <ARView
+          // turn on preserveDrawingBuffer to be able to take a screenshot
           gl={{ preserveDrawingBuffer: true }}
-          id="print"
+          // turn off flipUserCamera to for more natural camera feel
           flipUserCamera={false}
+          id="ARView"
         >
-          <ARAnchor target={1} // Target (image or face) to be anchored to
+          <ARAnchor
+            // target is point on the facemesh the model will be attached to
+            // reference: https://github.com/tensorflow/tfjs-models/blob/master/face-landmarks-detection/mesh_map.jpg
+            target={1}
           >
-            <ambientLight intensity={0.1} />
-            <directionalLight color="white" position={[0, 0, 5]} />
+            {/* light */}
+            <directionalLight color="white" position={[0, 0, 10]} />
 
             {/* simple cube */}
             {/* <mesh>
@@ -103,12 +155,12 @@ export default function Home() {
               <GlassesComponents />
               {/* head model made up of components to be able to adjust so it occludes */}
               <HeadOccluder />
-
-              {/* <Cube /> */}
             </group>
 
           </ARAnchor>
         </ARView>
+        {/* extra div with width and height of filter to make up for absolute positioning */}
+        <div style={{ minWidth: "100vw", minHeight: "100vh" }}></div>
       </div>
     </main >
   )
