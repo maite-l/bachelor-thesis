@@ -5,17 +5,24 @@ import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 
 export function CustomOptions({ options, triggerNextStep }) {
+
   const handleOptionClick = (option) => {
     triggerNextStep({ value: option.value, trigger: option.trigger });
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem'}}>
       {options.map((option, index) => (
         <div
           key={index}
           onClick={() => handleOptionClick(option)}
-          style={{ background: option.primary ? 'blue' : 'green', margin: '5px' }}
+          style={{ 
+            border: option.primary ? '2px #EF6C00 solid' : 'none',
+            textDecoration: option.primary ? 'none' : 'underline',
+            color: 'white', 
+            padding: '10px', 
+            borderRadius: '20px' 
+          }}
         >
           {option.value}
         </div>
@@ -84,7 +91,7 @@ export default function Home() {
           bubbleOptionStyle={{ border: '2px #EF6C00 solid', backgroundColor: 'transparent', color: '#EF6C00' }}
 
           // will have to be the same styling as bubbleStyle with the colours of the bot in the theme
-          // customStyle={{
+          customStyle={{
           //   backgroundColor: '#EF6C00',
           //   display: 'flex',
           //   flexDirection: 'column',
@@ -93,7 +100,12 @@ export default function Home() {
           //   fontSize: '15px',
           //   borderRadius: '15px 15px 15px 0px',
           //   width: "max-content",
-          // }}
+          backgroundColor: 'transparent',
+          display: 'flex',
+          justifyContent: 'flex-start',
+          padding: '12px',
+          margin: '0px'
+          }}
 
           steps={[
             {
@@ -104,17 +116,24 @@ export default function Home() {
             },
             {
               id: '2',
-              component: <CustomOptions options={[{ value: 'games', trigger: 3, primary: true}, {value: 'edtech', trigger: 4}]} />,
-              replace: true,
+              options: [
+                { value: '1', label: 'games', trigger: 4 },
+                { value: '2', label: 'edtech', trigger: 4 },
+              ],
             },
             {
               id: '3',
-              message: 'Wrong answer, try again.',
-              trigger: () => handleStepChange(2),
-              hideInput: true,
+              component: <CustomOptions options={[{ value: 'games', trigger: 4, primary: true }, { value: 'edtech', trigger: 5 }]} />,
+              replace: true,
             },
             {
               id: '4',
+              message: 'Wrong answer, try again.',
+              trigger: () => handleStepChange(3),
+              hideInput: true,
+            },
+            {
+              id: '5',
               // asMessage: true,
               component: (
                 <div>
