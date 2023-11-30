@@ -1,4 +1,5 @@
 import { getAllSlugs, getConversationData, getEventsData } from "../../lib/data";
+import Chatbot from "../(components)/Chatbot";
 
 // generate all possible paths for this route
 export async function generateStaticParams() {
@@ -79,58 +80,68 @@ const createMessage = (events) => {
     return message;
 }
 
-const adjustData = (message, originalData, events) => {
-    // define question ids to correctly place the new question
-    const previousQuestionId = 2; // id of the question the new one will be placed after
-    const currentQuestionId = events.length + 1; // id of the new question
+const adjustData = (message, originalData, stepData) => {
+    // define step ids to correctly place the new step
+    const previousStepId = stepData.stepBeforeId; // id of the step the new one will be placed after
+    const currentStepId = originalData.length + 1; // id of the new step
 
-    // create new question object and add it to the data
-    const newConversationObject = {
-        id: currentQuestionId,
-        question: message,
+    // create new message step and add it to the data
+    const newMessageStep = {
+        id: currentStepId,
+        message: message,
+        trigger: currentStepId + 1
+    };
+    originalData.push(newMessageStep);
+
+    // create new options step and add it to the data
+    const newOptionsStep = {
+        id: currentStepId + 1,
         options: [
             {
-                id: 1,
-                text: "text",
-                next_question: previousQuestionId + 1
+                value: '1',
+                label: stepData.optionLabels[0],
+                trigger: previousStepId + 1
+            },
+            {
+                value: '2',
+                label: stepData.optionLabels[1],
+                trigger: previousStepId + 1
             }
         ]
     };
-    originalData.push(newConversationObject);
+    originalData.push(newOptionsStep);
 
-    // adjust the next_question value of the options of the previous question
-    // we want to insert the new question between two others: the first question needs to point to the new question, 
-    // the new question needs to point to the second question
-    const previousQuestion = originalData.find(item => item.id === previousQuestionId);
-    if (previousQuestion) {
-        previousQuestion.options.forEach(option => {
-            option.next_question = currentQuestionId;
+    // adjust the trigger value of the options of the previous step to trigger new step
+    const previousStep = originalData.find(item => item.id === previousStepId);
+    if (previousStep) {
+        previousStep.options.forEach(option => {
+            option.trigger = currentStepId;
         });
     }
     return originalData;
 }
 
-export default async function Home({ params }) {
+export default async function LocationConversation({ params }) {
     const { slug } = params;
 
     // get location specific conversation data
-    let conversationData = getConversationData(slug);
+    const data = getConversationData(slug);
+    let conversationData = data.conversation;
     // get location specific events
     const events = getEventsData(slug);
 
     // if there are events, create a message out of relevant events and adjust the conversation data
     if (events) {
+        const stepData = data.optionalEventStep;
         const message = createMessage(events);
         if (message !== '') {
-            conversationData = adjustData(message, conversationData, events);
+            conversationData = adjustData(message, conversationData, stepData);
         }
     }
 
     return (
         <main>
-            <p>Dynamic route</p>
-            <p>{slug}</p>
-            <p>{JSON.stringify(conversationData)}</p>
+            <Chatbot steps={conversationData} />
         </main>
     )
 }

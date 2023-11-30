@@ -1,40 +1,62 @@
-[
-    {
-        "id": 1,
-        "question": "text text",
-        "options": [
-            {
-                "id": 1,
-                "text": "text",
-                "next_question": 2
-            },
-            {
-                "id": 2,
-                "text": "text",
-                "next_question": 2
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "question": "fun fact here",
-        "options": [
-            {
-                "id": 1,
-                "text": "text",
-                "next_question": 3
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "question": "another fun fact here",
-        "options": [
-            {
-                "id": 1,
-                "text": "text",
-                "end": true
-            }
+{
+    "conversation": [
+        {
+            "id": 1,
+            "message": "text text",
+            "trigger": "2",
+            "hideInput": true
+        },
+        {
+            "id": 2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "text",
+                    "trigger": 3
+                },
+                {
+                    "value": 2,
+                    "label": "text",
+                    "trigger": 3
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": 3,
+            "message": "fun fact here",
+            "trigger": "4",
+            "hideInput": true
+        },
+        {
+            "id": 4,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "text",
+                    "trigger": 5
+                },
+                {
+                    "value": 2,
+                    "label": "text",
+                    "trigger": 5
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": 5,
+            "message": "another fun fact here",
+            "end": true,
+            "hideInput": true
+        }
+        
+    ],
+    "optionalEventStep": {
+        "stepBeforeId": 4,
+        "optionLabels": [
+            "Wat leuk!",
+            "Intereseert me niet zo."
         ]
     }
-]
+}
