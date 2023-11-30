@@ -1,5 +1,6 @@
 import { getAllSlugs, getConversationData, getEventsData } from "../../lib/data";
 import Chatbot from "../(components)/Chatbot";
+import React from "react";
 
 // generate all possible paths for this route
 export async function generateStaticParams() {
@@ -138,6 +139,17 @@ export default async function LocationConversation({ params }) {
             conversationData = adjustData(message, conversationData, stepData);
         }
     }
+
+    // parse html in for custom components
+    conversationData = conversationData.map(step => {
+        if (step.hasOwnProperty('component')) {
+            let content = step.component;
+            step.component = (
+                <div dangerouslySetInnerHTML={{ __html: content }}></div>
+            );
+        }
+        return step;
+    });
 
     return (
         <main>
