@@ -3,42 +3,37 @@
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 
-export function CustomOptions({ options, triggerNextStep }) {
 
-    const handleOptionClick = (option) => {
-        triggerNextStep({ value: option.value, trigger: option.trigger });
-    };
-
-    return (
-        <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem' }}>
-            {options.map((option, index) => (
-                <div
-                    key={index}
-                    onClick={() => handleOptionClick(option)}
-                    style={{
-                        border: option.primary ? '2px #EF6C00 solid' : 'none',
-                        textDecoration: option.primary ? 'none' : 'underline',
-                        color: 'white',
-                        padding: '10px',
-                        borderRadius: '20px'
-                    }}
-                >
-                    {option.value}
-                </div>
-            ))}
-        </div>
-    );
+const addToLocalStorage = (step, key, value) => {
+    const existingArray = JSON.parse(localStorage.getItem(key)) || [];
+    const newArray = [...existingArray, value];
+    localStorage.setItem(key, JSON.stringify(newArray));
+    return step;
 };
 
 
-export default function Chatbot({steps}) {
+export default function Chatbot({ steps }) {
 
-    const addToLocalStorage = (step, key, value) => {
-        const existingArray = JSON.parse(localStorage.getItem(key)) || [];
-        const newArray = [...existingArray, value];
-        localStorage.setItem(key, JSON.stringify(newArray));
-        return step;
-    };
+    // parse the steps to add the trigger and component properties
+    steps = steps.map(step => {
+        const { trigger, component, ...rest } = step;
+
+        // if there is a component property, parse it as html
+        if (component) {
+            let content = step.component;
+            rest.component = (
+                <div dangerouslySetInnerHTML={{ __html: content }}></div>
+            );
+        }
+        // if the trigger is a function, add function in trigger
+        if (trigger && trigger.type === "function") {
+            rest.trigger = () => addToLocalStorage(trigger.arguments.trigger, trigger.arguments.key, trigger.arguments.value);
+        } else if (trigger) {
+            rest.trigger = trigger;
+        }
+
+        return rest;
+    });
 
     const theme = {
         background: '#000000',
@@ -74,18 +69,18 @@ export default function Chatbot({steps}) {
                     padding: '12px',
                     margin: '0px',
                     boxShadow: 'none',
-                      backgroundColor: '#EF6C00',
+                    backgroundColor: '#EF6C00',
                     //   display: 'flex',
                     //   flexDirection: 'column',
-                      color: '#fff',
-                      fontFamily: 'Helvetica Neue',
-                      fontSize: '14px',
-                      borderRadius: '18px 18px 18px 0px',
-                      width: "max-content",
-                      padding: '12px',
-                      marginLeft: '12px',
-                      marginBlockStart: '-4px',
-                      marginBlockEnd: '10px',
+                    color: '#fff',
+                    fontFamily: 'Helvetica Neue',
+                    fontSize: '14px',
+                    borderRadius: '18px 18px 18px 0px',
+                    width: "max-content",
+                    padding: '12px',
+                    marginLeft: '12px',
+                    marginBlockStart: '-4px',
+                    marginBlockEnd: '10px',
                 }}
                 steps={steps}
             />

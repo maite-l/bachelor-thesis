@@ -3,7 +3,7 @@
         {
             "id": 1,
             "message": "Hey daar, welkom op FTI Kortrijk! Ben je verdwaald?",
-            "trigger": "2",
+            "trigger": 2,
             "hideInput": true
         },
         {
@@ -25,7 +25,7 @@
         {
             "id": 3,
             "message": "Naar welk evenement ben je op zoek?",
-            "trigger": "4",
+            "trigger": 4,
             "hideInput": true
         },
         {
@@ -57,7 +57,14 @@
         {
             "id": 5,
             "message": "De Unwrap Arena is te vinden in de Budafabriek",
-            "trigger": "6",
+            "trigger": {
+                "type": "function",
+                "arguments": {
+                    "trigger": 6,
+                    "key": "location",
+                    "value": "Unwrap Arena"
+                }
+            },
             "hideInput": true
         },
         {

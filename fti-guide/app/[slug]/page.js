@@ -122,17 +122,6 @@ const adjustData = (message, originalData, stepData) => {
     return originalData;
 }
 
-const handleStepChange = (step) => {
-    // Execute your function based on the step ID or any other condition
-    console.log(`Step changed to ${step}`);
-
-    const existingArray = JSON.parse(localStorage.getItem('yourKey')) || [];
-    const newArray = [...existingArray, 'newElement'];
-    localStorage.setItem('yourKey', JSON.stringify(newArray));
-
-    return step;
-};
-
 export default async function LocationConversation({ params }) {
     const { slug } = params;
 
@@ -150,28 +139,6 @@ export default async function LocationConversation({ params }) {
             conversationData = adjustData(message, conversationData, stepData);
         }
     }
-
-    // parse html in for custom components
-    conversationData = conversationData.map(step => {
-        if (step.hasOwnProperty('component')) {
-            let content = step.component;
-            step.component = (
-                <div dangerouslySetInnerHTML={{ __html: content }}></div>
-            );
-        }
-        return step;
-    });
-
-    // const processedData = jsonData.map(item => {
-    //     const { functionPlaceholder, ...rest } = item;
-
-    //     if (functionPlaceholder) {
-    //         // Replace the function placeholder with the actual function
-    //         rest.trigger = () => handleStepChange(Number(rest.trigger));
-    //     }
-
-    //     return rest;
-    // });
 
     return (
         <main>
