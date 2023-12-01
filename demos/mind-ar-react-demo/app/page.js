@@ -109,8 +109,8 @@ export default function Home() {
   return (
     <main>
       <h1>React AR Mind Demo</h1>
-      <button type="button" onClick={handleTakeImage}>Download</button>
-      <button type="button" onClick={handleImageDownload}>Download</button>
+      <button type="button" onClick={handleTakeImage}>Take picture</button>
+      <button type="button" onClick={handleImageDownload}>Download picture</button>
       <div style={{ transform: "scaleX(-1)", display: "flex", justifyContent: "center" }}>
         <ARView
           // turn on preserveDrawingBuffer to be able to take a screenshot

@@ -61,18 +61,31 @@ export default function Chatbot({steps}) {
                 hideSubmitButton="true"
                 footerStyle={{ display: 'none' }}
                 contentStyle={{
-                    height: '30rem'
+                    height: '90vh',
+                    paddingBlockEnd: '20px',
                 }}
                 enableSmoothScroll="true"
                 style={{ borderRadius: '0px', boxShadow: 'none' }}
                 bubbleOptionStyle={{ border: '2px #EF6C00 solid', backgroundColor: 'transparent', color: '#EF6C00', marginBlockStart: '4px', marginInlineStart: '4px', textAlign: 'left' }}
                 customStyle={{
-                    backgroundColor: 'transparent',
+                    // backgroundColor: 'transparent',
                     display: 'flex',
                     justifyContent: 'flex-start',
                     padding: '12px',
                     margin: '0px',
                     boxShadow: 'none',
+                      backgroundColor: '#EF6C00',
+                    //   display: 'flex',
+                    //   flexDirection: 'column',
+                      color: '#fff',
+                      fontFamily: 'Helvetica Neue',
+                      fontSize: '14px',
+                      borderRadius: '18px 18px 18px 0px',
+                      width: "max-content",
+                      padding: '12px',
+                      marginLeft: '12px',
+                      marginBlockStart: '-4px',
+                      marginBlockEnd: '10px',
                 }}
                 steps={steps}
             />

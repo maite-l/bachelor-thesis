@@ -57,6 +57,14 @@ export default function Home() {
     return step;
   };
 
+  const insertedStep = {
+    id: '6',
+    message: 'What are you looking for?',
+    // trigger: '7',
+    end: true,
+    hideInput: true
+  };
+
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>Chatbot demo</h1>
@@ -151,9 +159,11 @@ export default function Home() {
                   ></iframe>
                 </div>
               ),
-              end: true,
+              // end: true,
               hideInput: true,
+              trigger: '6'
             },
+            insertedStep
           ]}
         />
       </ThemeProvider>
