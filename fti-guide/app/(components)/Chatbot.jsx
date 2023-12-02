@@ -26,7 +26,7 @@ export default function Chatbot({ steps }) {
             );
         }
         // if the trigger is a function, add function in trigger
-        if (trigger && trigger.type === "function") {
+        if (trigger && trigger.function === "addToLocalStorage") {
             rest.trigger = () => addToLocalStorage(trigger.arguments.trigger, trigger.arguments.key, trigger.arguments.value);
         } else if (trigger) {
             rest.trigger = trigger;

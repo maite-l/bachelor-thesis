@@ -58,7 +58,7 @@
             "id": 5,
             "message": "De Unwrap Arena is te vinden in de Budafabriek",
             "trigger": {
-                "type": "function",
+                "function": "addToLocalStorage",
                 "arguments": {
                     "trigger": 6,
                     "key": "location",
