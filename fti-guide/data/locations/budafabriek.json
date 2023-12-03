@@ -1,9 +1,22 @@
 {
     "conversation": [
         {
+            "id": "secondStart",
+            "message": "Oh hey, jij weer!",
+            "trigger": 4,
+            "hideInput": true
+        },
+        {
             "id": 1,
-            "message": "Hey daar, welkom op FTI Kortrijk! Ben je verdwaald?",
-            "trigger": 2,
+            "message": "Hey daar, welkom in de Unwrap Arena! Er is hier heel wat te beleven.",
+            "trigger": {
+                "function": "addToLocalStorage",
+                "arguments": {
+                    "trigger": 2,
+                    "key": "location",
+                    "value": "budafabriek"
+                }
+            },
             "hideInput": true
         },
         {
@@ -11,74 +24,113 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Ik weet naar welk evenement ik wil, maar weet niet waar het is.",
+                    "label": "Leuk",
                     "trigger": 3
                 },
                 {
                     "value": 2,
-                    "label": "Ik weet niet naar welk evenement ik wil.",
-                    "trigger": 3
+                    "label": "Ik wil iets  specifieks weten",
+                    "trigger": 4
                 }
             ],
             "hideInput": true
         },
         {
             "id": 3,
-            "message": "Naar welk evenement ben je op zoek?",
-            "trigger": 4,
-            "hideInput": true
+            "message": "Hier in de budafabriek kan je de evolutie van games ervaren, van retro tot de recentste en meest technologisch advanced spellen.",
+            "hideInput": true,
+            "end": true
         },
         {
             "id": 4,
+            "message": "Wat wil je weten?",
+            "hideInput": true,
+            "trigger": 5
+        },
+        {
+            "id": 5,
             "options": [
                 {
                     "value": 1,
-                    "label": "FutureED",
-                    "trigger": 5
+                    "label": "Vertel eens een leuk weetje",
+                    "trigger": 6
                 },
                 {
                     "value": 2,
-                    "label": "Unwrap Arena",
-                    "trigger": 5
+                    "label": "Wat is er hier te doen?",
+                    "trigger": 7
                 },
                 {
                     "value": 3,
-                    "label": "Breakout sessie",
-                    "trigger": 5
-                },
-                {
-                    "value": 4,
-                    "label": "Paden van de toekomst",
-                    "trigger": 5
+                    "label": "Zijn er hier bepaalde events?",
+                    "trigger": 8
                 }
             ],
             "hideInput": true
         },
         {
-            "id": 5,
-            "message": "De Unwrap Arena is te vinden in de Budafabriek",
-            "trigger": {
-                "function": "addToLocalStorage",
-                "arguments": {
-                    "trigger": 6,
-                    "key": "location",
-                    "value": "Unwrap Arena"
+            "id": 6,
+            "message": "Wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
+            "hideInput": true,
+            "trigger": 9
+        },
+        {
+            "id": 7,
+            "message": "Er is hier heel wat te doen. Je kan hier de evolutie van games ervaren, van retro tot de recentste en meest technologisch advanced spellen.",
+            "hideInput": true,
+            "trigger": 9
+        },
+        {
+            "id": 8,
+            "message": "Vandaag zijn er geen evenementen meer.",
+            "hideInput": true,
+            "trigger": 9
+        },
+        {
+            "id": 9,
+            "message": "Wil je nog iets weten?",
+            "hideInput": true,
+            "trigger": 10
+        },
+        {
+            "id": 10,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Vertel eens een leuk weetje",
+                    "trigger": 6
+                },
+                {
+                    "value": 2,
+                    "label": "Wat is er hier te doen?",
+                    "trigger": 6
+                },
+                {
+                    "value": 3,
+                    "label": "Zijn er hier bepaalde events?",
+                    "trigger": 8
+                },
+                {
+                    "value": 4,
+                    "label": "Nee, dank je",
+                    "trigger": 11
                 }
-            },
+            ],
             "hideInput": true
         },
         {
-            "id": 6,
-            "component": "<div><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1sen!2sbe!4v1701353891867!5m2!1sen!2sbe' width='300' height='300' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe></div>",
+            "id": 11,
+            "message": "Ok, veel plezier!",
             "hideInput": true,
             "end": true
         }
     ],
     "optionalEventStep": {
-        "stepBeforeId": 4,
+        "stepBeforeId": 3,
         "optionLabels": [
             "Wat leuk!",
             "Intereseert me niet zo."
-        ]
+        ],
+        "eventAnswerId": 8
     }
 }

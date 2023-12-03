@@ -75,6 +75,24 @@ export default function Home() {
     link.click();
   };
 
+  const handleShare = async () => {
+    // const image = document.querySelector('.image');
+    // const canvas = await html2canvas(image);
+    // const data = canvas.toDataURL('image/jpg');
+    const shareData = {
+      title: "MDN",
+      text: "Learn web development on MDN!",
+      url: "https://developer.mozilla.org",
+    };
+    try {
+      await navigator.share(shareData);
+      console.log('Shared successfully');
+    } catch (err) {
+      console.log('Error: ' + err);
+    }
+
+  };
+
 
   // determine scale and offset based on window width (could use better solution)
   const windowWidth = window.innerWidth;
@@ -111,6 +129,7 @@ export default function Home() {
       <h1>React AR Mind Demo</h1>
       <button type="button" onClick={handleTakeImage}>Take picture</button>
       <button type="button" onClick={handleImageDownload}>Download picture</button>
+      <button type="button" onClick={handleShare}>Share</button>
       <div style={{ transform: "scaleX(-1)", display: "flex", justifyContent: "center" }}>
         <ARView
           // turn on preserveDrawingBuffer to be able to take a screenshot

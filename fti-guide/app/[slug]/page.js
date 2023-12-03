@@ -78,47 +78,65 @@ const createMessage = (events) => {
             });
         }
     }
-    return message;
+
+    let eventMessage = { message: message, answer: message };
+
+    if (message === '') {
+        eventMessage.answer = 'Vandaag is zijn er geen events meer.';
+    }
+    return eventMessage;
 }
 
-const adjustData = (message, originalData, stepData) => {
-    // define step ids to correctly place the new step
-    const previousStepId = stepData.stepBeforeId; // id of the step the new one will be placed after
-    const currentStepId = originalData.length + 1; // id of the new step
+const adjustData = (eventMessage, originalData, stepData) => {
 
-    // create new message step and add it to the data
-    const newMessageStep = {
-        id: currentStepId,
-        message: message,
-        trigger: currentStepId + 1
-    };
-    originalData.push(newMessageStep);
+    if (eventMessage.message !== '') {
+        // define step ids to correctly place the new step
+        const previousStepId = stepData.stepBeforeId; // id of the step the new one will be placed after
+        const newStepId = 'eventStep1'; // id of the new step
+        const newOptionsStepId = 'eventStep2'; // id of the new options step
 
-    // create new options step and add it to the data
-    const newOptionsStep = {
-        id: currentStepId + 1,
-        options: [
-            {
-                value: '1',
-                label: stepData.optionLabels[0],
-                trigger: previousStepId + 1
-            },
-            {
-                value: '2',
-                label: stepData.optionLabels[1],
-                trigger: previousStepId + 1
-            }
-        ]
-    };
-    originalData.push(newOptionsStep);
+        // create new message step and add it to the data
+        const newMessageStep = {
+            id: newStepId,
+            message: eventMessage.message,
+            trigger: newOptionsStepId
+        };
+        originalData.push(newMessageStep);
 
-    // adjust the trigger value of the options of the previous step to trigger new step
-    const previousStep = originalData.find(item => item.id === previousStepId);
-    if (previousStep) {
-        previousStep.options.forEach(option => {
-            option.trigger = currentStepId;
-        });
+        // create new options step and add it to the data
+        const newOptionsStep = {
+            id: newOptionsStepId,
+            options: [
+                {
+                    value: '1',
+                    label: stepData.optionLabels[0],
+                    trigger: previousStepId + 1
+                },
+                {
+                    value: '2',
+                    label: stepData.optionLabels[1],
+                    trigger: previousStepId + 1
+                }
+            ]
+        };
+        originalData.push(newOptionsStep);
+
+        // adjust the trigger value of the previous step to trigger new step
+        const previousStep = originalData.find(item => item.id === previousStepId);
+        if (previousStep.options) {
+            previousStep.options.forEach(option => {
+                option.trigger = newStepId;
+            });
+        } else if (previousStep.trigger) {
+            previousStep.trigger = newStepId;
+        }
     }
+
+    const eventAnswerStep = originalData.find(item => item.id === stepData.eventAnswerId);
+    console.log(eventAnswerStep);
+    console.log(eventMessage.answer);
+    eventAnswerStep.message = eventMessage.answer;
+
     return originalData;
 }
 
@@ -134,15 +152,13 @@ export default async function LocationConversation({ params }) {
     // if there are events, create a message out of relevant events and adjust the conversation data
     if (events) {
         const stepData = data.optionalEventStep;
-        const message = createMessage(events);
-        if (message !== '') {
-            conversationData = adjustData(message, conversationData, stepData);
-        }
+        const eventMessage = createMessage(events);
+        conversationData = adjustData(eventMessage, conversationData, stepData);
     }
 
     return (
         <main>
-            <Chatbot steps={conversationData} />
+            <Chatbot steps={conversationData} slug={slug} />
         </main>
     )
 }

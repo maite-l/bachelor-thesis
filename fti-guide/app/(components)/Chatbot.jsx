@@ -6,13 +6,24 @@ import { ThemeProvider } from 'styled-components';
 
 const addToLocalStorage = (step, key, value) => {
     const existingArray = JSON.parse(localStorage.getItem(key)) || [];
-    const newArray = [...existingArray, value];
-    localStorage.setItem(key, JSON.stringify(newArray));
+
+    // Check if the value is already in the array
+    if (!existingArray.includes(value)) {
+        const newArray = [...existingArray, value];
+        localStorage.setItem(key, JSON.stringify(newArray));
+    }
+
     return step;
 };
 
 
-export default function Chatbot({ steps }) {
+export default function Chatbot({ steps, slug }) {
+
+    const locationsArray = JSON.parse(localStorage.getItem('location')) || [];
+
+    if (!locationsArray.includes(slug)) {
+        steps = steps.filter(step => step.id !== "secondStart");
+    }
 
     // parse the steps to add the trigger and component properties
     steps = steps.map(step => {
