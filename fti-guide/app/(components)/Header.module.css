@@ -1,0 +1,11 @@
+.header {
+    background-color: var(--coral);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 50px;
+    border-block-end: solid 1px var(--purple);
+
+}

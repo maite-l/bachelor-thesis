@@ -5,6 +5,7 @@ import localFont from 'next/font/local'
 import './(css)/globals.css'
 import { createMedia } from "@artsy/fresnel";
 import Nav from './(components)/Nav';
+import Header from './(components)/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
       <body className={`${Lausanne.className} ${GTSuper.variable}`}>
         <MediaContextProvider>
           <Media at="mobile" className='mobile'>
+            <Header />
             <Nav />
             {children}
           </Media>

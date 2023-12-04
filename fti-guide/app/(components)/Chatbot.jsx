@@ -20,6 +20,32 @@ const addToLocalStorage = (step, key, value) => {
     return step;
 };
 
+const handleResize = () => {
+    const windowWidth = window.innerWidth;
+    const options = document.querySelectorAll('.rsc-os-options');
+    const option = document.querySelectorAll('.rsc-os-option');
+
+    if (options) {
+        options.forEach((options) => {
+            if (windowWidth < 388) {
+                options.style.margin = '2px 12px 12px 0';
+            } else {
+                options.style.margin = '0';
+            }
+        });
+    }
+
+    if (option) {
+        option.forEach((option) => {
+            if (windowWidth < 388) {
+                option.style.width = '100%';
+            } else {
+                option.style.width = '180px';
+            }
+        });
+    }
+};
+
 
 export default function Chatbot({ steps, slug }) {
 
@@ -66,6 +92,8 @@ export default function Chatbot({ steps, slug }) {
         }
     }, [slug]);
 
+
+
     const theme = {
         background: 'var(--white)',
         fontFamily: 'var(--font-lausanne)',
@@ -85,7 +113,7 @@ export default function Chatbot({ steps, slug }) {
                     hideSubmitButton="true"
                     footerStyle={{ display: 'none' }}
                     contentStyle={{
-                        height: '90vh',
+                        height: '80vh',
                         paddingBlockEnd: '20px',
                         margin: '0',
                     }}
@@ -96,6 +124,7 @@ export default function Chatbot({ steps, slug }) {
                         height: '100%',
                         margin: 'auto',
                         width: '100%',
+                        zIndex: '1',
                     }}
                     bubbleOptionStyle={{
                         border: '1px var(--purple) solid',
@@ -109,7 +138,7 @@ export default function Chatbot({ steps, slug }) {
                         fontSize: '15px',
                         padding: '18px',
                         fontFamily: 'var(--font-lausanne)',
-                        width: '180px',
+                        width: '170px'
                     }}
                     bubbleStyle={{
                         border: '1px var(--purple) solid',
