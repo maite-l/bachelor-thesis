@@ -1,5 +1,19 @@
 @import "reset.css";
 
+:root {
+    --purple: #6E33D5;
+    --white: #FBF3ED;
+    --coral: #F27361;
+}
+
+html {
+    background-color: var(--white);
+}
+a {
+    text-decoration: none;
+    color: var(--purple);
+}
+
 @media (max-width: 768px) {
     .desktop {
         display: none;

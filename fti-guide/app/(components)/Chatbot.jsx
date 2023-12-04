@@ -67,15 +67,12 @@ export default function Chatbot({ steps, slug }) {
     }, [slug]);
 
     const theme = {
-        background: '#000000',
-        fontFamily: 'Helvetica Neue',
-        headerBgColor: '#EF6C00',
-        headerFontColor: '#fff',
-        headerFontSize: '15px',
-        botBubbleColor: '#EF6C00',
-        botFontColor: '#fff',
-        userBubbleColor: '#fff',
-        userFontColor: '#4a4a4a',
+        background: 'var(--white)',
+        fontFamily: 'var(--font-lausanne)',
+        botBubbleColor: 'var(--purple)',
+        botFontColor: 'var(--white)',
+        userBubbleColor: 'var(--white)',
+        userFontColor: 'var(--purple)',
     };
 
     return (
@@ -90,10 +87,39 @@ export default function Chatbot({ steps, slug }) {
                     contentStyle={{
                         height: '90vh',
                         paddingBlockEnd: '20px',
+                        margin: '0',
                     }}
                     enableSmoothScroll="true"
-                    style={{ borderRadius: '0px', boxShadow: 'none' }}
-                    bubbleOptionStyle={{ border: '2px #EF6C00 solid', backgroundColor: 'transparent', color: '#EF6C00', marginBlockStart: '4px', marginInlineStart: '4px', textAlign: 'left' }}
+                    style={{
+                        borderRadius: '0px',
+                        boxShadow: 'none',
+                        height: '100%',
+                        margin: 'auto',
+                        width: '100%',
+                    }}
+                    bubbleOptionStyle={{
+                        border: '1px var(--purple) solid',
+                        backgroundColor: 'transparent',
+                        color: 'var(--purple)',
+                        marginInlineStart: '4px',
+                        marginBlockStart: '4px',
+                        textAlign: 'center',
+                        boxShadow: 'none',
+                        borderRadius: '0px',
+                        fontSize: '15px',
+                        padding: '18px',
+                        fontFamily: 'var(--font-lausanne)',
+                        width: '180px',
+                    }}
+                    bubbleStyle={{
+                        border: '1px var(--purple) solid',
+                        boxShadow: 'none',
+                        fontSize: '15px',
+                        lineHeight: '1.5',
+                        padding: '18px',
+                        borderRadius: '0px 20px',
+                    }}
+
                     customStyle={{
                         // backgroundColor: 'transparent',
                         display: 'flex',
