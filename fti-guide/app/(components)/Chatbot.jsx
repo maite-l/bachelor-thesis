@@ -113,8 +113,8 @@ export default function Chatbot({ steps, slug }) {
                     hideSubmitButton="true"
                     footerStyle={{ display: 'none' }}
                     contentStyle={{
-                        height: '80vh',
-                        paddingBlockEnd: '20px',
+                        // height: '80vh',
+                        paddingBlock: '20px',
                         margin: '0',
                     }}
                     enableSmoothScroll="true"
@@ -147,6 +147,7 @@ export default function Chatbot({ steps, slug }) {
                         lineHeight: '1.5',
                         padding: '18px',
                         borderRadius: '0px 20px',
+
                     }}
 
                     customStyle={{

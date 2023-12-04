@@ -132,5 +132,10 @@
             "Intereseert me niet zo."
         ],
         "eventAnswerId": 8
+    },
+    "character": {
+        "name": "RoBob de Gamer",
+        "quote": "Beep Boop! Ik ben de beste gamer van de Unwrap Arena!",
+        "image": "images/characters/robo.png"
     }
 }
