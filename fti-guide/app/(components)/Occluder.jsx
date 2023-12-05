@@ -20,4 +20,4 @@ export function HeadOccluder(props) {
     );
 }
 
-useGLTF.preload("/head_occluder/head.gltf");
+useGLTF.preload("head_occluder/head.gltf");

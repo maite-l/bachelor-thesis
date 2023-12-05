@@ -3,7 +3,7 @@
 import styles from './BadgeCollection.module.css';
 import { useEffect, useState } from 'react';
 import BadgesOverview from './BadgesOverview';
-// import ARFilter from './ARFilter';
+import ARFilter from './ARFilter';
 
 export default function BadgeCollection({ allBadges }) {
 
@@ -50,7 +50,7 @@ export default function BadgeCollection({ allBadges }) {
 
       <p className={'title margin ' + styles.filterTitle}>Deel je Badges met stijl met coole <em>gezichtsfilters!</em></p>
 
-      {/* <ARFilter/> */}
+      <ARFilter/>
 
       </div>
       );
