@@ -5,8 +5,8 @@ import React from "react";
 // import of the library
 import { ARView, ARAnchor } from "react-three-mind";
 
-import { Model } from './Model';
-import { HeadOccluder } from './Occluder';
+// import { Model } from './Model';
+// import { HeadOccluder } from './Occluder';
 
 import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
@@ -141,9 +141,9 @@ export default function ARFilter() {
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
                             {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
-                            <Model />
+                            {/* <Model /> */}
                             {/* head model made up of components to be able to adjust so it occludes */}
-                            <HeadOccluder />
+                            {/* <HeadOccluder /> */}
                         </group>
 
                     </ARAnchor>
