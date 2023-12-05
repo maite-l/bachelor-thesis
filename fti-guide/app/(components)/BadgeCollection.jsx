@@ -50,7 +50,7 @@ export default function BadgeCollection({ allBadges }) {
 
       <p className={'title margin ' + styles.filterTitle}>Deel je Badges met stijl met coole <em>gezichtsfilters!</em></p>
 
-      <ARFilter/>
+      {/* <ARFilter/> */}
 
       </div>
       );
