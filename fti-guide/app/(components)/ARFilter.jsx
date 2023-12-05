@@ -2,8 +2,7 @@
 
 import React from "react";
 
-// import of the library
-// import { ARView, ARAnchor } from "react-three-mind";
+import { ARView, ARAnchor } from "react-three-mind";
 
 // import { Model } from './Model';
 // import { HeadOccluder } from './Occluder';
