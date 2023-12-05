@@ -51,3 +51,21 @@ export function getEventsData(slug) {
         return null; // Or throw an error if you want to handle it differently
     }
 }
+
+export function getAllBadges() {
+    const dataDirectory = path.join(process.cwd(), 'data');
+    const fullPath = path.join(dataDirectory, `badges.json`);
+    try {
+        // Read the contents of the JSON file
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+        // Parse the JSON data
+        const jsonData = JSON.parse(fileContents);
+
+        return jsonData;
+    } catch (error) {
+        // Handle errors (e.g., file not found, JSON parsing error)
+        console.error(`Error reading JSON file ${fullPath}:`, error);
+        return null; // Or throw an error if you want to handle it differently
+    }
+}

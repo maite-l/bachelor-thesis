@@ -65,7 +65,7 @@ export default function Chatbot({ steps, slug }) {
             setChatSteps(newSteps);
 
             // check if the location is already in the localstorage, if so, remove the secondStart step
-            const locationsArray = JSON.parse(localStorage.getItem('location')) || [];
+            const locationsArray = JSON.parse(localStorage.getItem('collected')) || [];
             if (!locationsArray.includes(slug)) {
                 const newSteps = steps.filter(step => step.id !== "secondStart");
                 setChatSteps(newSteps);

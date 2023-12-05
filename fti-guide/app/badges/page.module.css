@@ -1,0 +1,5 @@
+.title {
+    border-block-end: solid 1px var(--purple);
+    padding-block-end: 0.8rem;
+    padding-block-start: 2.3rem;
+}

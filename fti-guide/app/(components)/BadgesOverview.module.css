@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    gap: 0.8rem;
+    margin-inline: 0.5rem;
+    overflow-x: scroll;
+    padding-block-end: 1rem;
+    padding-block-start: 1.5rem;
+}
+
+.container::-webkit-scrollbar {
+    width: 10px;
+    border: var(--purple) solid 1px;
+    max-width: 90vw;
+}
+.container::-webkit-scrollbar-thumb {
+    background: var(--purple);
+    width: 1rem;
+}

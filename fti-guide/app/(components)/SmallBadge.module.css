@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: max-content;
+    color: var(--purple);
+    text-align: center;
+}
+
+.badgeContainer {
+    border: solid 1px var(--purple);
+    border-radius: 20px 0px; 
+    width: 6rem;
+    height: 6rem;
+}
+
+.collected {
+    border-color: var(--coral);
+}
+.uncollected {
+    border-color: var(--purple);
+}

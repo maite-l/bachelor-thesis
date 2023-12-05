@@ -1,7 +1,17 @@
-export default function Home() {
+
+import styles from './page.module.css'
+import { getAllBadges } from '../../lib/data';
+import BadgeCollection from '../(components)/BadgeCollection';
+
+
+export default function BadgesPage() {
+
+  const allBadges = getAllBadges();
+
   return (
     <main>
-      <p className='thing'>Hier kan je je badges vinden!</p>
+      <h1 className={'title margin ' + styles.title}>Jouw badge verzameling</h1>
+      <BadgeCollection allBadges={allBadges} />
     </main>
   )
 }

@@ -24,3 +24,12 @@ a {
         display: none;
     }
 }
+
+.title {
+    font-family: var(--font-gt-super);
+    color: var(--purple);
+    font-size: 1.5rem;
+}
+.margin {
+    margin-inline: 0.5rem;
+}
