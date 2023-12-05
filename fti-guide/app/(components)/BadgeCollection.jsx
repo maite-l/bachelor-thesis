@@ -1,9 +1,10 @@
 'use client';
 
 import styles from './BadgeCollection.module.css';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import BadgesOverview from './BadgesOverview';
-import ARFilter from './ARFilter';
+const ARFilterNoSSR = dynamic(() => import('./ARFilter'), { ssr: false });
 
 export default function BadgeCollection({ allBadges }) {
 
@@ -50,7 +51,7 @@ export default function BadgeCollection({ allBadges }) {
 
       <p className={'title margin ' + styles.filterTitle}>Deel je Badges met stijl met coole <em>gezichtsfilters!</em></p>
 
-      <ARFilter/>
+      <ARFilterNoSSR />
 
       </div>
       );
