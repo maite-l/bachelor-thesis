@@ -124,7 +124,7 @@ export default function ARFilter() {
             <button type="button" onClick={handleImageDownload}>Download picture</button>
             <button type="button" onClick={handleShare}>Share</button> */}
             <div style={{ transform: "scaleX(-1)", display: "flex", justifyContent: "center" }}>
-                {/* <ARView
+                <ARView
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     gl={{ preserveDrawingBuffer: true }}
                     // turn off flipUserCamera to for more natural camera feel
@@ -134,9 +134,9 @@ export default function ARFilter() {
                     <ARAnchor
                         // target is point on the facemesh the model will be attached to
                         target={1}
-                    > */}
+                    >
                         {/* light */}
-                        {/* <directionalLight color="white" position={[0, 0, 10]} /> */}
+                        <directionalLight color="white" position={[0, 0, 10]} />
 
                         {/* model */}
                         {/* <group scale={[scale, scale, scale]} position={[0, 0, offset]}> */}
@@ -146,8 +146,8 @@ export default function ARFilter() {
                             {/* <HeadOccluder />
                         </group> */}
 
-                    {/* </ARAnchor>
-                </ARView> */}
+                    </ARAnchor>
+                </ARView>
                 {/* extra div with width and height of filter to make up for absolute positioning */}
                 <div style={{ minWidth: "100vw", minHeight: "100vh" }}></div>
             </div>
