@@ -3,10 +3,10 @@
 import React from "react";
 
 // import of the library
-import { ARView, ARAnchor } from "react-three-mind";
+// import { ARView, ARAnchor } from "react-three-mind";
 
-import { Model } from './Model';
-import { HeadOccluder } from './Occluder';
+// import { Model } from './Model';
+// import { HeadOccluder } from './Occluder';
 
 import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
