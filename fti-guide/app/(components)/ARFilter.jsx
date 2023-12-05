@@ -89,34 +89,34 @@ export default function ARFilter() {
 
 
     // determine scale and offset based on window width (could use better solution)
-    const windowWidth = window.innerWidth;
-    let scale = 1;
-    let offset = 0;
-    if (windowWidth < 320) {
-        scale = 4;
-        offset = 2.2;
-    } else if (windowWidth < 375) {
-        scale = 2.8;
-        offset = 1.8;
-    } else if (windowWidth < 425) {
-        scale = 2.5;
-        offset = 1.4;
-    } else if (windowWidth < 550) {
-        scale = 2;
-        offset = 1.4;
-    } else if (windowWidth < 650) {
-        scale = 1.8;
-        offset = 0.5;
-    } else if (windowWidth < 800) {
-        scale = 1.7;
-        offset = 0.4;
-    } else if (windowWidth < 1000) {
-        scale = 1.4;
-        offset = 0.3;
-    } else if (windowWidth >= 1000) {
-        scale = 1;
-        offset = 0;
-    }
+    // const windowWidth = window.innerWidth;
+    // let scale = 1;
+    // let offset = 0;
+    // if (windowWidth < 320) {
+    //     scale = 4;
+    //     offset = 2.2;
+    // } else if (windowWidth < 375) {
+    //     scale = 2.8;
+    //     offset = 1.8;
+    // } else if (windowWidth < 425) {
+    //     scale = 2.5;
+    //     offset = 1.4;
+    // } else if (windowWidth < 550) {
+    //     scale = 2;
+    //     offset = 1.4;
+    // } else if (windowWidth < 650) {
+    //     scale = 1.8;
+    //     offset = 0.5;
+    // } else if (windowWidth < 800) {
+    //     scale = 1.7;
+    //     offset = 0.4;
+    // } else if (windowWidth < 1000) {
+    //     scale = 1.4;
+    //     offset = 0.3;
+    // } else if (windowWidth >= 1000) {
+    //     scale = 1;
+    //     offset = 0;
+    // }
 
     return (
         <div>
@@ -124,7 +124,7 @@ export default function ARFilter() {
             <button type="button" onClick={handleImageDownload}>Download picture</button>
             <button type="button" onClick={handleShare}>Share</button> */}
             <div style={{ transform: "scaleX(-1)", display: "flex", justifyContent: "center" }}>
-                <ARView
+                {/* <ARView
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     gl={{ preserveDrawingBuffer: true }}
                     // turn off flipUserCamera to for more natural camera feel
@@ -134,20 +134,20 @@ export default function ARFilter() {
                     <ARAnchor
                         // target is point on the facemesh the model will be attached to
                         target={1}
-                    >
+                    > */}
                         {/* light */}
-                        <directionalLight color="white" position={[0, 0, 10]} />
+                        {/* <directionalLight color="white" position={[0, 0, 10]} /> */}
 
                         {/* model */}
-                        <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
+                        {/* <group scale={[scale, scale, scale]} position={[0, 0, offset]}> */}
                             {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
-                            <Model />
+                            {/* <Model /> */}
                             {/* head model made up of components to be able to adjust so it occludes */}
-                            <HeadOccluder />
-                        </group>
+                            {/* <HeadOccluder />
+                        </group> */}
 
-                    </ARAnchor>
-                </ARView>
+                    {/* </ARAnchor>
+                </ARView> */}
                 {/* extra div with width and height of filter to make up for absolute positioning */}
                 <div style={{ minWidth: "100vw", minHeight: "100vh" }}></div>
             </div>
