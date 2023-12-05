@@ -3,7 +3,7 @@
 import React from "react";
 
 // import of the library
-import { ARView, ARAnchor } from "react-three-mind";
+// import { ARView, ARAnchor } from "react-three-mind";
 
 // import { Model } from './Model';
 // import { HeadOccluder } from './Occluder';
@@ -124,30 +124,30 @@ export default function ARFilter() {
             <button type="button" onClick={handleImageDownload}>Download picture</button>
             <button type="button" onClick={handleShare}>Share</button> */}
             <div style={{ transform: "scaleX(-1)", display: "flex", justifyContent: "center" }}>
-                <ARView
+                {/* <ARView
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     gl={{ preserveDrawingBuffer: true }}
                     // turn off flipUserCamera to for more natural camera feel
                     flipUserCamera={false}
                     id="ARView"
-                >
-                    <ARAnchor
+                > */}
+                    {/* <ARAnchor
                         // target is point on the facemesh the model will be attached to
                         target={1}
-                    >
+                    > */}
                         {/* light */}
-                        <directionalLight color="white" position={[0, 0, 10]} />
+                        {/* <directionalLight color="white" position={[0, 0, 10]} /> */}
 
                         {/* model */}
-                        <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
+                        {/* <group scale={[scale, scale, scale]} position={[0, 0, offset]}> */}
                             {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
                             {/* <Model /> */}
                             {/* head model made up of components to be able to adjust so it occludes */}
                             {/* <HeadOccluder /> */}
-                        </group>
+                        {/* </group> */}
 
-                    </ARAnchor>
-                </ARView>
+                    {/* </ARAnchor> */}
+                {/* </ARView> */}
                 {/* extra div with width and height of filter to make up for absolute positioning */}
                 <div style={{ minWidth: "100vw", minHeight: "100vh" }}></div>
             </div>
