@@ -3,7 +3,7 @@
 import styles from './BadgeCollection.module.css';
 import { useEffect, useState } from 'react';
 import BadgesOverview from './BadgesOverview';
-import ARFilter from './ARFilter';
+// import ARFilter from './ARFilter';
 
 export default function BadgeCollection({ allBadges }) {
 
