@@ -2,7 +2,7 @@ import styles from './BadgesOverview.module.css';
 
 import SmallBadge from './SmallBadge';
 
-export default function BadgesOverview({ filteredBadges, uncollectedBadges }) {
+export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount }) {
 
     return (
         <div className={styles.container}>
@@ -10,7 +10,7 @@ export default function BadgesOverview({ filteredBadges, uncollectedBadges }) {
                 <SmallBadge key={badge.location} name={badge.name} collected={true} />
             ))}
 
-            {Array.from({ length: uncollectedBadges }, (_, index) => (
+            {Array.from({ length: uncollectedBadgesAmount }, (_, index) => (
                 <SmallBadge key={index} name={'?'} collected={false} />
             ))}
 

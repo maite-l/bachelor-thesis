@@ -8,10 +8,15 @@
 
 html {
     background-color: var(--white);
+    color: var(--purple);
 }
 a {
     text-decoration: none;
     color: var(--purple);
+}
+
+em {
+    color: var(--coral);
 }
 
 @media (max-width: 768px) {
@@ -29,7 +34,8 @@ a {
     font-family: var(--font-gt-super);
     color: var(--purple);
     font-size: 1.5rem;
+    line-height: 1.5;
 }
 .margin {
-    margin-inline: 0.5rem;
+    margin-inline: 15px;
 }
