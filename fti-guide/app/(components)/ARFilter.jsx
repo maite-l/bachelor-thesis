@@ -52,21 +52,21 @@ export default function ARFilter() {
     };
 
     const handleShare = async () => {
-        // const image = document.querySelector('.image');
+        // const image = imgContainerRef.current;
         // const canvas = await html2canvas(image);
         // const data = canvas.toDataURL('image/jpg');
         console.log('figuring out share');
-        // const shareData = {
-        //     title: "MDN",
-        //     text: "Learn web development on MDN!",
-        //     url: "https://developer.mozilla.org",
-        // };
-        // try {
-        //     await navigator.share(shareData);
-        //     console.log('Shared successfully');
-        // } catch (err) {
-        //     console.log('Error: ' + err);
-        // }
+        const shareData = {
+            title: "MDN",
+            text: "Learn web development on MDN!",
+            url: "https://developer.mozilla.org",
+        };
+        try {
+            await navigator.share(shareData);
+            console.log('Shared successfully');
+        } catch (err) {
+            console.log('Error: ' + err);
+        }
 
     };
 
