@@ -9,6 +9,7 @@
     align-items: center;
     justify-items: center;
     margin-block-start: 1rem;
+    height: 80vh;
 }
 
 .imgContainer {
@@ -21,7 +22,8 @@
     grid-row: 1;
     grid-column: 1;
     transform: scaleX(-1);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .gridElement {
@@ -32,7 +34,7 @@
 
 .interface {
     z-index: 5;
-    padding-block-start: 70vh;
+    padding-block-start: 40vh;
 }
 .photoTakenInterface {
     display: flex;

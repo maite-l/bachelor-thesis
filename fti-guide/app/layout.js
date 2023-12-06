@@ -6,6 +6,7 @@ import './(css)/globals.css'
 import { createMedia } from "@artsy/fresnel";
 import Nav from './(components)/Nav';
 import Header from './(components)/Header';
+import Desktop from './(components)/Desktop';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,7 +41,7 @@ export default function RootLayout({ children }) {
             {children}
           </Media>
           <Media greaterThanOrEqual="desktop" className='desktop'>
-            Deze ervaring werkt enkel op smartphones en tablets
+            <Desktop />
           </Media>
         </MediaContextProvider>
       </body>

@@ -1,0 +1,43 @@
+
+
+.container {
+    line-height: 1.5;
+    margin-block: 6rem;
+    height: 100vh;
+}
+
+
+@media (max-width: 1700px) {
+    .container {
+        margin-inline: 5rem;
+    }
+}
+
+@media (min-width: 1700px) {
+    .container {
+        max-width: 60rem;
+        margin-inline: auto;
+    }
+}
+@media (min-width: 1440px) {
+.main {
+        background-image: url("/logo.svg");
+        background-repeat: no-repeat;
+        background-position: right top;
+    }
+}
+
+.text {
+    margin-block-start: 6rem;
+    max-width: 42rem;
+}
+.big {
+    font-size: 32px;
+    padding-block-end: 1.5rem;
+}
+.small {
+    font-size: 24px;
+    padding-block-start: 1.5rem;
+    border-block-start: var(--purple) solid 1px;
+    max-width: fit-content;
+}

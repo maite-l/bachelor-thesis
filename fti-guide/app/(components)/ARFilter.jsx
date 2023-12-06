@@ -85,31 +85,31 @@ export default function ARFilter() {
     const windowWidth = window.innerWidth;
     let scale = 1;
     let offset = 0;
-    // if (windowWidth < 320) {
-    //     scale = 4;
-    //     offset = 2.2;
-    // } else if (windowWidth < 375) {
-    //     scale = 2.8;
-    //     offset = 1.8;
-    // } else if (windowWidth < 425) {
-    //     scale = 2.5;
-    //     offset = 1.4;
-    // } else if (windowWidth < 550) {
-    //     scale = 2;
-    //     offset = 1.4;
-    // } else if (windowWidth < 650) {
-    //     scale = 1.8;
-    //     offset = 0.5;
-    // } else if (windowWidth < 800) {
-    //     scale = 1.7;
-    //     offset = 0.4;
-    // } else if (windowWidth < 1000) {
-    //     scale = 1.4;
-    //     offset = 0.3;
-    // } else if (windowWidth >= 1000) {
-    //     scale = 1;
-    //     offset = 0;
-    // }
+    if (windowWidth < 320) {
+        scale = 4;
+        offset = 2.2;
+    } else if (windowWidth < 375) {
+        scale = 2.8;
+        offset = 1.8;
+    } else if (windowWidth < 425) {
+        scale = 2.5;
+        offset = 1.4;
+    } else if (windowWidth < 550) {
+        scale = 2;
+        offset = 1.4;
+    } else if (windowWidth < 650) {
+        scale = 1.8;
+        offset = 0.5;
+    } else if (windowWidth < 800) {
+        scale = 1.7;
+        offset = 0.4;
+    } else if (windowWidth < 1000) {
+        scale = 1.4;
+        offset = 0.3;
+    } else if (windowWidth >= 1000) {
+        scale = 1;
+        offset = 0;
+    }
 
     return (
         <div>
