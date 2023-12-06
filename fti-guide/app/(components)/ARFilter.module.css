@@ -1,0 +1,57 @@
+.container {
+    display: grid;
+    gap: 0.8rem;
+    overflow: hidden;
+    border: solid 1px var(--purple);
+    margin-block-end: 42px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin-block-start: 1rem;
+}
+
+.imgContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-row: 1;
+    grid-column: 1;
+    transform: scaleX(-1);
+    overflow: hidden;
+}
+
+.gridElement {
+    grid-row: 1;
+    grid-column: 1;
+    overflow: hidden;
+}
+
+.interface {
+    z-index: 5;
+    padding-block-start: 70vh;
+}
+.cameraButton {
+    box-shadow: none;
+    background-color: var(--purple);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: none;
+}
+.cameraButton::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: solid 1px var(--purple);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}

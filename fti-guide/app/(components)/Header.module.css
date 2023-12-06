@@ -8,4 +8,5 @@
     height: 50px;
     border-block-end: solid 1px var(--purple);
     position: fixed;
+    z-index: 1000;
 }

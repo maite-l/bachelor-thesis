@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React, { useState, useRef } from "react";
 
 // import of the library
 import { ARView, ARAnchor } from "react-three-mind";
@@ -11,8 +11,17 @@ import { HeadOccluder } from './Occluder';
 import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
 
+import styles from './ARFilter.module.css';
+
 
 export default function ARFilter() {
+
+    const [imageV, setImageV] = useState(null);
+    const [imageF, setImageF] = useState(null);
+
+    // set a ref to the image container
+    const imgContainerRef = useRef(null);
+
     const handleTakeImage = async () => {
         const ARView = document.getElementById('ARView');
 
@@ -27,45 +36,18 @@ export default function ARFilter() {
         // dom-to-image to get the filter as an image (html2canvas doesn't support transparency in canvas element)
         const dataF = await domtoimage.toPng(filter);
 
-        // create a container div to hold the images
-        const container = document.createElement('div');
-        // add styling to position the images on top of each other
-        container.style.display = 'grid';
-        container.style.overflow = 'hidden';
-        container.style.gridTemplateColumns = '1fr';
-        container.style.gridTemplateRows = '1fr';
-        container.style.justifyContent = 'center';
-        container.style.alignItems = 'center';
-        container.style.justifyItems = 'center';
-        container.style.transform = 'scaleX(-1)';
-        container.classList.add('image');
-
-        // Create img elements for the images
-        const imgV = document.createElement('img');
-        imgV.src = dataV;
-        imgV.style.gridColumn = '1';
-        imgV.style.gridRow = '1';
-        const imgF = document.createElement('img');
-        imgF.src = dataF;
-        imgF.style.gridColumn = '1';
-        imgF.style.gridRow = '1';
-
-        // Append images to the container
-        container.appendChild(imgV);
-        container.appendChild(imgF);
-
-        // Append the container to the body
-        document.body.appendChild(container);
+        // Set the images as state
+        setImageV(dataV);
+        setImageF(dataF);
     };
 
     const handleImageDownload = async () => {
-        const image = document.querySelector('.image');
-        console.log(image);
+        const image = imgContainerRef.current;
         const canvas = await html2canvas(image);
         const data = canvas.toDataURL('image/jpg');
         const link = document.createElement('a');
         link.href = data;
-        link.download = 'image.jpg';
+        link.download = 'FTI-filter.jpg';
         link.click();
     };
 
@@ -85,6 +67,11 @@ export default function ARFilter() {
             console.log('Error: ' + err);
         }
 
+    };
+
+    const handleNew = () => {
+        setImageV(null);
+        setImageF(null);
     };
 
 
@@ -120,16 +107,29 @@ export default function ARFilter() {
 
     return (
         <div>
-            {/* <button type="button" onClick={handleTakeImage}>Take picture</button>
-            <button type="button" onClick={handleImageDownload}>Download picture</button>
-            <button type="button" onClick={handleShare}>Share</button> */}
-            <div style={{ transform: "scaleX(-1)", display: "flex", justifyContent: "center" }}>
+
+            <div className={`container margin ` + styles.container}>
+                <div className={`${styles.interface} ${styles.gridElement}`} >
+                    {!imageV && !imageF && <button type="button" onClick={handleTakeImage} className={styles.cameraButton}></button>}
+                    {imageV && imageF &&
+                        <>
+                            <button type="button" onClick={handleImageDownload}>Download picture</button>
+                            <button type="button" onClick={handleShare}>Share</button>
+                            <button type="button" onClick={handleNew}>Retake</button>
+                        </>
+                    }
+                </div>
+                <div className={styles.imgContainer} ref={imgContainerRef}>
+                    {imageV && <img src={imageV} className={styles.gridElement} />}
+                    {imageF && <img src={imageF} className={styles.gridElement} />}
+                </div>
                 <ARView
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     gl={{ preserveDrawingBuffer: true }}
                     // turn off flipUserCamera to for more natural camera feel
                     flipUserCamera={false}
                     id="ARView"
+                    style={{ width: "100vw", height: "100vh", zIndex: "-1", gridColumn: "1", gridRow: "1", transform: "scaleX(-1)" }}
                 >
                     <ARAnchor
                         // target is point on the facemesh the model will be attached to
@@ -140,16 +140,14 @@ export default function ARFilter() {
 
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
-                            {/* glasses model made up of components, converted by https://gltf.pmnd.rs/ */}
                             <Model />
-                            {/* head model made up of components to be able to adjust so it occludes */}
                             <HeadOccluder />
                         </group>
 
                     </ARAnchor>
                 </ARView>
                 {/* extra div with width and height of filter to make up for absolute positioning */}
-                <div style={{ minWidth: "100vw", minHeight: "100vh" }}></div>
+                {/* <div style={{ minWidth: "100vw", minHeight: "100vh" }}></div> */}
             </div>
         </div >
     )
