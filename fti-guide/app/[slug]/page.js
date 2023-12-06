@@ -145,7 +145,7 @@ export default async function LocationConversation({ params }) {
     const { slug } = params;
 
     // get location specific conversation data
-    const data = getConversationData(slug);
+    const data = getConversationData(`locations/${slug}`);
     let conversationData = data.conversation;
     // get location specific events
     const events = getEventsData(slug);

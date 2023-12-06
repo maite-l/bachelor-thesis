@@ -104,75 +104,72 @@ export default function Chatbot({ steps, slug }) {
     };
 
     return (
-        <ThemeProvider theme={theme}>
-            {!loading && (
-                <ChatBot
-                    hideHeader="true"
-                    hideBotAvatar="true"
-                    hideUserAvatar="true"
-                    hideSubmitButton="true"
-                    footerStyle={{ display: 'none' }}
-                    contentStyle={{
-                        // height: '80vh',
-                        paddingBlock: '20px',
-                        margin: '0',
-                    }}
-                    enableSmoothScroll="true"
-                    style={{
-                        borderRadius: '0px',
-                        boxShadow: 'none',
-                        height: '100%',
-                        margin: 'auto',
-                        width: '100%',
-                        zIndex: '1',
-                    }}
-                    bubbleOptionStyle={{
-                        border: '1px var(--purple) solid',
-                        backgroundColor: 'transparent',
-                        color: 'var(--purple)',
-                        marginInlineStart: '4px',
-                        marginBlockStart: '4px',
-                        textAlign: 'center',
-                        boxShadow: 'none',
-                        borderRadius: '0px',
-                        fontSize: '15px',
-                        padding: '18px',
-                        fontFamily: 'var(--font-lausanne)',
-                        width: '170px'
-                    }}
-                    bubbleStyle={{
-                        border: '1px var(--purple) solid',
-                        boxShadow: 'none',
-                        fontSize: '15px',
-                        lineHeight: '1.5',
-                        padding: '18px',
-                        borderRadius: '0px 20px',
+        <>
+            <ThemeProvider theme={theme}>
+                {!loading && (
+                    <ChatBot
+                        hideHeader="true"
+                        hideBotAvatar="true"
+                        hideUserAvatar="true"
+                        hideSubmitButton="true"
+                        footerStyle={{ display: 'none' }}
+                        contentStyle={{
+                            // height: '80vh',
+                            paddingBlock: '20px',
+                            margin: '0',
+                        }}
+                        enableSmoothScroll="true"
+                        style={{
+                            borderRadius: '0px',
+                            boxShadow: 'none',
+                            height: '100%',
+                            margin: 'auto',
+                            width: '100%',
+                            zIndex: '1',
+                        }}
+                        bubbleOptionStyle={{
+                            border: '1px var(--purple) solid',
+                            backgroundColor: 'transparent',
+                            color: 'var(--purple)',
+                            marginInlineStart: '4px',
+                            marginBlockStart: '4px',
+                            textAlign: 'center',
+                            boxShadow: 'none',
+                            borderRadius: '0px',
+                            fontSize: '15px',
+                            padding: '18px',
+                            fontFamily: 'var(--font-lausanne)',
+                            width: '170px',
+                            lineHeight: '1.5',
+                        }}
+                        bubbleStyle={{
+                            border: '1px var(--purple) solid',
+                            boxShadow: 'none',
+                            fontSize: '15px',
+                            lineHeight: '1.5',
+                            padding: '18px',
+                            borderRadius: '0px 20px',
+                        }}
 
-                    }}
+                        customStyle={{
+                            marginRight: '0px',
+                            marginLeft: '12px',
+                            boxShadow: 'none',
+                            backgroundColor: 'var(--purple)',
+                            color: 'var(--white)',
+                            fontFamily: 'var(--font-lausanne)',
+                            width: "max-content",
+                            border: '1px var(--purple) solid',
+                            fontSize: '15px',
+                            lineHeight: '1.5',
+                            padding: '18px',
+                            borderRadius: '0px 20px',
+                        }}
+                        steps={chatSteps}
+                    />
+                )}
+            </ThemeProvider>
+        </>
 
-                    customStyle={{
-                        // backgroundColor: 'transparent',
-                        display: 'flex',
-                        justifyContent: 'flex-start',
-                        padding: '12px',
-                        margin: '0px',
-                        boxShadow: 'none',
-                        backgroundColor: '#EF6C00',
-                        //   display: 'flex',
-                        //   flexDirection: 'column',
-                        color: '#fff',
-                        fontFamily: 'Helvetica Neue',
-                        fontSize: '14px',
-                        borderRadius: '18px 18px 18px 0px',
-                        width: "max-content",
-                        padding: '12px',
-                        marginLeft: '12px',
-                        marginBlockStart: '-4px',
-                        marginBlockEnd: '10px',
-                    }}
-                    steps={chatSteps}
-                />
-            )}
-        </ThemeProvider>
     )
 }

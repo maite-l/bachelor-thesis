@@ -1,0 +1,131 @@
+{
+    "conversation": [
+        {
+            "id": "opening 1",
+            "message": "Hey daar, welkom op FTI Kortrijk! Ben je naar iets op zoek?",
+            "trigger": "opening options",
+            "hideInput": true
+        },
+        {
+            "id": "opening options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Ik weet naar welk evenement ik wil, maar weet niet waar het is.",
+                    "trigger": "specific"
+                },
+                {
+                    "value": 2,
+                    "label": "Ik weet niet naar welk evenement ik wil.",
+                    "trigger": "searching"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "opening 2",
+            "message": "Geen probleem, waarmee kan ik je helpen?",
+            "trigger": "opening options",
+            "hideInput": true
+        },
+        {
+            "id": "specific",
+            "message": "Geen zorgen, ik zal het voor je vinden! Waar wil je naartoe?",
+            "hideInput": true,
+            "trigger": "specific options"
+        },
+        {
+            "id": "specific options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "FutureED",
+                    "trigger": "location futureED"
+                },
+                {
+                    "value": 2,
+                    "label": "Unwrap Arena",
+                    "trigger": "location unwrap"
+                },
+                {
+                    "value": 3,
+                    "label": "Minigolf",
+                    "trigger": "location minigolf"
+                },
+                {
+                    "value": 4,
+                    "label": "Breakout sessies",
+                    "trigger": "location breakout"
+                },
+                {
+                    "value": 5,
+                    "label": "Paden van de toekomst",
+                    "trigger": "location paden"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "location futureED",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>FuturED is te vinden in de Broelkaai 6.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.026892062663!2d3.2659886!3d50.8306658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2b7e3a531%3A0x356fa0ed0c08d1ad!2sBroelkaai%206%2C%208500%20Kortrijk!5e0!3m2!1sen!2sbe!4v1701881525062!5m2!1sen!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Broelkaai+6,+8500+Kortrijk/@50.8306658,3.2659886,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33ae2b7e3a531:0x356fa0ed0c08d1ad!8m2!3d50.8306658!4d3.2659886!16s%2Fg%2F11gfngy6v8?entry=ttu'>Open op Google Maps</a></div>",
+            "hideInput": true,
+            "trigger": "end options"
+        },
+        {
+            "id": "location unwrap",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De Unwrap Arena is te vinden in de Budafabriek.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1sen!2sbe!4v1701353891867!5m2!1sen!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/BUDAfabriek/@50.8315457,3.2630413,15z/data=!4m2!3m1!1s0x0:0xb3e9316f20e0416a?sa=X&ved=2ahUKEwiYqa39nPuCAxUf3AIHHfD7AN4Q_BJ6BAgQEAA'>Open op Google Maps</a></div>",
+            "hideInput": true,
+            "trigger": "end options"
+        },
+        {
+            "id": "location minigolf",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De minigolf is te vinden in de Broeltoren.</p><iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10080.120957062647!2d3.2668921!3d50.8306038!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2a5ae3aef%3A0xe6c972f427961fe4!2sBroel%20Towers!5e0!3m2!1sen!2sbe!4v1701881466913!5m2!1sen!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Broel+Towers/@50.8306038,3.2668921,15z/data=!4m2!3m1!1s0x0:0xe6c972f427961fe4?sa=X&ved=2ahUKEwj19KK6ovuCAxUJwAIHHRNwAAoQ_BJ6BAgWEAA'>Open op Google Maps</a></div>",
+            "hideInput": true,
+            "trigger": "end options"
+        },
+        {
+            "id": "location breakout",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De breakout sessies zijn te vinden in de Tacktoren.</p><iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10080.073469916471!2d3.2647023!3d50.8308237!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2cafc8e75%3A0xb460b9986b084352!2sBuda%20Tower!5e0!3m2!1sen!2sbe!4v1701881391713!5m2!1sen!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Buda+Tower/@50.8308237,3.2647023,15z/data=!4m6!3m5!1s0x47c33ae2cafc8e75:0xb460b9986b084352!8m2!3d50.8308237!4d3.2647023!16s%2Fg%2F1pp2tkmxg?entry=ttu'>Open op Google Maps</a></div>",
+            "hideInput": true,
+            "trigger": "end options"
+        },
+        {
+            "id": "location paden",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>Paden van de Toekomst is te vinden aan de Leieboorden</p><iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10079.710886947863!2d3.2633401!3d50.8325027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcdd4b2179%3A0x23cc0a7fdb0e273b!2sBanks%20of%20the%20River%20Lys%20-%20Diksmuidekaai!5e0!3m2!1sen!2sbe!4v1701881262763!5m2!1sen!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Banks+of+the+River+Lys+-+Diksmuidekaai/@50.8325027,3.2633401,15z/data=!4m6!3m5!1s0x47c33afcdd4b2179:0x23cc0a7fdb0e273b!8m2!3d50.8325027!4d3.2633401!16s%2Fg%2F1pp2tljvc?entry=ttu'>Open op Google Maps</a></div>",
+            "hideInput": true,
+            "trigger": "end options"
+        },
+        {
+            "id": "end options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Bedankt!",
+                    "trigger": "thanks"
+                },
+                {
+                    "value": 2,
+                    "label": "Ik zoek nog een ander evenement.",
+                    "trigger": "opening 2"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "thanks",
+            "message": "Graag gedaan!",
+            "hideInput": true,
+            "end": true
+        },
+        {
+            "id": "searching",
+            "message": "Geen probleem, ik zal het voor je vinden! Wat voor soort evenement zoek je?",
+            "hideInput": true,
+            "end": true
+        }
+    ],
+    "character": {
+        "name": "RoBob de navigator",
+        "quote": "Ik zal je begeleiden naar je gewenste locatie!"
+    }
+}

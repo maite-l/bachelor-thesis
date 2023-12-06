@@ -12,7 +12,7 @@ export function getAllSlugs() {
 }
 
 export function getConversationData(slug) {
-    const dataDirectory = path.join(process.cwd(), 'data/locations');
+    const dataDirectory = path.join(process.cwd(), 'data');
     const fullPath = path.join(dataDirectory, `${slug}.json`);
     try {
         // Read the contents of the JSON file
