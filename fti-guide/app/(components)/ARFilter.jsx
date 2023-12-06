@@ -52,14 +52,15 @@ export default function ARFilter() {
     };
 
     const handleShare = async () => {
-        // const image = imgContainerRef.current;
-        // const canvas = await html2canvas(image);
-        // const data = canvas.toDataURL('image/jpg');
+        const image = imgContainerRef.current;
+        const canvas = await html2canvas(image);
+        const data = canvas.toDataURL('image/jpg');
+        const blob = await (await fetch(data)).blob();
+        const file = new File([blob], 'fileName.png', { type: blob.type });
         console.log('figuring out share');
         const shareData = {
-            title: "MDN",
-            text: "Learn web development on MDN!",
-            url: "https://developer.mozilla.org",
+            title: "Check out this image!",
+            files: [file],
         };
         try {
             await navigator.share(shareData);
