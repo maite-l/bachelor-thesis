@@ -3,6 +3,7 @@
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import { useEffect, useState } from 'react';
+import ChatbotHeader from './ChatbotHeader';
 
 
 const addToLocalStorage = (step, key, value) => {
@@ -20,34 +21,7 @@ const addToLocalStorage = (step, key, value) => {
     return step;
 };
 
-const handleResize = () => {
-    const windowWidth = window.innerWidth;
-    const options = document.querySelectorAll('.rsc-os-options');
-    const option = document.querySelectorAll('.rsc-os-option');
-
-    if (options) {
-        options.forEach((options) => {
-            if (windowWidth < 388) {
-                options.style.margin = '2px 12px 12px 0';
-            } else {
-                options.style.margin = '0';
-            }
-        });
-    }
-
-    if (option) {
-        option.forEach((option) => {
-            if (windowWidth < 388) {
-                option.style.width = '100%';
-            } else {
-                option.style.width = '180px';
-            }
-        });
-    }
-};
-
-
-export default function Chatbot({ steps, slug }) {
+export default function Chatbot({ steps, slug, characterData }) {
 
     const [chatSteps, setChatSteps] = useState([{
         "id": "placeholder",
@@ -108,21 +82,20 @@ export default function Chatbot({ steps, slug }) {
             <ThemeProvider theme={theme}>
                 {!loading && (
                     <ChatBot
-                        hideHeader="true"
+                        headerComponent={<ChatbotHeader data={characterData} />}
                         hideBotAvatar="true"
                         hideUserAvatar="true"
                         hideSubmitButton="true"
                         footerStyle={{ display: 'none' }}
                         contentStyle={{
-                            // height: '80vh',
-                            paddingBlock: '20px',
+                            paddingBlockEnd: '60px',
                             margin: '0',
                         }}
                         enableSmoothScroll="true"
                         style={{
                             borderRadius: '0px',
                             boxShadow: 'none',
-                            height: '100%',
+                            height: 'max-content',
                             margin: 'auto',
                             width: '100%',
                             zIndex: '1',

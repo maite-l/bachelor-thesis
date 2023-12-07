@@ -1,0 +1,19 @@
+.chatbotHeader {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 1rem;
+    color: var(--purple);
+    line-height: 1.5;
+    border-bottom: solid 1px var(--purple);
+}
+
+.chatbotHeaderInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbotName {
+    font-family: var(--font-gt-super);
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
