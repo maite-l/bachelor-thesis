@@ -83,7 +83,7 @@ const createMessage = (events) => {
     let eventMessage = { message: message, answer: message };
 
     if (message === '') {
-        eventMessage.answer = 'Vandaag is zijn er geen events meer.';
+        eventMessage.answer = 'Vandaag is zijn er geen evenementen.';
     }
     return eventMessage;
 }

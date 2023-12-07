@@ -24,12 +24,12 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Leuk",
+                    "label": "Echt? Ik ben benieuwd, vertel eens wat er hier allemaal te doen is.",
                     "trigger": 3
                 },
                 {
                     "value": 2,
-                    "label": "Ik wil iets  specifieks weten",
+                    "label": "Ik heb een specifieke vraag.",
                     "trigger": 4
                 }
             ],
@@ -37,9 +37,31 @@
         },
         {
             "id": 3,
-            "message": "Hier in de budafabriek kan je de evolutie van games ervaren, van retro tot de recentste en meest technologisch advanced spellen.",
+            "message": "Hier in de Unwrap Arena kan je de game-industrie ontdekken, met nadruk op Vlaamse successen. Ervaar de evolutie van games van retro tot nu.",
             "hideInput": true,
-            "end": true
+            "trigger": 3.1
+        },
+        {
+            "id": 3.1,
+            "message": "Je kan zelfs zelf gamen in de arcadehal!",
+            "hideInput": true,
+            "trigger": 3.2
+        },
+        {
+            "id": 3.2,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Wat leuk!",
+                    "trigger": 12
+                },
+                {
+                    "value": 2,
+                    "label": "Dat klinkt interessant.",
+                    "trigger": 12
+                }
+            ],
+            "hideInput": true
         },
         {
             "id": 4,
@@ -62,7 +84,7 @@
                 },
                 {
                     "value": 3,
-                    "label": "Zijn er hier bepaalde events?",
+                    "label": "Is er vandaag een event?",
                     "trigger": 8
                 }
             ],
@@ -76,13 +98,13 @@
         },
         {
             "id": 7,
-            "message": "Er is hier heel wat te doen. Je kan hier de evolutie van games ervaren, van retro tot de recentste en meest technologisch advanced spellen.",
+            "message": "Hier in de Unwrap Arena kan je de game-industrie ontdekken, met nadruk op Vlaamse successen. Ervaar de evolutie van games van retro tot nu.",
             "hideInput": true,
             "trigger": 9
         },
         {
             "id": 8,
-            "message": "Vandaag zijn er geen evenementen meer.",
+            "message": "Vandaag zijn er geen evenementen.",
             "hideInput": true,
             "trigger": 9
         },
@@ -103,7 +125,7 @@
                 {
                     "value": 2,
                     "label": "Wat is er hier te doen?",
-                    "trigger": 6
+                    "trigger": 7
                 },
                 {
                     "value": 3,
@@ -123,10 +145,48 @@
             "message": "Ok, veel plezier!",
             "hideInput": true,
             "end": true
+        }, 
+        {
+            "id": 12,
+            "message": "Hier is al een weetje over games: wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
+            "trigger": 13
+        }, 
+        {
+            "id": 13,
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Wow, echt waar?",
+                    "trigger": 14
+                },
+                {
+                    "value": 2,
+                    "label": "Dat wist ik al!",
+                    "trigger": 14
+                }
+            ],
+            "hideInput": true
+        }, 
+        {
+            "id": 14,
+            "message": "Leuk weetje toch?",
+            "trigger": 15
+        }, 
+        {
+            "id": 15,
+            "message": "Je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
+            "hideInput": true,
+            "trigger": 16
+        },
+        {
+            "id": 16,
+            "message": "*badge component*",
+            "hideInput": true,
+            "end": true
         }
     ],
     "optionalEventStep": {
-        "stepBeforeId": 3,
+        "stepBeforeId": 14,
         "optionLabels": [
             "Wat leuk!",
             "Intereseert me niet zo."
