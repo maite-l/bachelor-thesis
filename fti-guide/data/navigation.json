@@ -17,7 +17,7 @@
                 {
                     "value": 2,
                     "label": "Ik weet niet naar welk evenement ik wil.",
-                    "trigger": "searching"
+                    "trigger": "searching 1"
                 }
             ],
             "hideInput": true
@@ -61,6 +61,11 @@
                     "value": 5,
                     "label": "Paden van de toekomst",
                     "trigger": "location paden"
+                }, 
+                {
+                    "value": 6,
+                    "label": "Films",
+                    "trigger": "location films"
                 }
             ],
             "hideInput": true
@@ -91,9 +96,17 @@
         },
         {
             "id": "location paden",
-            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>Paden van de Toekomst is te vinden aan de Leieboorden</p><iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10079.710886947863!2d3.2633401!3d50.8325027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcdd4b2179%3A0x23cc0a7fdb0e273b!2sBanks%20of%20the%20River%20Lys%20-%20Diksmuidekaai!5e0!3m2!1sen!2sbe!4v1701881262763!5m2!1sen!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Banks+of+the+River+Lys+-+Diksmuidekaai/@50.8325027,3.2633401,15z/data=!4m6!3m5!1s0x47c33afcdd4b2179:0x23cc0a7fdb0e273b!8m2!3d50.8325027!4d3.2633401!16s%2Fg%2F1pp2tljvc?entry=ttu'>Open op Google Maps</a></div>",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>'(de) weg van de toekomst' is te vinden aan de Leieboorden.</p><iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10079.710886947863!2d3.2633401!3d50.8325027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcdd4b2179%3A0x23cc0a7fdb0e273b!2sBanks%20of%20the%20River%20Lys%20-%20Diksmuidekaai!5e0!3m2!1sen!2sbe!4v1701881262763!5m2!1sen!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Banks+of+the+River+Lys+-+Diksmuidekaai/@50.8325027,3.2633401,15z/data=!4m6!3m5!1s0x47c33afcdd4b2179:0x23cc0a7fdb0e273b!8m2!3d50.8325027!4d3.2633401!16s%2Fg%2F1pp2tljvc?entry=ttu'>Open op Google Maps</a></div>",
             "hideInput": true,
             "trigger": "end options"
+        },
+        {
+            "id": "location films",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De films zijn te vinden in de Budascoop.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10080.127241162256!2d3.2647309000000075!3d50.83057470000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2ddf66129%3A0x614bace16222e0c9!2sArt%20center%20BUDA%20%7C%20Budascoop!5e0!3m2!1sen!2sbe!4v1701941688484!5m2!1sen!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Art+center+BUDA+%7C+Budascoop/@50.8305747,3.2647309,15z/data=!4m6!3m5!1s0x47c33ae2ddf66129:0x614bace16222e0c9!8m2!3d50.8305747!4d3.2647309!16s%2Fg%2F122_m9bh?entry=ttu'>Open op Google Maps</a></div>",
+            "hideInput": true,
+            "trigger": "end options"
+
+
         },
         {
             "id": "end options",
@@ -118,8 +131,227 @@
             "end": true
         },
         {
-            "id": "searching",
-            "message": "Geen probleem, ik zal het voor je vinden! Wat voor soort evenement zoek je?",
+            "id": "searching 1",
+            "message": "Geen probleem, ik zal iets voor je vinden! Waar ben je geïnteresseerd in?",
+            "hideInput": true,
+            "trigger": "searching options"
+        },
+        {
+            "id": "searching 2",
+            "message": "Waar ben je geïnteresseerd in?",
+            "hideInput": true,
+            "trigger": "searching options"
+        },
+        {
+            "id": "searching options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Educatie",
+                    "trigger": "option educatie"
+                },
+                {
+                    "value": 2,
+                    "label": "Minigolf",
+                    "trigger": "option minigolf"
+                },
+                {
+                    "value": 3,
+                    "label": "Games en alles daarrond",
+                    "trigger": "option games"
+                },
+                {
+                    "value": 4,
+                    "label": "Kunstinstallaties over de toekomst",
+                    "trigger": "option kunst"
+                },
+                {
+                    "value": 5,
+                    "label": "Workshops over de tech van morgen",
+                    "trigger": "option workshop"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option educatie",
+            "message": "Op FuturED maak je kennis met het onderwijs van de toekomst die niet zo veraf blijkt, en leer je hoe technologie in verschillende klassen kan worden geïntegreerd.",
+            "hideInput": true,
+            "trigger": "option educatie options"
+        },
+        {
+            "id": "option educatie options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Leuk, waar is het?",
+                    "trigger": "location futureED"
+                },
+                {
+                    "value": 2,
+                    "label": "Niet zo mijn ding.",
+                    "trigger": "new search"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option minigolf",
+            "message": "Hogeschool VIVES maakte een minigolfparcours dat je op het FTI festival kan spelen.",
+            "hideInput": true,
+            "trigger": "option minigolf options"
+        },
+        {
+            "id": "option minigolf options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Tof, waar kan ik dit vinden?",
+                    "trigger": "location minigolf"
+                },
+                {
+                    "value": 2,
+                    "label": "Spreekt mij niet zo aan.",
+                    "trigger": "new search"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option games",
+            "message": "Er zijn meerdere locaties die met games te maken hebben, wat zou je graag doen?",
+            "hideInput": true,
+            "trigger": "option games options"
+        },
+        {
+            "id": "option games options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Ik wil bijleren over games en zelf games spelen!",
+                    "trigger": "option unwrap"
+                },
+                {
+                    "value": 2,
+                    "label": "Ik wil films zien die een link hebben met de game-industrie.",
+                    "trigger": "option films"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option unwrap",
+            "message": "In de Unwrap Arena kan je de Vlaamse game-industrie ontdekken, meer leren over games van vroeger en nu en het zelfs opnemen tegen andere spelers in de esports arena.",
+            "hideInput": true,
+            "trigger": "option unwrap options"
+        },
+        {
+            "id": "option unwrap options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Klinkt interessant, waar kan ik dit vinden?",
+                    "trigger": "location unwrap"
+                },
+                {
+                    "value": 2,
+                    "label": "Niet echt voor mij.",
+                    "trigger": "new search"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option films",
+            "message": "Tijdens het FTI festival worden verschillende films met een link met de game-industrie getoond op zaterdag, zondag en woensdag.",
+            "hideInput": true,
+            "trigger": "option films options"
+        },
+        {
+            "id": "option films options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Dat klinkt tof, waar is het precies?",
+                    "trigger": "location films"
+                },
+                {
+                    "value": 2,
+                    "label": "Niet helemaal waar ik naar op zoek ben.",
+                    "trigger": "new search"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option kunst",
+            "message": "Ontdek een de toekomstgerichte installatie '(de) weg van de toekomst', gemaakt door Brusselse agency Hurea.",
+            "hideInput": true,
+            "trigger": "option kunst options"
+        },
+        {
+            "id": "option kunst options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Dat klinkt als iets waar ik naartoe wil. Waar is het precies?",
+                    "trigger": "location paden"
+                },
+                {
+                    "value": 2,
+                    "label": "Interesseert mij niet zo.",
+                    "trigger": "new search"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option workshop",
+            "message": "Op woensdag worden er verschillende breakout sessions georganiseerd waar je meer kan leren over de technologie van morgen en hoe dit van toepassing kan zijn in het dagelijkse leven. Hiervoor heb je een gratis ticket nodig.",
+            "hideInput": true,
+            "trigger": "option workshop options"
+        },
+        {
+            "id": "option workshop options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Ik ben benieuwd, waar vind ik dit op het festival?",
+                    "trigger": "location breakout"
+                },
+                {
+                    "value": 2,
+                    "label": "Lijkt niet echt iets voor mij.",
+                    "trigger": "new search"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "new search",
+            "message": "Geen probleem, wil je info over een ander thema?",
+            "hideInput": true,
+            "trigger": "new search options"
+        },
+        {
+            "id": "new search options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Graag!",
+                    "trigger": "searching 2"
+                },
+                {
+                    "value": 2,
+                    "label": "Nee, bedankt.",
+                    "trigger": "veel plezier"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "veel plezier",
+            "message": "OK, veel plezier op FTI Kortrijk!",
             "hideInput": true,
             "end": true
         }
