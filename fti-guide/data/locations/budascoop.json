@@ -2,13 +2,13 @@
     "conversation": [
         {
             "id": "secondStart",
-            "message": "Oh hey, jij weer!",
+            "message": "Leuk je weer te zien!",
             "trigger": "question",
             "hideInput": true
         },
         {
             "id": "firstStart",
-            "message": "Hey daar, welkom in de Unwrap Arena! Er is hier heel wat te beleven.",
+            "message": "Hey, welkom in de Budascoop, je zult je hier niet snel vervelen!",
             "trigger": "firstStart options",
             "hideInput": true
         },
@@ -17,7 +17,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Echt? Ik ben benieuwd, vertel eens wat er hier allemaal te doen is.",
+                    "label": "Echt? Vertel me meer.",
                     "trigger": "conversation 1.0"
                 },
                 {
@@ -30,30 +30,30 @@
         },
         {
             "id": "conversation 1.0",
-            "message": "Hier in de Unwrap Arena kan je de game-industrie ontdekken, met nadruk op Vlaamse successen. Ervaar de evolutie van games van retro tot nu.",
+            "message": "Op zaterdag, zondag en woensdag zijn er hier twee films te zien.",
             "hideInput": true,
             "trigger": "conversation 1.1"
         },
         {
             "id": "conversation 1.1",
-            "message": "Je kan ook leren hoe games ontwikkelen een serieuze job is.",
-            "hideInput": true,
-            "trigger": "conversation 1.2"
-        },
-        {
-            "id": "conversation 1.2",
             "options": [
                 {
                     "value": 1,
-                    "label": "Kan ik hier ook iets zelf doen?",
-                    "trigger": "conversation 1.3"
+                    "label": "Wat hebben deze films met het festival te maken?",
+                    "trigger": "conversation 1.2"
                 }
             ],
             "hideInput": true
         },
         {
+            "id": "conversation 1.2",
+            "message": "Deze films hebben altijd een link met de game-industrie, behalve op zaterdag.",
+            "hideInput": true,
+            "trigger": "conversation 1.3"
+        },
+        {
             "id": "conversation 1.3",
-            "message": "In de arcadehal kan je het zelfs opnemen tegen je vrienden en familie in iconische retro-games!",
+            "message": "Dan is het retro-dag, en worden er dus oude films gespeeld.",
             "hideInput": true,
             "trigger": "conversation 1.4"
         },
@@ -62,12 +62,12 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Daar kijk ik naar uit!",
+                    "label": "Klinkt tof!",
                     "trigger": "conversation 2.0"
                 },
                 {
                     "value": 2,
-                    "label": "Ik zal me bij de info houden.",
+                    "label": "Oh, interessant.",
                     "trigger": "conversation 2.0"
                 }
             ],
@@ -75,19 +75,19 @@
         },
         {
             "id": "conversation 2.0",
-            "message": "Hier is alvast een weetje over retro-games:",
+            "message": "Nog snel een weetje:",
             "hideInput": true,
             "trigger": "conversation 2.1"
         },
         {
             "id": "conversation 2.1",
-            "message": "wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
+            "message": "Unreal Engine, oorspronkelijk ontwikkeld voor games, wordt vaker en vaker bij het maken van films en series om visuele effecten en virtuele sets te maken.",
             "hideInput": true,
             "trigger": "conversation 2.2"
         },
         {
             "id": "conversation 2.2",
-            "message": "Het lijkt heel hard op de bekende oude game 'Pong'!",
+            "message": "Misschien zag je de serie 'The Mandalorian'. Hier hebben per aflevering een aantal scenes een virtuele achtergrond, gemaakt in deze tool om games te maken!",
             "hideInput": true,
             "trigger": "conversation 2.3"
         },
@@ -96,12 +96,12 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Wow, echt waar?",
+                    "label": "Dat wist ik nog niet!",
                     "trigger": "conversation 3.0"
                 },
                 {
                     "value": 2,
-                    "label": "Oh, cool.",
+                    "label": "Die serie heb ik inderdaad gevolgd!",
                     "trigger": "conversation 3.0"
                 }
             ],
@@ -109,20 +109,20 @@
         },
         {
             "id": "conversation 3.0",
-            "message": "Leuk weetje, hé? Hoe dan ook",
+            "message": "Interessant, vind je niet?",
             "hideInput": true,
             "trigger": "conversation 4.0"
         },
         {
             "id": "conversation 4.0",
-            "message": "Je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
+            "message": "je hebt veel bijgeleerd, toch? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
             "hideInput": true,
             "trigger": {
                 "function": "addToLocalStorage",
                 "arguments": {
                     "trigger": "conversation 5.0",
                     "key": "collected",
-                    "value": "budafabriek"
+                    "value": "budascoop"
                 }
             }
         },
@@ -134,7 +134,7 @@
         },
         {
             "id": "question",
-            "message": "Wat wil je weten?",
+            "message": "Waarmee kan ik je helpen?",
             "hideInput": true,
             "trigger": "question options"
         },
@@ -143,7 +143,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over games",
+                    "label": "Vertel eens een leuk weetje over de link tussen films en games.",
                     "trigger": "option fact 1"
                 },
                 {
@@ -161,31 +161,31 @@
         },
         {
             "id": "option fact 1",
-            "message": "Wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
+            "message": "Unreal Engine, oorspronkelijk ontwikkeld voor games, wordt vaker en vaker bij het maken van films en series om visuele effecten en virtuele sets te maken.",
             "hideInput": true,
             "trigger": "option fact 2"
         },
         {
             "id": "option fact 2",
-            "message": "Het lijkt heel hard op de bekende oude game 'Pong'!",
+            "message": "Misschien zag je de serie 'The Mandalorian'. Hier hebben per aflevering een aantal scenes een virtuele achtergrond, gemaakt in deze tool om games te maken!",
             "hideInput": true,
             "trigger": "new question"
         },
         {
             "id": "option location 1",
-            "message": "Hier in de Unwrap Arena kan je de game-industrie ontdekken, met nadruk op Vlaamse successen. Ervaar de evolutie van games van retro tot nu.",
+            "message": "Op zaterdag, zondag en woensdag kun je hier films zien.",
             "hideInput": true,
             "trigger": "option location 2"
         },
         {
             "id": "option location 2",
-            "message": "Je kan ook leren hoe games ontwikkelen een serieuze job is.",
+            "message": "Deze films hebben altijd een link met de game-industrie, behalve op zaterdag.",
             "hideInput": true,
             "trigger": "option location 3"
         },
         {
             "id": "option location 3",
-            "message": "In de arcadehal kan je het zelfs opnemen tegen je vrienden en familie in iconische retro-games!",
+            "message": "Dan is het retro-dag, en worden er dus oude films gespeeld.",
             "hideInput": true,
             "trigger": "new question"
         },
@@ -235,7 +235,7 @@
         }
     ],
     "optionalEventStep": {
-        "stepBeforeId": "conversation 3.0",
+        "stepBeforeId": "conversation 1.4",
         "optionLabels": [
             "Wat leuk!",
             "Intereseert me niet zo."
@@ -243,8 +243,8 @@
         "eventAnswerId": "option events 1"
     },
     "character": {
-        "name": "RoBob de Gamer",
-        "quote": "Beep Boop! Ik ben de beste gamer van de Unwrap Arena!",
+        "name": "RoBob de VFX editor",
+        "quote": "*quote here*",
         "image": "images/characters/robo.png"
     }
 }

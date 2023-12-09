@@ -93,16 +93,33 @@ const adjustData = (eventMessage, originalData, stepData) => {
     if (eventMessage.message !== '') {
         // define step ids to correctly place the new step
         const previousStepId = stepData.stepBeforeId; // id of the step the new one will be placed after
-        const newStepId = 'eventStep1'; // id of the new step
-        const newOptionsStepId = 'eventStep2'; // id of the new options step
+        const previousStep = originalData.find(item => item.id === previousStepId); // the step the new one will be placed after
+        let nextStepId;  // id of the step the new one will be placed before
+        if (previousStep.options) {
+            nextStepId = previousStep.options[0].trigger;
+        }
+        else {
+            nextStepId = previousStep.trigger;
+        }
+
+        const newStepId1 = 'eventStep1'; // id of the new step
+        const newStepId2 = 'eventStep2'; // id of the new step
+        const newOptionsStepId = 'eventOptions'; // id of the new options step
 
         // create new message step and add it to the data
-        const newMessageStep = {
-            id: newStepId,
+        const newMessageStep1 = {
+            id: newStepId1,
             message: eventMessage.message,
+            trigger: newStepId2
+        };
+        originalData.push(newMessageStep1);
+
+        const newMessageStep2 = {
+            id: newStepId2,
+            message: 'Misschien is dat iets voor jou?',
             trigger: newOptionsStepId
         };
-        originalData.push(newMessageStep);
+        originalData.push(newMessageStep2);
 
         // create new options step and add it to the data
         const newOptionsStep = {
@@ -111,31 +128,28 @@ const adjustData = (eventMessage, originalData, stepData) => {
                 {
                     value: '1',
                     label: stepData.optionLabels[0],
-                    trigger: previousStepId + 1
+                    trigger: nextStepId
                 },
                 {
                     value: '2',
                     label: stepData.optionLabels[1],
-                    trigger: previousStepId + 1
+                    trigger: nextStepId
                 }
             ]
         };
         originalData.push(newOptionsStep);
 
         // adjust the trigger value of the previous step to trigger new step
-        const previousStep = originalData.find(item => item.id === previousStepId);
         if (previousStep.options) {
             previousStep.options.forEach(option => {
-                option.trigger = newStepId;
+                option.trigger = newStepId1;
             });
         } else if (previousStep.trigger) {
-            previousStep.trigger = newStepId;
+            previousStep.trigger = newStepId1;
         }
     }
 
     const eventAnswerStep = originalData.find(item => item.id === stepData.eventAnswerId);
-    console.log(eventAnswerStep);
-    console.log(eventMessage.answer);
     eventAnswerStep.message = eventMessage.answer;
 
     return originalData;
@@ -159,7 +173,7 @@ export default async function LocationConversation({ params }) {
 
     return (
         <main>
-            <Chatbot steps={conversationData} slug={slug} characterData={data.character}/>
+            <Chatbot steps={conversationData} slug={slug} characterData={data.character} />
         </main>
     )
 }

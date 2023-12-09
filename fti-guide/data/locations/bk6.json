@@ -2,13 +2,13 @@
     "conversation": [
         {
             "id": "secondStart",
-            "message": "Oh hey, jij weer!",
+            "message": "Hey, welkom terug!",
             "trigger": "question",
             "hideInput": true
         },
         {
             "id": "firstStart",
-            "message": "Hey daar, welkom in de Unwrap Arena! Er is hier heel wat te beleven.",
+            "message": "Hallo, welkom op FuturED! Er zijn hier allerlei leuken dingen te ontdekken.",
             "trigger": "firstStart options",
             "hideInput": true
         },
@@ -17,7 +17,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Echt? Ik ben benieuwd, vertel eens wat er hier allemaal te doen is.",
+                    "label": "Wat leuk! Vertel me meer.",
                     "trigger": "conversation 1.0"
                 },
                 {
@@ -30,13 +30,13 @@
         },
         {
             "id": "conversation 1.0",
-            "message": "Hier in de Unwrap Arena kan je de game-industrie ontdekken, met nadruk op Vlaamse successen. Ervaar de evolutie van games van retro tot nu.",
+            "message": "Hier kan je bijleren over hoe we in de nabije toekomst zullen bijleren.",
             "hideInput": true,
             "trigger": "conversation 1.1"
         },
         {
             "id": "conversation 1.1",
-            "message": "Je kan ook leren hoe games ontwikkelen een serieuze job is.",
+            "message": "KU Leuven Kulak en Hogeschool VIVES stellen interactieve ervaringen voor om hun kennis over onderwijstechnologie toe te lichten.",
             "hideInput": true,
             "trigger": "conversation 1.2"
         },
@@ -45,7 +45,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Kan ik hier ook iets zelf doen?",
+                    "label": "Dat is al heel wat!",
                     "trigger": "conversation 1.3"
                 }
             ],
@@ -53,21 +53,27 @@
         },
         {
             "id": "conversation 1.3",
-            "message": "In de arcadehal kan je het zelfs opnemen tegen je vrienden en familie in iconische retro-games!",
+            "message": "Er is nog meer!",
             "hideInput": true,
             "trigger": "conversation 1.4"
         },
         {
             "id": "conversation 1.4",
+            "message": "Je ontdekt ook hoe de toekomstige klassen er zullen uitzien, van de kleuterklas tot hoger onderwijs.",
+            "hideInput": true,
+            "trigger": "conversation 1.5"
+        },
+        {
+            "id": "conversation 1.5",
             "options": [
                 {
                     "value": 1,
-                    "label": "Daar kijk ik naar uit!",
+                    "label": "Wow, dat lijkt interessant!",
                     "trigger": "conversation 2.0"
                 },
                 {
                     "value": 2,
-                    "label": "Ik zal me bij de info houden.",
+                    "label": "Die interactieve ervaringen lijken me wel wat.",
                     "trigger": "conversation 2.0"
                 }
             ],
@@ -75,19 +81,19 @@
         },
         {
             "id": "conversation 2.0",
-            "message": "Hier is alvast een weetje over retro-games:",
+            "message": "Hier is al een weetje over technologie in het onderwijs:",
             "hideInput": true,
             "trigger": "conversation 2.1"
         },
         {
             "id": "conversation 2.1",
-            "message": "wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
+            "message": "wist je dat kinderen nog altijd niet leren typen op school?",
             "hideInput": true,
             "trigger": "conversation 2.2"
         },
         {
             "id": "conversation 2.2",
-            "message": "Het lijkt heel hard op de bekende oude game 'Pong'!",
+            "message": "Hoewel dit de dag van vandaag dikwijls een cruciale vaardigheid is, is dit nog altijd een betaalde cursus buiten de lesuren op de meeste scholen.",
             "hideInput": true,
             "trigger": "conversation 2.3"
         },
@@ -96,12 +102,12 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Wow, echt waar?",
+                    "label": "Dat meen je niet!",
                     "trigger": "conversation 3.0"
                 },
                 {
                     "value": 2,
-                    "label": "Oh, cool.",
+                    "label": "Ik wist dat eigenlijk al.",
                     "trigger": "conversation 3.0"
                 }
             ],
@@ -109,20 +115,20 @@
         },
         {
             "id": "conversation 3.0",
-            "message": "Leuk weetje, hé? Hoe dan ook",
+            "message": "Raar, hé? Hoe dan ook",
             "hideInput": true,
             "trigger": "conversation 4.0"
         },
         {
             "id": "conversation 4.0",
-            "message": "Je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
+            "message": "je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
             "hideInput": true,
             "trigger": {
                 "function": "addToLocalStorage",
                 "arguments": {
                     "trigger": "conversation 5.0",
                     "key": "collected",
-                    "value": "budafabriek"
+                    "value": "bk6"
                 }
             }
         },
@@ -143,7 +149,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over games",
+                    "label": "Vertel eens een leuk weetje over technologie in het onderwijs",
                     "trigger": "option fact 1"
                 },
                 {
@@ -161,31 +167,37 @@
         },
         {
             "id": "option fact 1",
-            "message": "Wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
+            "message": "Wist je dat kinderen nog altijd niet leren typen op school?",
             "hideInput": true,
             "trigger": "option fact 2"
         },
         {
             "id": "option fact 2",
-            "message": "Het lijkt heel hard op de bekende oude game 'Pong'!",
+            "message": "Hoewel dit de dag van vandaag dikwijls een cruciale vaardigheid is, is dit nog altijd een vrijblijvende en betaalde cursus op de meeste scholen.",
             "hideInput": true,
             "trigger": "new question"
         },
         {
             "id": "option location 1",
-            "message": "Hier in de Unwrap Arena kan je de game-industrie ontdekken, met nadruk op Vlaamse successen. Ervaar de evolutie van games van retro tot nu.",
+            "message": "Hier kan je bijleren over hoe we in de nabije toekomst zullen bijleren.",
             "hideInput": true,
             "trigger": "option location 2"
         },
         {
             "id": "option location 2",
-            "message": "Je kan ook leren hoe games ontwikkelen een serieuze job is.",
+            "message": "KU Leuven Kulak en Hogeschool VIVES stellen interactieve ervaringen voor om hun kennis over onderwijstechnologie toe te lichten.",
             "hideInput": true,
             "trigger": "option location 3"
         },
         {
             "id": "option location 3",
-            "message": "In de arcadehal kan je het zelfs opnemen tegen je vrienden en familie in iconische retro-games!",
+            "message": "Er is nog meer!",
+            "hideInput": true,
+            "trigger": "option location 4"
+        },
+        {
+            "id": "option location 4",
+            "message": "Je ontdekt ook hoe de toekomstige klassen er zullen uitzien, van de kleuterklas tot hoger onderwijs.",
             "hideInput": true,
             "trigger": "new question"
         },
@@ -243,8 +255,8 @@
         "eventAnswerId": "option events 1"
     },
     "character": {
-        "name": "RoBob de Gamer",
-        "quote": "Beep Boop! Ik ben de beste gamer van de Unwrap Arena!",
+        "name": "RoBob de Student",
+        "quote": "*quote here*",
         "image": "images/characters/robo.png"
     }
 }
