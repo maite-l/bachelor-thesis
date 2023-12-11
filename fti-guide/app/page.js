@@ -2,6 +2,7 @@ import styles from './index.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import SmallBadge from './(components)/badges/SmallBadge'
+import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
@@ -17,13 +18,15 @@ export default function Home() {
 
       <section className={styles.badges}>
         <h2 className={'margin ' + 'title'}>Verzamel alle badges</h2>
-        <div className={styles.badgesContainer}>
-          <SmallBadge collected={true} />
-          <SmallBadge collected={true} />
-          <SmallBadge collected={true} />
-          <SmallBadge collected={true} />
-          <SmallBadge collected={true} />
-        </div>
+        <Marquee speed={25}>
+          <div className={styles.badgesContainer}>
+            <SmallBadge collected={true} />
+            <SmallBadge collected={true} />
+            <SmallBadge collected={true} />
+            <SmallBadge collected={true} />
+            <SmallBadge collected={true} />
+          </div>
+        </Marquee>
         <p className={'margin'}>
           Elke RoBob die je vindt zal je een <em>badge</em> geven als beloning van je vondst en de nieuwe kennis die je hebt opgedaan.
         </p>

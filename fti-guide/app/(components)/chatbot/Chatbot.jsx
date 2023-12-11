@@ -89,7 +89,7 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
         <>
             {showBadge && (
                 <div>
-                    <BadgePopUp badge={badge} />
+                    <BadgePopUp badge={badge} onClose={() => setShowBadge(false)} />
                 </div>
             )}
             <ThemeProvider theme={theme}>
