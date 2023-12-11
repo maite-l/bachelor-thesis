@@ -148,7 +148,7 @@ export default function ARFilter() {
                 </div>
                 <ARView
                     maxTrack={2} // Maximum number of targets tracked simultaneously
-                    filterMinCF={0.01} // Cutoff Frequency, decrease to reduce jittering
+                    filterMinCF={0.0001} // Cutoff Frequency, decrease to reduce jittering
                     filterBeta={2000} // Increase to reduce delay
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     gl={{ preserveDrawingBuffer: true }}
