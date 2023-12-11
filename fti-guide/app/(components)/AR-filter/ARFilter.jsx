@@ -147,6 +147,9 @@ export default function ARFilter() {
                     {imageF && <img src={imageF} className={styles.gridElement} />}
                 </div>
                 <ARView
+                    maxTrack={2} // Maximum number of targets tracked simultaneously
+                    filterMinCF={0.05} // Cutoff Frequency, decrease to reduce jittering
+                    filterBeta={500} // Increase to reduce jittering
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     gl={{ preserveDrawingBuffer: true }}
                     // turn off flipUserCamera to for more natural camera feel
