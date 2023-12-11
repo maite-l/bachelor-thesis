@@ -32,6 +32,9 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
+.videoImg {
+    height: 150vh;
+}
 
 .gridElement {
     grid-row: 1;

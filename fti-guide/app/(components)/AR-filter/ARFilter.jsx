@@ -143,7 +143,7 @@ export default function ARFilter() {
                     }
                 </div>
                 <div className={styles.imgContainer} ref={imgContainerRef}>
-                    {imageV && <img src={imageV} className={styles.gridElement} />}
+                    {imageV && <img src={imageV} className={`${styles.gridElement} ${styles.videoImg}`} />}
                     {imageF && <img src={imageF} className={styles.gridElement} />}
                 </div>
                 <ARView
