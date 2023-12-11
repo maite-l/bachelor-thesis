@@ -5,11 +5,16 @@
     --white: #FBF3ED;
     --coral: #F27361;
     --purple-transparent: #6E33D533;
+    --spacing: clamp(0.9rem, 4vw, 1.5rem);
+    --font-size--xsmall: clamp(0.8rem, 3vw, 0.9rem);
+    --font-size--small: 1rem;
+    --font-size--big: clamp(1.5rem, 4vw, 1.75rem);
 }
 
 html {
     background-color: var(--white);
     color: var(--purple);
+    font-size: var(--font-size--small);
 }
 a {
     text-decoration: none;
@@ -34,11 +39,11 @@ em {
 .title {
     font-family: var(--font-gt-super);
     color: var(--purple);
-    font-size: 1.5rem;
+    font-size: var(--font-size--big);
     line-height: 1.5;
 }
 .margin {
-    margin-inline: 15px;
+    margin-inline: var(--spacing);
 }
 
 main {
@@ -52,5 +57,5 @@ button {
     cursor: pointer;
     font-family: var(--font-lausanne);
     color: var(--purple);
-    font-size: 16px;
+    font-size: var(--font-size--small);
 }

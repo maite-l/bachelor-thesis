@@ -14,7 +14,7 @@ export default function BadgePopUp({ badge }) {
                         <p>Proficiat!</p>
                         <p>Je hebt een gloednieuw badge gekregen.</p>
                     </div>
-                    <p className={styles.name}>{badge.name}</p>
+                    <p className={'title ' + styles.name}>{badge.name}</p>
                     <BigBadge />
                     <Link href="/badges" className={styles.button}>Ontvang badge</Link>
                 </div>

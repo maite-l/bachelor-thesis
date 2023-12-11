@@ -5,12 +5,12 @@
 }
 
 .header {
-    padding-block-start: 2rem;
-    padding-block-end: 3rem;
+    padding-block-start: clamp(2rem, 10vw, 3rem);
+    padding-block-end: clamp(3rem, 10vw, 4rem);
 }
 .header h1 {
     border-block-start: solid 1px var(--purple);
-    padding-block-start: 0.5rem;
+    padding-block-start: 0.8rem;
     padding-block-end: 1rem;
 }
 
@@ -41,7 +41,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.8rem;
-    height: 3rem;
+    height: clamp(3rem, 10vw, 3.8rem);
     min-width: 12rem;
     background-color: var(--coral);
     border: solid 1px var(--white);
@@ -52,8 +52,8 @@
 .badges {
     background-color: var(--purple);
     color: var(--white);
-    padding-block-start: 2rem;
-    padding-block-end: 3rem;
+    padding-block-start: clamp(2rem, 10vw, 3rem);
+    padding-block-end: clamp(3rem, 10vw, 4rem);
     overflow: hidden;
 }
 .badges h2 {
@@ -62,8 +62,13 @@
     padding-block-end: 0.8rem;
     border-block-end: solid 1px var(--white);
 }
-.badges p {
-    max-width: 28rem;
+
+
+@media only screen and (min-width: 512px) {
+    .badges p {
+        max-width: 28rem;
+        margin: auto;
+    }
 }
 
 .badgesContainer {
@@ -71,7 +76,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 0.8rem;
-    padding-block: 0.8rem;
+    padding-block: clamp(0.8rem, 3vw, 1.4rem);
     overflow: hidden;
 }
 .badges .button {
@@ -89,7 +94,7 @@
     .navigation .content {
         display: grid;
         grid-template-columns: 2fr 3fr;
-        gap: 2rem;
+        gap: clamp(2rem, 6vw, 3rem);
         text-align: left;
     }
     .navigation .content .img {
@@ -103,7 +108,7 @@
     }
     .navigation .content h2 {
         line-height: 1.2;
-        max-width: 15rem;
+        max-width: 18rem;
     }
 }
 
@@ -116,12 +121,12 @@
 .navigation .button {
     border: solid 1px var(--purple);
     width: max-content;
-    padding: 0 1rem;
+    padding: 0 clamp(1rem, 10vw, 2rem);;
     margin: auto;
 }   
 
 .navigation .help {
-    margin-block-start: 1.3rem;
+    margin-block-start: clamp(1.3rem, 6vw, 4rem);
     display: flex;
     flex-direction: column;
     justify-content: center;

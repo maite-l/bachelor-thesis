@@ -26,11 +26,23 @@
 
 .chatbotName {
     font-family: var(--font-gt-super);
-    font-size: 1.5rem;
+    font-size: var(--font-size--big);
     margin-bottom: 0.3rem;
 }
 
 .tags {
     display: grid;
     grid-template-columns: 2rem 1fr;
+}
+
+
+@media only screen and (min-width: 512px) {
+    .chatbotHeader {
+        grid-template-columns: 2fr 3fr;
+        grid-template-columns: auto 1fr;
+    }
+    .characterContainer {
+        place-content: flex-end;
+        padding-inline: 1.5rem;
+    }
 }

@@ -1,7 +1,7 @@
 .container {
     display: flex;
     gap: 0.8rem;
-    margin-inline: 15px;
+    margin-inline: var(--spacing);
     overflow-x: scroll;
     padding-block-end: 1rem;
     padding-block-start: 1.5rem;

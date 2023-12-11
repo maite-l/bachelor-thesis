@@ -10,7 +10,7 @@ export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount
     return (
         <div className={styles.container}>
             {filteredBadges.map(badge => (
-                <SmallBadge key={badge.slug} name={badge.name} collected={true} />
+                <SmallBadge key={badge.slug} name={badge.name} collected={true} className={styles.badge}/>
             ))}
 
             {Array.from({ length: uncollectedBadgesAmount }, (_, index) => (

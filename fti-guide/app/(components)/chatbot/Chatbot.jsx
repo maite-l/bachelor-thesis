@@ -102,6 +102,7 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
                         footerStyle={{ display: 'none' }}
                         contentStyle={{
                             paddingBlockEnd: '60px',
+                            paddingBlockStart: 'clamp(1rem, 4vw, 3rem)',
                             margin: '0',
                         }}
                         enableSmoothScroll="true"
@@ -122,16 +123,16 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
                             textAlign: 'center',
                             boxShadow: 'none',
                             borderRadius: '0px',
-                            fontSize: '15px',
+                            fontSize: 'var(--font-size--xsmall)',
                             padding: '18px',
                             fontFamily: 'var(--font-lausanne)',
-                            width: '170px',
+                            maxWidth: 'clamp(10.5rem, 40vw, 14rem)',
                             lineHeight: '1.5',
                         }}
                         bubbleStyle={{
                             border: '1px var(--purple) solid',
                             boxShadow: 'none',
-                            fontSize: '15px',
+                            fontSize: 'var(--font-size--xsmall)',
                             lineHeight: '1.5',
                             padding: '18px',
                             borderRadius: '0px 20px',
@@ -146,7 +147,7 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
                             fontFamily: 'var(--font-lausanne)',
                             width: "max-content",
                             border: '1px var(--purple) solid',
-                            fontSize: '15px',
+                            fontSize: 'var(--font-size--xsmall)',
                             lineHeight: '1.5',
                             padding: '18px',
                             borderRadius: '0px 20px',
