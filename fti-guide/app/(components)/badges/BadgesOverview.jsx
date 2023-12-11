@@ -4,10 +4,13 @@ import SmallBadge from './SmallBadge';
 
 export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount }) {
 
+    console.log(filteredBadges);
+    console.log(uncollectedBadgesAmount);
+
     return (
         <div className={styles.container}>
             {filteredBadges.map(badge => (
-                <SmallBadge key={badge.location} name={badge.name} collected={true} />
+                <SmallBadge key={badge.slug} name={badge.name} collected={true} />
             ))}
 
             {Array.from({ length: uncollectedBadgesAmount }, (_, index) => (

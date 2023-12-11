@@ -1,0 +1,10 @@
+.title {
+    border-block-end: solid 1px var(--purple);
+    padding-block-end: 0.5rem;
+    padding-block-start: 2.3rem;
+}
+
+.amount {
+    line-height: 1.5;
+    padding-block-start: 2rem;
+}

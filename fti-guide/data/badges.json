@@ -1,20 +1,23 @@
 [
     {
-        "location": "budafabriek",
+        "slug": "budafabriek",
         "name": "Unwrap Explorer",
         "character": "RoBob de gamer"
     },
     {
-        "location": "leieboorden",
+        "slug": "leieboorden",
         "name": "Leieboorden"
     },
     {
-        "location": "broeltorens"
+        "slug": "budascoop",
+        "name": "Budascoop"
     },
     {
-        "location": "budatoren"
+        "slug": "budatoren",
+        "name": "Budatoren"
     },
     {
-        "location": "bk6" 
+        "slug": "bk6",
+        "name": "BK6"
     }
 ]

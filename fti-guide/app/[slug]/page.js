@@ -1,5 +1,5 @@
-import { getAllSlugs, getConversationData, getEventsData } from "../../lib/data";
-import Chatbot from "../(components)/Chatbot";
+import { getAllSlugs, getConversationData, getEventsData, getBadgeData } from "../../lib/data";
+import Chatbot from "../(components)/chatbot/Chatbot";
 import React from "react";
 import styles from './page.module.css';
 
@@ -163,6 +163,8 @@ export default async function LocationConversation({ params }) {
     let conversationData = data.conversation;
     // get location specific events
     const events = getEventsData(slug);
+    // get badge info
+    const badge = getBadgeData(slug);
 
     // if there are events, create a message out of relevant events and adjust the conversation data
     if (events) {
@@ -173,7 +175,7 @@ export default async function LocationConversation({ params }) {
 
     return (
         <main>
-            <Chatbot steps={conversationData} slug={slug} characterData={data.character} />
+            <Chatbot steps={conversationData} slug={slug} characterData={data.character} badge={badge} />
         </main>
     )
 }

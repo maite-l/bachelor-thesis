@@ -69,3 +69,24 @@ export function getAllBadges() {
         return null; // Or throw an error if you want to handle it differently
     }
 }
+
+export function getBadgeData(slug) {
+    const dataDirectory = path.join(process.cwd(), 'data');
+    const fullPath = path.join(dataDirectory, `badges.json`);
+    try {
+        // Read the contents of the JSON file
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+        // Parse the JSON data
+        const jsonData = JSON.parse(fileContents);
+
+        // Filter badges based on slug
+        const badgeData = jsonData.filter((badge) => badge.slug === slug);
+
+        return badgeData.length > 0 ? badgeData[0] : null;
+    } catch (error) {
+        // Handle errors (e.g., file not found, JSON parsing error)
+        console.error(`Error reading JSON file ${fullPath}:`, error);
+        return null; // Or throw an error if you want to handle it differently
+    }
+}

@@ -125,17 +125,22 @@
             "trigger": {
                 "function": "addToLocalStorage",
                 "arguments": {
-                    "trigger": "conversation 5.0",
+                    "trigger": "conversation 4.1",
                     "key": "collected",
                     "value": "leieboorden"
                 }
             }
         },
         {
-            "id": "conversation 5.0",
-            "message": "*badge component*",
-            "hideInput": true,
-            "end": true
+            "id": "conversation 4.1",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Een beloning? Daar zeg ik geen nee tegen!",
+                    "end": true
+                }
+            ],
+            "hideInput": true
         },
         {
             "id": "question",
@@ -249,7 +254,9 @@
     },
     "character": {
         "name": "RoBob de Futurist",
-        "quote": "*quote here*",
-        "image": "images/characters/robo.png"
+        "tags": {
+            "event": "(de) weg van de toekomst",
+            "location": "Leieboorden"
+        }
     }
 }

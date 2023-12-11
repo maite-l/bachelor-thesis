@@ -4,24 +4,12 @@ import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import { useEffect, useState } from 'react';
 import ChatbotHeader from './ChatbotHeader';
+import BadgePopUp from '../badges/BadgePopUp';
 
 
-const addToLocalStorage = (step, key, value) => {
-    // make sure we are on client side
-    if (typeof window !== 'undefined') {
-        const existingArray = JSON.parse(localStorage.getItem(key)) || [];
 
-        // check if the value is already in the array
-        if (!existingArray.includes(value)) {
-            const newArray = [...existingArray, value];
-            localStorage.setItem(key, JSON.stringify(newArray));
-        }
-    }
 
-    return step;
-};
-
-export default function Chatbot({ steps, slug, characterData }) {
+export default function Chatbot({ steps, slug, characterData, badge }) {
 
     const [chatSteps, setChatSteps] = useState([{
         "id": "placeholder",
@@ -30,6 +18,24 @@ export default function Chatbot({ steps, slug, characterData }) {
         "hideInput": true
     }]);
     const [loading, setLoading] = useState(true);
+    const [collectBadgeInNextStep, setCollectBadgeInNextStep] = useState(false);
+    const [showBadge, setShowBadge] = useState(false);
+
+    const addToLocalStorage = (step, key, value) => {
+        // make sure we are on client side
+        if (typeof window !== 'undefined') {
+            const existingArray = JSON.parse(localStorage.getItem(key)) || [];
+
+            // check if the value is already in the array
+            if (!existingArray.includes(value)) {
+                const newArray = [...existingArray, value];
+                localStorage.setItem(key, JSON.stringify(newArray));
+                setCollectBadgeInNextStep(true);
+            }
+        }
+
+        return step;
+    };
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -77,12 +83,19 @@ export default function Chatbot({ steps, slug, characterData }) {
         userFontColor: 'var(--purple)',
     };
 
+    console.log(slug);
+
     return (
         <>
+            {showBadge && (
+                <div>
+                    <BadgePopUp badge={badge} />
+                </div>
+            )}
             <ThemeProvider theme={theme}>
                 {!loading && (
                     <ChatBot
-                        headerComponent={<ChatbotHeader data={characterData} />}
+                        headerComponent={<ChatbotHeader data={characterData} slug={slug} />}
                         hideBotAvatar="true"
                         hideUserAvatar="true"
                         hideSubmitButton="true"
@@ -139,6 +152,11 @@ export default function Chatbot({ steps, slug, characterData }) {
                             borderRadius: '0px 20px',
                         }}
                         steps={chatSteps}
+                        handleEnd={() => {
+                            if (collectBadgeInNextStep) {
+                                setShowBadge(true);
+                            }
+                        }}
                     />
                 )}
             </ThemeProvider>
