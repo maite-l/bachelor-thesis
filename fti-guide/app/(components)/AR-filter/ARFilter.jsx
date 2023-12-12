@@ -30,16 +30,25 @@ export default function ARFilter() {
     const handleTakeImage = async () => {
         const ARView = document.getElementById('ARView');
 
+        console.log(ARView);
+
         // Get the video and filter elements
         const video = ARView.querySelector('video');
         const filter = ARView.querySelector('canvas');
+
+        console.log(video);
+        console.log(filter);
 
         // html2canvas to get the video as an image (dom-to-image doesn't support video element)
         const canvasV = await html2canvas(video);
         const dataV = canvasV.toDataURL('image/jpg');
 
+        console.log(dataV);
+
         // dom-to-image to get the filter as an image (html2canvas doesn't support transparency in canvas element)
         const dataF = await domtoimage.toPng(filter);
+
+        console.log(dataF);
 
         // Set the images as state
         setImageV(dataV);
@@ -151,9 +160,10 @@ export default function ARFilter() {
                     // filterMinCF={0.0001} // Cutoff Frequency, decrease to reduce jittering
                     // filterBeta={2000} // Increase to reduce delay
                     // turn on preserveDrawingBuffer to be able to take a screenshot
+                    flipUserCamera={false}
                     gl={{ preserveDrawingBuffer: true }}
                     id="ARView"
-                    style={{ width: "100vw", height: "100vh", zIndex: "-1", gridColumn: "1", gridRow: "1" }}
+                    style={{ width: "100vw", height: "100vh", zIndex: "-1", gridColumn: "1", gridRow: "1", transform: "scaleX(-1)" }}
                 >
                     <ARAnchor
                         // target is point on the facemesh the model will be attached to
