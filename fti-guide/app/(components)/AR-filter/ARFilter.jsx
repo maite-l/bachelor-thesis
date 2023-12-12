@@ -44,7 +44,7 @@ export default function ARFilter() {
         const canvasV = await html2canvas(video);
         const dataV = canvasV.toDataURL('image/jpg');
 
-        // console.log(dataV);
+        console.log(dataV);
 
         // dom-to-image to get the filter as an image (html2canvas doesn't support transparency in canvas element)
         const dataF = await domtoimage.toPng(filter);
