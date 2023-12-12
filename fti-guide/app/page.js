@@ -22,7 +22,7 @@ export default function Home() {
         <Marquee speed={25}>
           <div className={styles.badgesContainer}>
             {getAllBadges().map((badge) => (
-              <SmallBadge version={'home'} image={badge.slug} alt={badge.name}/>
+              <SmallBadge version={'home'} image={badge.slug} alt={badge.name} key={badge.slug}/>
             ))}
           </div>
         </Marquee>
