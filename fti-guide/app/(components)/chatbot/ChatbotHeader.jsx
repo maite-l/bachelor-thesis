@@ -7,7 +7,7 @@ export default function ChatbotHeader({ data, slug }) {
     return (
         <div className={styles.chatbotHeader}>
             <div className={styles.characterContainer}>
-                <img className={styles.character} src={`/chatheader/robob-${slug}.svg`} alt={data.name} />
+                <img className={styles.character} src={`/images/chatheader/robob-${slug}.svg`} alt={data.name} />
             </div>
             <div className={styles.chatbotHeaderInfo}>
                 <h1 className={styles.chatbotName}>{data.name}</h1>

@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Model(props) {
-    const { nodes, materials } = useGLTF("/glasses.gltf");
+    const { nodes, materials } = useGLTF("/3d/glasses.gltf");
     return (
         <group {...props} dispose={null} scale={[4.5, 4.5, 4.5]} position={[0, 0, -0.2]} renderOrder={3}>
             <mesh

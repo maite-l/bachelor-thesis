@@ -1,11 +1,11 @@
-import { getAllSlugs, getConversationData, getEventsData, getBadgeData } from "../../lib/data";
+import { getAllLocationSlugs, getConversationData, getEventsData, getBadgeData } from "../../lib/data";
 import Chatbot from "../(components)/chatbot/Chatbot";
 import React from "react";
 import styles from './page.module.css';
 
 // generate all possible paths for this route
 export async function generateStaticParams() {
-    const paths = getAllSlugs();
+    const paths = getAllLocationSlugs();
     return paths;
 }
 export const dynamicParams = false; // prevent other routes from being generated

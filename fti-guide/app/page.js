@@ -9,7 +9,7 @@ export default function Home() {
     <main className={styles.main}>
 
       <section className={'margin ' + styles.header}>
-        <Image src="/header.svg" alt="RoBob" width={322} height={216} className={styles.img} />
+        <Image src="/images/home/header.svg" alt="3 RoBobs" width={322} height={216} className={styles.img} />
         <h1 className={'title ' + styles.borderTop}>Vind je persoonlijke begeleider!</h1>
         <p>
           Je hebt misschien al eens een <em>RoBob</em> tegengekomen? Als je hem eens met je <em>smartphone aantikt</em>, zal hij op je scherm tot leven komen om je te helpen!
@@ -38,7 +38,7 @@ export default function Home() {
 
       <section className={'margin ' + styles.navigation}>
         <div className={styles.content}>
-          <Image src="/navBob.svg" alt="RoBob" width={155} height={206} className={styles.img} />
+          <Image src="/images/home/navBob.svg" alt="Navigatie RoBob" width={155} height={206} className={styles.img} />
           <div className={styles.text}>
             <h2 className={'title '}>Laat RoBob je helpen met <em>ontdekken!</em></h2>
             <p>

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export function getAllSlugs() {
+export function getAllLocationSlugs() {
     const dataDirectory = path.join(process.cwd(), 'data/locations');
     const filenames = fs.readdirSync(dataDirectory);
     const paths = filenames.map((filename) => {

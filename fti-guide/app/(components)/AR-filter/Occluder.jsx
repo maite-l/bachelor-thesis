@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function HeadOccluder(props) {
-    const { nodes, materials } = useGLTF("/head_occluder/head.gltf");
+    const { nodes, materials } = useGLTF("/3d/head_occluder/head.gltf");
     return (
         <group {...props} dispose={null} scale={[0.055, 0.055, 0.055]} position={[0, 0, -0.1]} renderOrder={0}>
             <mesh
@@ -14,7 +14,7 @@ export function HeadOccluder(props) {
                 receiveShadow
                 geometry={nodes.headOccluder_lambert1_0.geometry}
                 material={materials.lambert1}
-                // material-colorWrite={false}
+                material-colorWrite={false}
             />
         </group>
     );
