@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SmallBadge from './(components)/badges/SmallBadge'
 import Marquee from "react-fast-marquee";
+import { getAllBadges } from '../lib/data';
 
 export default function Home() {
   return (
@@ -20,11 +21,9 @@ export default function Home() {
         <h2 className={'margin ' + 'title'}>Verzamel alle badges</h2>
         <Marquee speed={25}>
           <div className={styles.badgesContainer}>
-            <SmallBadge collected={true} />
-            <SmallBadge collected={true} />
-            <SmallBadge collected={true} />
-            <SmallBadge collected={true} />
-            <SmallBadge collected={true} />
+            {getAllBadges().map((badge) => (
+              <SmallBadge version={'home'} image={badge.slug} alt={badge.name}/>
+            ))}
           </div>
         </Marquee>
         <p className={'margin'}>

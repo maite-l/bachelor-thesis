@@ -12,12 +12,12 @@ export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount
         <div className={styles.container}>
             {filteredBadges.map(badge => (
                 <Link key={badge.slug} href={`/badges/${badge.slug}`}>
-                    <SmallBadge key={badge.slug} name={badge.name} collected={true} className={styles.badge} />
+                    <SmallBadge key={badge.slug} name={badge.name} version={'collected'} className={styles.badge} image={badge.slug}/>
                 </Link>
             ))}
 
             {Array.from({ length: uncollectedBadgesAmount }, (_, index) => (
-                <SmallBadge key={index} name={'?'} collected={false} />
+                <SmallBadge key={index} name={'?'} version={'uncollected'} />
             ))}
 
         </div>
