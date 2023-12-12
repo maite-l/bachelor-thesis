@@ -22,7 +22,7 @@ const Lausanne = localFont({
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
     mobile: 0,
-    desktop: 900,
+    desktop: 820,
   }
 });
 
