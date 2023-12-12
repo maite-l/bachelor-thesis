@@ -87,12 +87,12 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
 
     return (
         <>
-            {/* {showBadge && ( */}
+            {showBadge && (
                 <div>
                     <BadgePopUp badge={badge} onClose={() => setShowBadge(false)} />
                 </div>
-            {/* )} */}
-            {/* <ThemeProvider theme={theme}>
+            )}
+            <ThemeProvider theme={theme}>
                 {!loading && (
                     <ChatBot
                         headerComponent={<ChatbotHeader data={characterData} slug={slug} />}
@@ -160,7 +160,7 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
                         }}
                     />
                 )}
-            </ThemeProvider> */}
+            </ThemeProvider>
         </>
 
     )
