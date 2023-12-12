@@ -83,8 +83,8 @@ export default function ARFilter() {
 
     // determine scale and offset based on window width (could use better solution)
     // const windowWidth = window.innerWidth;
-    // let scale = 1;
-    // let offset = 0;
+    let scale = 1;
+    let offset = 0;
     // if (windowWidth < 320) {
     //     scale = 4;
     //     offset = 2.2;
