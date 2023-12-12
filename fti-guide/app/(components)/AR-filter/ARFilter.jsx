@@ -82,7 +82,7 @@ export default function ARFilter() {
 
     // determine scale and offset based on window width (could use better solution)
     const windowWidth = window.innerWidth;
-    let scale = 2;
+    let scale = 2.2;
     let offset = 0;
     // if (windowWidth < 320) {
     //     scale = 4;
@@ -99,16 +99,10 @@ export default function ARFilter() {
     // } else if (windowWidth < 650) {
     //     scale = 1.8;
     //     offset = 0.5;
-    // } else if (windowWidth < 800) {
+    // } else if (windowWidth < 820) {
     //     scale = 1.7;
     //     offset = 0.4;
-    // } else if (windowWidth < 1000) {
-    //     scale = 1.4;
-    //     offset = 0.3;
-    // } else if (windowWidth >= 1000) {
-    //     scale = 1;
-    //     offset = 0;
-    // }
+    // } 
 
     return (
         <div>
@@ -162,7 +156,7 @@ export default function ARFilter() {
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
                             <Model />
-                            {/* <HeadOccluder /> */}
+                            <HeadOccluder />
                             <mesh position={[0, 0.1, -0.6]}>
                                 <boxGeometry attach="geometry" args={[0.8, 0.8, 0.8]} />
                                 <meshStandardMaterial attach="material" color="hotpink" />
