@@ -55,6 +55,7 @@ export default function ARFilter() {
         setImageV(dataV);
         setImageF(dataF);
         setImageSet(true);
+        console.log('images set');
     };
 
     const handleImageDownload = async () => {
