@@ -152,10 +152,8 @@ export default function ARFilter() {
                     // filterBeta={2000} // Increase to reduce delay
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     gl={{ preserveDrawingBuffer: true }}
-                    // turn off flipUserCamera to for more natural camera feel
-                    flipUserCamera={false}
                     id="ARView"
-                    style={{ width: "100vw", height: "100vh", zIndex: "-1", gridColumn: "1", gridRow: "1", transform: "scaleX(-1)" }}
+                    style={{ width: "100vw", height: "100vh", zIndex: "-1", gridColumn: "1", gridRow: "1" }}
                 >
                     <ARAnchor
                         // target is point on the facemesh the model will be attached to
@@ -163,6 +161,12 @@ export default function ARFilter() {
                     >
                         {/* light */}
                         <directionalLight color="white" position={[0, 0, 10]} />
+
+                        <mesh>
+                            <boxGeometry attach="geometry" args={[1, 1, 1]} />
+                            <meshStandardMaterial attach="material" color="hotpink" />
+                        </mesh>
+
 
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
