@@ -32,7 +32,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
-.videoImg {
+.videoImg, .filterImg {
     height: 100vh;
 }
 

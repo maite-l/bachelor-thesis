@@ -9,7 +9,6 @@ import { Model } from './Model';
 import { HeadOccluder } from './Occluder';
 
 import html2canvas from 'html2canvas';
-import domtoimage from 'dom-to-image';
 
 import styles from './ARFilter.module.css';
 
@@ -18,7 +17,6 @@ export default function ARFilter() {
 
     const [imageV, setImageV] = useState(null);
     const [imageF, setImageF] = useState(null);
-    const [imageSet, setImageSet] = useState(false);
 
     let canShare = false;
     if (typeof navigator !== 'undefined' && navigator.share) {
@@ -37,25 +35,14 @@ export default function ARFilter() {
         const video = ARView.querySelector('video');
         const filter = ARView.querySelector('canvas');
 
-        console.log(video);
-        console.log(filter);
-
-        // html2canvas to get the video as an image (dom-to-image doesn't support video element)
         const canvasV = await html2canvas(video);
         const dataV = canvasV.toDataURL('image/jpg');
 
-        // console.log(dataV);
+        const canvasF = await html2canvas(filter, { backgroundColor: null });
+        const dataF = canvasF.toDataURL('image/jpg');
 
-        // dom-to-image to get the filter as an image (html2canvas doesn't support transparency in canvas element)
-        const dataF = await domtoimage.toPng(filter);
-
-        // console.log(dataF);
-
-        // Set the images as state
         setImageV(dataV);
         setImageF(dataF);
-        setImageSet(true);
-        console.log('images set');
     };
 
     const handleImageDownload = async () => {
@@ -125,11 +112,6 @@ export default function ARFilter() {
 
     return (
         <div>
-            {imageSet &&
-                <div>
-                    hello image is set
-                </div>
-            }
 
             <div className={`container margin ` + styles.container}>
                 <div className={`${styles.interface} ${styles.gridElement}`} >
@@ -161,12 +143,9 @@ export default function ARFilter() {
                 </div>
                 <div className={styles.imgContainer} ref={imgContainerRef}>
                     {imageV && <img src={imageV} className={`${styles.gridElement} ${styles.videoImg}`} />}
-                    {imageF && <img src={imageF} className={styles.gridElement} />}
+                    {imageF && <img src={imageF} className={`${styles.gridElement} ${styles.filterImg}`} />}
                 </div>
                 <ARView
-                    maxTrack={2} // Maximum number of targets tracked simultaneously
-                    // filterMinCF={0.0001} // Cutoff Frequency, decrease to reduce jittering
-                    // filterBeta={2000} // Increase to reduce delay
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     flipUserCamera={false}
                     gl={{ preserveDrawingBuffer: true }}
@@ -180,9 +159,6 @@ export default function ARFilter() {
                         {/* light */}
                         <directionalLight color="white" position={[0, 0, 10]} />
 
-
-
-
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
                             <Model />
@@ -195,10 +171,6 @@ export default function ARFilter() {
 
                     </ARAnchor>
                 </ARView>
-                {/* extra div with width and height of filter to make up for absolute positioning */}
-                {/* <div style={{ minWidth: "100vw", minHeight: "100vh" }}></div> */}
-
-
             </div>
         </div >
     )
