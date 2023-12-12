@@ -82,34 +82,34 @@ export default function ARFilter() {
 
 
     // determine scale and offset based on window width (could use better solution)
-    const windowWidth = window.innerWidth;
-    let scale = 1;
-    let offset = 0;
-    if (windowWidth < 320) {
-        scale = 4;
-        offset = 2.2;
-    } else if (windowWidth < 375) {
-        scale = 2.8;
-        offset = 1.8;
-    } else if (windowWidth < 425) {
-        scale = 2.5;
-        offset = 1.4;
-    } else if (windowWidth < 550) {
-        scale = 2;
-        offset = 1.4;
-    } else if (windowWidth < 650) {
-        scale = 1.8;
-        offset = 0.5;
-    } else if (windowWidth < 800) {
-        scale = 1.7;
-        offset = 0.4;
-    } else if (windowWidth < 1000) {
-        scale = 1.4;
-        offset = 0.3;
-    } else if (windowWidth >= 1000) {
-        scale = 1;
-        offset = 0;
-    }
+    // const windowWidth = window.innerWidth;
+    // let scale = 1;
+    // let offset = 0;
+    // if (windowWidth < 320) {
+    //     scale = 4;
+    //     offset = 2.2;
+    // } else if (windowWidth < 375) {
+    //     scale = 2.8;
+    //     offset = 1.8;
+    // } else if (windowWidth < 425) {
+    //     scale = 2.5;
+    //     offset = 1.4;
+    // } else if (windowWidth < 550) {
+    //     scale = 2;
+    //     offset = 1.4;
+    // } else if (windowWidth < 650) {
+    //     scale = 1.8;
+    //     offset = 0.5;
+    // } else if (windowWidth < 800) {
+    //     scale = 1.7;
+    //     offset = 0.4;
+    // } else if (windowWidth < 1000) {
+    //     scale = 1.4;
+    //     offset = 0.3;
+    // } else if (windowWidth >= 1000) {
+    //     scale = 1;
+    //     offset = 0;
+    // }
 
     return (
         <div>
@@ -147,9 +147,9 @@ export default function ARFilter() {
                     {imageF && <img src={imageF} className={styles.gridElement} />}
                 </div>
                 <ARView
-                    maxTrack={2} // Maximum number of targets tracked simultaneously
-                    filterMinCF={0.0001} // Cutoff Frequency, decrease to reduce jittering
-                    filterBeta={2000} // Increase to reduce delay
+                    // maxTrack={2} // Maximum number of targets tracked simultaneously
+                    // filterMinCF={0.0001} // Cutoff Frequency, decrease to reduce jittering
+                    // filterBeta={2000} // Increase to reduce delay
                     // turn on preserveDrawingBuffer to be able to take a screenshot
                     gl={{ preserveDrawingBuffer: true }}
                     // turn off flipUserCamera to for more natural camera feel
