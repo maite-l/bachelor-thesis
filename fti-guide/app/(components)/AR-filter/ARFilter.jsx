@@ -84,7 +84,7 @@ export default function ARFilter() {
     // determine scale and offset based on window width (could use better solution)
     const windowWidth = window.innerWidth;
     let scale = 2;
-    let offset = .5;
+    let offset = 0;
     // if (windowWidth < 320) {
     //     scale = 4;
     //     offset = 2.2;
@@ -162,16 +162,17 @@ export default function ARFilter() {
                         {/* light */}
                         <directionalLight color="white" position={[0, 0, 10]} />
 
-                        <mesh>
-                            <boxGeometry attach="geometry" args={[1, 1, 1]} />
-                            <meshStandardMaterial attach="material" color="hotpink" />
-                        </mesh>
+
 
 
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
                             <Model />
-                            <HeadOccluder />
+                            {/* <HeadOccluder /> */}
+                            <mesh position={[0, 0.1, -0.6]}>
+                                <boxGeometry attach="geometry" args={[0.8, 0.8, 0.8]} />
+                                <meshStandardMaterial attach="material" color="hotpink" />
+                            </mesh>
                         </group>
 
                     </ARAnchor>
