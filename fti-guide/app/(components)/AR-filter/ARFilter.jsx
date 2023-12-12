@@ -18,6 +18,7 @@ export default function ARFilter() {
 
     const [imageV, setImageV] = useState(null);
     const [imageF, setImageF] = useState(null);
+    const [imageSet, setImageSet] = useState(false);
 
     let canShare = false;
     if (typeof navigator !== 'undefined' && navigator.share) {
@@ -53,8 +54,7 @@ export default function ARFilter() {
         // Set the images as state
         setImageV(dataV);
         setImageF(dataF);
-        console.log(imageF);
-        console.log(imageV);
+        setImageSet(true);
     };
 
     const handleImageDownload = async () => {
@@ -124,6 +124,11 @@ export default function ARFilter() {
 
     return (
         <div>
+            {imageSet &&
+                <div>
+                    hello image is set
+                </div>
+            }
 
             <div className={`container margin ` + styles.container}>
                 <div className={`${styles.interface} ${styles.gridElement}`} >
@@ -158,7 +163,7 @@ export default function ARFilter() {
                     {imageF && <img src={imageF} className={styles.gridElement} />}
                 </div>
                 <ARView
-                    // maxTrack={2} // Maximum number of targets tracked simultaneously
+                    maxTrack={2} // Maximum number of targets tracked simultaneously
                     // filterMinCF={0.0001} // Cutoff Frequency, decrease to reduce jittering
                     // filterBeta={2000} // Increase to reduce delay
                     // turn on preserveDrawingBuffer to be able to take a screenshot
@@ -191,6 +196,8 @@ export default function ARFilter() {
                 </ARView>
                 {/* extra div with width and height of filter to make up for absolute positioning */}
                 {/* <div style={{ minWidth: "100vw", minHeight: "100vh" }}></div> */}
+
+
             </div>
         </div >
     )
