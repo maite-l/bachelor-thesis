@@ -1,5 +1,4 @@
 import styles from './BadgePopUp.module.css';
-import BigBadge from './BigBadge';
 import Link from 'next/link';
 
 export default function BadgePopUp({ badge, onClose }) {
@@ -15,7 +14,10 @@ export default function BadgePopUp({ badge, onClose }) {
                         <p>Je hebt een gloednieuw badge gekregen.</p>
                     </div>
                     <p className={'title ' + styles.name}>{badge.name}</p>
-                    <BigBadge />
+                    <div className={styles.badgeBackground}>
+                        <div className={styles.badgeContainer}>
+                        </div>
+                    </div>
                     <Link href="/badges" className={styles.primaryButton}>Bekijk nieuwe badge</Link>
                     <button className={styles.secondaryButton} onClick={() => { onClose() }}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">

@@ -61,9 +61,7 @@ export default function ARFilter() {
         const data = canvas.toDataURL('image/jpg');
         const blob = await (await fetch(data)).blob();
         const file = new File([blob], 'FTI-filter.jpg', { type: blob.type });
-        console.log('figuring out share');
         const shareData = {
-            title: "Check out this image!",
             files: [file],
         };
         try {
@@ -81,7 +79,7 @@ export default function ARFilter() {
 
 
     // determine scale and offset based on window width (could use better solution)
-    const windowWidth = window.innerWidth;
+    // const windowWidth = window.innerWidth;
     let scale = 2.2;
     let offset = 0;
     // if (windowWidth < 320) {
