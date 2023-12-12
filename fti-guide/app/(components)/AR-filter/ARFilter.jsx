@@ -52,9 +52,9 @@ export default function ARFilter() {
         // console.log(dataF);
 
         // Set the images as state
-        setImageV(dataV);
-        setImageF(dataF);
-        setImageSet(true);
+        // setImageV(dataV);
+        // setImageF(dataF);
+        // setImageSet(true);
         console.log('images set');
     };
 
