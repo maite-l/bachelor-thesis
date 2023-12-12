@@ -14,7 +14,7 @@ export function HeadOccluder(props) {
                 receiveShadow
                 geometry={nodes.headOccluder_lambert1_0.geometry}
                 material={materials.lambert1}
-                material-colorWrite={false}
+                // material-colorWrite={false}
             />
         </group>
     );
