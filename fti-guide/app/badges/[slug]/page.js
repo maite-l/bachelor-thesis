@@ -6,10 +6,9 @@ import styles from './page.module.css';
 export async function generateStaticParams() {
     const badges = getAllBadges();
     const paths = badges.map((badge) => ({
-        params: {
-            slug: badge.slug,
-        },
+        slug: badge.slug,
     }));
+    console.log(paths)
     return paths;
 }
 export const dynamicParams = false; // prevent other routes from being generated
@@ -24,3 +23,13 @@ export default async function Badge({ params }) {
         </main>
     )
 }
+
+// export default async function Badge({  }) {
+
+
+//     return (
+//         <main>
+//             <p>test</p>
+//         </main>
+//     )
+// }
