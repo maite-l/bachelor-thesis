@@ -10,7 +10,9 @@ export default function SmallBadge({ version, name, image }) {
         badgeStyle = styles.uncollected;
     } else if (version === 'home') {
         badgeStyle = styles.home;
-    } 
+    } else if (version === 'selected') {
+        badgeStyle = styles.selected;
+    }
 
 
     return (

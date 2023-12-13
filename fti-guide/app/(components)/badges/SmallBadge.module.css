@@ -36,6 +36,10 @@
     background-color: var(--white);
     border: none;
 }
+.selected {
+    background-color: var(--coral);
+    border-color: var(--coral);
+}
 
 .image {
     width: 90%;

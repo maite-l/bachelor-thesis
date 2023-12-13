@@ -6,6 +6,7 @@ import Image from "next/image";
 import BadgeCollection from "@/app/(components)/badges/BadgeCollection";
 import BadgeDetailTopBar from "@/app/(components)/BadgeDetailTopBar";
 
+
 // generate all possible paths for this route
 export async function generateStaticParams() {
     const badges = getAllBadges();
@@ -22,14 +23,21 @@ export default async function Badge({ params }) {
     const { slug } = params;
     const badgeData = getBadgeData(slug);
 
+    let description;
+    if (badgeData.description) {
+        description = (
+            <p dangerouslySetInnerHTML={{ __html: badgeData.description }}></p>
+        );
+    }
+
     return (
         <main className={styles.main}>
 
-            <BadgeDetailTopBar location={badgeData.location} link={badgeData.mapLink}/>
+            <BadgeDetailTopBar location={badgeData.location} link={badgeData.mapLink} />
 
             <div className={`margin ` + styles.badgeOverview}>
                 <div>
-                    <h1 className={styles.name}>{badgeData.name}</h1>
+                    <h1 className={styles.name}>De {badgeData.name}</h1>
                     <p>Proficiat, je hebt de {badgeData.world} bereikt!</p>
                 </div>
                 <div className={styles.badge}>
@@ -50,8 +58,8 @@ export default async function Badge({ params }) {
 
             <div className="margin">
                 <h2 className={`title ` + styles.title}>Je hebt deze badge ontvangen van <em>{badgeData.character}</em></h2>
-                <div className={styles.characterImage}>
-
+                <div className={styles.characterImageContainer}>
+                    <Image src={`/images/robob_` + badgeData.slug + `.svg`} alt={badgeData.character} width={130} height={160} />
                 </div>
 
                 <div className={styles.descriptionBackground}>
@@ -60,13 +68,13 @@ export default async function Badge({ params }) {
                         <rect y="15" width="24" height="4" fill="#FBF3ED" />
                     </svg>
                     <div className={styles.descriptionContainer}>
-                        <p>{badgeData.description}</p>
+                        {description}
                     </div>
                 </div>
             </div>
 
             <div>
-                <BadgeCollection allBadges={getAllBadges()} title={'Bekijk je andere badges'} showAmount={false} />
+                <BadgeCollection allBadges={getAllBadges()} title={'Bekijk je andere badges'} showAmount={false} selected={slug}/>
             </div>
 
         </main>

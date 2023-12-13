@@ -2,7 +2,7 @@
     background-color: var(--purple-transparent);
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 2000;
     top: 0;
     left: 0;

@@ -90,3 +90,13 @@
 .main {
     padding-block-end: 5rem;
 }
+
+.characterImageContainer {
+    display: flex;
+    justify-content: center;
+    padding-block: 1.5rem 2rem;
+}
+.characterImageContainer img {
+    width: 35vw;
+    height: auto;
+}

@@ -4,7 +4,7 @@ import styles from './BadgeCollection.module.css';
 import { useEffect, useState } from 'react';
 import BadgesOverview from './BadgesOverview';
 
-export default function BadgeCollection({ allBadges, title, showAmount }) {
+export default function BadgeCollection({ allBadges, title, showAmount, selected }) {
 
   const [collectedBadgeValues, setCollectedBadgeValues] = useState([]);
 
@@ -29,7 +29,7 @@ export default function BadgeCollection({ allBadges, title, showAmount }) {
   return (
     <div>
       <h1 className={'title margin ' + styles.title}>{title}</h1>
-      <BadgesOverview filteredBadges={filteredBadges} uncollectedBadgesAmount={uncollectedBadgesAmount} />
+      <BadgesOverview filteredBadges={filteredBadges} uncollectedBadgesAmount={uncollectedBadgesAmount} selected={selected} />
 
       {showAmount && (
         <div className={'margin ' + styles.amount}>
