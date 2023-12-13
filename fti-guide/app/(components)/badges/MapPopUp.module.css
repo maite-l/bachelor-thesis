@@ -1,0 +1,41 @@
+.background {
+    background-color: var(--purple-transparent);
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(4px);
+}
+
+.container {
+    border: var(--purple) 1px solid;
+    border-radius: 30px 0;
+    background-color: var(--white);
+    width: fit-content;
+    margin: auto;
+    margin-block-start: 15vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-width: 12.7rem;
+    width: 80vw;
+    height: 70vh;
+    line-height: 1.5;
+}
+
+.content button {
+    align-self: flex-end;
+    height: clamp(1.7rem, 5vw, 3rem);
+    padding-block-start: 0.6rem;
+    padding-inline-end: 0.6rem;
+}
+
+.map {
+    padding-inline: clamp(2rem, 5vw, 4rem);
+    padding-block-end: clamp(2rem, 5vw, 4rem);
+    height: 100%;
+}

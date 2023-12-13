@@ -5,6 +5,7 @@
     overflow-x: scroll;
     padding-block-end: 1rem;
     padding-block-start: 1.5rem;
+    line-height: normal;
 }
 
 .container::-webkit-scrollbar {
