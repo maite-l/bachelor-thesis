@@ -108,7 +108,7 @@
         max-width: 24rem;
     }
     .navigation .content h2 {
-        line-height: 1.2;
+        line-height: normal;
         max-width: 18rem;
     }
 }

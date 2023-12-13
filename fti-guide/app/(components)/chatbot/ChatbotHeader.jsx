@@ -2,8 +2,6 @@ import styles from './ChatbotHeader.module.css'
 
 export default function ChatbotHeader({ data, slug }) {
 
-    // const slug = 'bk6';
-
     return (
         <div className={styles.chatbotHeader}>
             <div className={styles.characterContainer}>

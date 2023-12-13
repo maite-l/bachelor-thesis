@@ -8,7 +8,7 @@
 }
 
 .container::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
     border: var(--purple) solid 1px;
     max-width: 90vw;
 }
