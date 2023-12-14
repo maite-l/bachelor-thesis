@@ -8,12 +8,12 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
 
   const [collectedBadgeValues, setCollectedBadgeValues] = useState([]);
 
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     const badgesArray = JSON.parse(localStorage.getItem('collected'));
-  //     setCollectedBadgeValues(badgesArray);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const badgesArray = JSON.parse(localStorage.getItem('collected'));
+      setCollectedBadgeValues(badgesArray);
+    }
+  }, []);
 
   let collectedBadgesAmount = 0;
   if (collectedBadgeValues) { collectedBadgesAmount = collectedBadgeValues.length }
