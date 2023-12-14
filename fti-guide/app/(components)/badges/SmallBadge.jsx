@@ -3,6 +3,10 @@ import Image from 'next/image';
 
 export default function SmallBadge({ version, name, image }) {
 
+    console.log('version', version);
+    console.log('name', name);
+    console.log('image', image);
+
     let badgeStyle;
     if (version === 'collected') {
         badgeStyle = styles.collected;
@@ -17,13 +21,14 @@ export default function SmallBadge({ version, name, image }) {
 
     return (
         <div className={styles.container}>
-            <div className={`${styles.badgeContainer}`}>
+            {/* <div className={`${styles.badgeContainer} ${badgeStyle}`}>
                 {image
                     ? <Image src={`/images/badges/${image}.svg`} alt={image} width={80} height={68} className={styles.image}/>
                     : null
                 }
             </div>
-            {name ? <p>{name}</p> : null}
+            {name ? <p>{name}</p> : null} */}
+            {name}
         </div>
     );
 }
