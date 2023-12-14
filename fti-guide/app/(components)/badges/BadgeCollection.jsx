@@ -8,7 +8,8 @@ const getBadgesFromLocalStorage = () => {
   if (typeof window !== 'undefined') {
     const badgesArray = JSON.parse(localStorage.getItem('collected'));
     console.log('collectedBadgeValues', badgesArray);
-    return badgesArray;
+    const test = ['leieboorden', 'bk6']
+    return test;
   }
 }
 
