@@ -7,7 +7,7 @@ export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount
 
     return (
         <div className={styles.container}>
-            {filteredBadges.map(badge => (
+            {/* {filteredBadges.map(badge => (
                 <Link key={badge.slug} href={`/badges/${badge.slug}`}>
                     <SmallBadge
                         key={badge.slug}
@@ -20,7 +20,7 @@ export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount
 
             {Array.from({ length: uncollectedBadgesAmount }, (_, index) => (
                 <SmallBadge key={index} name={'?'} version={'uncollected'} />
-            ))}
+            ))} */}
 
         </div>
     );
