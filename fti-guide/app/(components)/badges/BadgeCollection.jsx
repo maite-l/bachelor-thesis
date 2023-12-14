@@ -4,14 +4,6 @@ import styles from './BadgeCollection.module.css';
 import { useEffect, useState } from 'react';
 import BadgesOverview from './BadgesOverview';
 
-// const getBadgesFromLocalStorage = () => {
-//   if (typeof window !== 'undefined') {
-//     const badgesArray = JSON.parse(localStorage.getItem('collected'));
-//     console.log('collectedBadgeValues', badgesArray);
-//     return badgesArray;
-//   }
-// }
-
 export default function BadgeCollection({ allBadges, title, showAmount, selected }) {
 
   const [collectedBadgeValues, setCollectedBadgeValues] = useState([]);
@@ -20,14 +12,8 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
     if (typeof window !== 'undefined') {
       const badgesArray = JSON.parse(localStorage.getItem('collected'));
       setCollectedBadgeValues(badgesArray);
-      console.log('collectedBadgeValues', badgesArray);
     }
   }, []);
-
-  // const collectedBadgeValues = getBadgesFromLocalStorage();
-  // console.log('collectedBadgeValues', collectedBadgeValues);
-  // getBadgesFromLocalStorage();
-  // let collectedBadgeValues = [];
 
   let collectedBadgesAmount = 0;
   if (collectedBadgeValues) { collectedBadgesAmount = collectedBadgeValues.length }
@@ -39,10 +25,6 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
       return collectedBadgeValues.includes(badge.slug);
     });
   }
-
-  console.log('filteredBadges', filteredBadges);
-  console.log('uncollectedBadgesAmount', uncollectedBadgesAmount);
-  console.log('selected', selected);
 
   return (
     <div>

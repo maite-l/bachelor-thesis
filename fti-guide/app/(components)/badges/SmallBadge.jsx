@@ -1,11 +1,6 @@
 import styles from './SmallBadge.module.css';
-import Image from 'next/image';
 
 export default function SmallBadge({ version, name, image }) {
-
-    console.log('version', version);
-    console.log('name', name);
-    console.log('image', image);
 
     let badgeStyle;
     if (version === 'collected') {
@@ -17,7 +12,6 @@ export default function SmallBadge({ version, name, image }) {
     } else if (version === 'selected') {
         badgeStyle = styles.selected;
     }
-
 
     return (
         <div className={styles.container}>
