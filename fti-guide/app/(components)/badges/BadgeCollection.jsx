@@ -8,7 +8,7 @@ const getBadgesFromLocalStorage = () => {
   if (typeof window !== 'undefined') {
     const badgesArray = JSON.parse(localStorage.getItem('collected'));
     console.log('collectedBadgeValues', badgesArray);
-    // return badgesArray;
+    return badgesArray;
   }
 }
 
@@ -24,9 +24,9 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
   //   }
   // }, []);
 
-  // const collectedBadgeValues = getBadgesFromLocalStorage();
-  getBadgesFromLocalStorage();
-  let collectedBadgeValues = [];
+  const collectedBadgeValues = getBadgesFromLocalStorage();
+  // getBadgesFromLocalStorage();
+  // let collectedBadgeValues = [];
 
   let collectedBadgesAmount = 0;
   if (collectedBadgeValues) { collectedBadgesAmount = collectedBadgeValues.length }
