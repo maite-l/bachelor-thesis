@@ -22,10 +22,11 @@ export default function SmallBadge({ version, name, image }) {
     return (
         <div className={styles.container}>
             <div className={`${styles.badgeContainer} ${badgeStyle}`}>
-                {/* {image
-                    ? <Image src={`/images/badges/${image}.svg`} alt={image} width={80} height={68} className={styles.image}/>
+                {image
+                    // ? <Image src={`/images/badges/${image}.svg`} alt={image} width={80} height={68} className={styles.image}/>
+                    ? <p>{image}</p>
                     : null
-                } */}
+                }
             </div>
             {name ? <p>{name}</p> : null}
         </div>
