@@ -7,7 +7,7 @@ const ARFilterNoSSR = dynamic(() => import('../(components)/AR-filter/ARFilter')
 
 export default function BadgesPage() {
 
-  // const allBadges = getAllBadges();
+  const allBadges = getAllBadges();
 
   return (
     <main>
