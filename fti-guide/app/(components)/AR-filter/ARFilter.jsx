@@ -42,6 +42,8 @@ export default function ARFilter() {
         const canvasF = await html2canvas(filter, { backgroundColor: null });
         const dataF = canvasF.toDataURL('image/jpg');
 
+        console.log('dataV and dataF set');
+
         setImageV(dataV);
         setImageF(dataF);
     };
