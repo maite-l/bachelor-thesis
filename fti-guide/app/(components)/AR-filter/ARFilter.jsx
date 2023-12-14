@@ -27,6 +27,7 @@ export default function ARFilter() {
     const imgContainerRef = useRef(null);
 
     const handleTakeImage = async () => {
+        console.log('take image');
         const ARView = document.getElementById('ARView');
 
         console.log(ARView);
