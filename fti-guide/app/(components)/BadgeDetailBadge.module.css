@@ -1,0 +1,110 @@
+
+
+
+/* @media (max-width: 820px) {
+    .desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 821px) {
+    .mobile {
+        display: none;
+    }
+} */
+
+.containerMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 2.3rem 5rem;
+    text-align: center;
+}
+
+.containerTablet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-block: 2.3rem 5rem;
+    text-align: center;
+}
+
+.name {
+    font-size: var(--font-size--big);
+    font-family: var(--font-gt-super);
+    margin-block-end: 0.8rem;
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.badgeBackground {
+    background-color: var(--coral);
+    width: fit-content;
+}
+
+.badgeContainer {
+    border-radius: 30px 0px;
+    border: var(--coral) 1px solid;
+    background-color: var(--white);
+    min-width: 15.3rem;
+    width: 70vw;
+    min-height: 15.3rem;
+    height: 70vw;
+}
+
+.badgeImage {
+    width: 90%;
+    height: 100%;
+}
+
+.containerTablet .badgeContainer {
+    width: 40vw;
+    height: 40vw;
+}
+
+.containerTablet .info {
+    padding-block-end: 0.5rem;
+    border-block-end: solid 1px var(--purple);
+}
+
+.containerTablet .infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.button {
+    border: var(--purple) 1px solid;
+    border-radius: 20px 0;
+    text-align: center;
+    padding: 1rem 0rem;
+    width: 100%;
+}
+
+.containerTablet .button {
+    width: fit-content;
+    padding-inline: 1rem;
+}
+
+
+
+@media (min-width: 601px) {
+    .containerMobile {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .containerTablet {
+        display: none;
+    }
+}
