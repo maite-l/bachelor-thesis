@@ -19,7 +19,7 @@ export default function SmallBadge({ version, name, image }) {
         <div className={styles.container}>
             <div className={`${styles.badgeContainer} ${badgeStyle}`}>
                 {image
-                    ? <Image src={`/images/badges/${image}.svg`} alt={name} width={80} height={68} className={styles.image}/>
+                    ? <Image src={`/images/badges/${image}.svg`} alt={image} width={80} height={68} className={styles.image}/>
                     : null
                 }
             </div>

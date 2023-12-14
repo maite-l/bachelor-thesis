@@ -10,7 +10,7 @@ export default function Home() {
     <main className={styles.main}>
 
       <section className={'margin ' + styles.header}>
-        <Image src="/images/home/header.svg" alt="3 RoBobs" width={322} height={216} className={styles.img} />
+        <Image src="/images/home/header.svg" alt="3 RoBobs" width={322} height={216} className={styles.img} priority={true}/>
         <h1 className={'title ' + styles.borderTop}>Vind je persoonlijke begeleider!</h1>
         <p>
           Je hebt misschien al eens een <em>RoBob</em> tegengekomen? Als je hem eens met je <em>smartphone aantikt</em>, zal hij op je scherm tot leven komen om je te helpen!
