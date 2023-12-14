@@ -1,10 +1,10 @@
 
 import { getAllBadges } from '../../lib/data';
-// import BadgeCollection from '../(components)/badges/BadgeCollection';
+import BadgeCollection from '../(components)/badges/BadgeCollection';
 import styles from './page.module.css';
 import dynamic from 'next/dynamic';
 const ARFilterNoSSR = dynamic(() => import('../(components)/AR-filter/ARFilter'), { ssr: false });
-const BadgeCollection = dynamic(() => import('../(components)/badges/BadgeCollection'), { ssr: false });
+// const BadgeCollection = dynamic(() => import('../(components)/badges/BadgeCollection'), { ssr: false });
 
 export default function BadgesPage() {
 
