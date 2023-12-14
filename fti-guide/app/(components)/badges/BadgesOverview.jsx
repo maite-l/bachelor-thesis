@@ -11,7 +11,7 @@ export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount
                 <Link key={badge.slug} href={`/badges/${badge.slug}`}>
                     <SmallBadge
                         name={badge.name}
-                        version={ selected === badge.slug ? 'selected' : 'collected'}
+                        // version={ selected === badge.slug ? 'selected' : 'collected'}
                         className={styles.badge}
                         image={badge.slug} />
                 </Link>
