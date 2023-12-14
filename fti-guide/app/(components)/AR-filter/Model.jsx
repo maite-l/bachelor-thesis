@@ -6,29 +6,207 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Model(props) {
-    const { nodes, materials } = useGLTF("/3d/glasses.gltf");
+    const { nodes, materials } = useGLTF("/3d/Head_test.gltf");
     return (
-        <group {...props} dispose={null} scale={[4.5, 4.5, 4.5]} position={[0, 0, -0.2]} renderOrder={3}>
+        <group {...props} dispose={null} renderOrder={3}>
             <mesh
                 castShadow
                 receiveShadow
-                geometry={nodes.glasses_base.geometry}
-                material={materials["glasses_base.001"]}
-                position={[0.004, 0.038, -0.006]}
-                rotation={[1.565, -0.268, 0]}
-                scale={[0.03, 0.002, 0.03]}
-            >
-                <mesh
-                    castShadow
-                    receiveShadow
-                    geometry={nodes.glasses_mirror.geometry}
-                    material={materials["glasses_mirror.001"]}
-                    position={[1.178, 5.298, -0.233]}
-                    scale={1.061}
-                />
-            </mesh>
+                geometry={nodes.Sphere.geometry}
+                material={materials.coral}
+                position={[-0.064, 0.077, -0.004]}
+                scale={1.173}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Cylinder.geometry}
+                material={nodes.Cylinder.material}
+                position={[-0.069, 0.113, -0.003]}
+                rotation={[0, 0, 0.259]}
+                scale={0.863}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Sphere001.geometry}
+                material={materials.purple}
+                position={[-0.08, 0.156, -0.003]}
+                scale={0.8}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve111.geometry}
+                material={materials.white}
+                position={[0.024, 0.018, -0.002]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={[1.519, 2.189, 1.519]}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve112.geometry}
+                material={materials.purple}
+                position={[0, 0.002, -0.002]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={[1.519, 2.189, 1.519]}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve113.geometry}
+                material={materials.Glasses}
+                position={[-0.08, 0.026, 0.073]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve114.geometry}
+                material={materials.purple}
+                position={[-0.08, 0.026, 0.073]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve115.geometry}
+                material={materials.white}
+                position={[-0.008, -0.025, 0.043]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve116.geometry}
+                material={materials.purple}
+                position={[-0.004, -0.028, 0.051]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve117.geometry}
+                material={materials["Glasses light"]}
+                position={[-0.125, 0.026, 0.073]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve130.geometry}
+                material={materials.white}
+                position={[-0.116, 0.026, 0.073]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={[1.519, 0.676, 1.519]}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve131.geometry}
+                material={materials["SVGMat.006"]}
+                position={[-0.08, 0.026, 0.07]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve132.geometry}
+                material={materials.purple}
+                position={[-0.033, -0.026, 0.048]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve133.geometry}
+                material={materials.purple}
+                position={[-0.019, -0.031, 0.048]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve134.geometry}
+                material={materials.purple}
+                position={[0, -0.034, 0.048]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve135.geometry}
+                material={materials.purple}
+                position={[0.034, -0.026, 0.048]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve136.geometry}
+                material={materials.purple}
+                position={[0.018, -0.031, 0.048]}
+                rotation={[Math.PI / 2, 0, 0]}
+                scale={1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve140.geometry}
+                material={materials.Glasses}
+                position={[0.081, 0.026, 0.073]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                scale={-1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve141.geometry}
+                material={materials.purple}
+                position={[0.081, 0.026, 0.073]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                scale={-1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve142.geometry}
+                material={materials["Glasses light"]}
+                position={[0.126, 0.026, 0.073]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                scale={-1.519}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve143.geometry}
+                material={materials.white}
+                position={[0.117, 0.026, 0.073]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                scale={[-1.519, -0.676, -1.519]}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Curve144.geometry}
+                material={materials["SVGMat.006"]}
+                position={[0.081, 0.026, 0.07]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                scale={-1.519}
+            />
         </group>
     );
 }
 
-useGLTF.preload("glasses.gltf");
+useGLTF.preload("/3d/Head_test.gltf");
