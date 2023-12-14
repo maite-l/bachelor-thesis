@@ -14,7 +14,7 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const badgesArray = JSON.parse(localStorage.getItem('collected'));
-      // setCollectedBadgeValues(badgesArray);
+      setCollectedBadgeValues(badgesArray);
       console.log('collectedBadgeValues', badgesArray);
     }
   }, []);
