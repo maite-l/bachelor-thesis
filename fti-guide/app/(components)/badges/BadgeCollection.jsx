@@ -40,6 +40,10 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
     });
   }
 
+  console.log('filteredBadges', filteredBadges);
+  console.log('uncollectedBadgesAmount', uncollectedBadgesAmount);
+  console.log('selected', selected);
+
   return (
     <div>
       <h1 className={'title margin ' + styles.title}>{title}</h1>
