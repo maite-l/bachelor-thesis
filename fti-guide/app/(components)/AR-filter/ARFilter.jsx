@@ -18,6 +18,8 @@ export default function ARFilter() {
     const [imageV, setImageV] = useState(null);
     const [imageF, setImageF] = useState(null);
 
+    const [showConfirmation, setShowConfirmation] = useState(false);
+
     let canShare = false;
     if (typeof navigator !== 'undefined' && navigator.share) {
         canShare = true;
@@ -28,8 +30,6 @@ export default function ARFilter() {
 
     const handleTakeImage = async () => {
         const ARView = document.getElementById('ARView');
-
-        console.log(ARView);
 
         // Get the video and filter elements
         const video = ARView.querySelector('video');
@@ -53,6 +53,10 @@ export default function ARFilter() {
         link.href = data;
         link.download = 'FTI-filter.jpg';
         link.click();
+        setShowConfirmation(true);
+        setTimeout(() => {
+            setShowConfirmation(false);
+        }, 3000);
     };
 
     const handleShare = async () => {
@@ -103,7 +107,11 @@ export default function ARFilter() {
     // } 
 
     return (
-        <div>
+        <div className={styles.ARfilter}>
+
+            <div className={`${styles.confirmation} ${showConfirmation ? styles.confirmationVisible : styles.confirmationHidden}`}>
+                Foto opgeslagen!
+            </div>
 
             <div className={`container margin ` + styles.container}>
                 <div className={`${styles.interface} ${styles.gridElement}`} >
