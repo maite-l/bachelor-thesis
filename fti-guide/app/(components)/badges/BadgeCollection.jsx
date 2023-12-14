@@ -3,21 +3,27 @@
 import styles from './BadgeCollection.module.css';
 import { useEffect, useState } from 'react';
 import BadgesOverview from './BadgesOverview';
-import dynamic from 'next/dynamic';
-const ARFilterNoSSR = dynamic(() => import('../AR-filter/ARFilter'), { ssr: false });
 
+const getBadgesFromLocalStorage = () => {
+  if (typeof window !== 'undefined') {
+    const badgesArray = JSON.parse(localStorage.getItem('collected'));
+    return badgesArray;
+  }
+}
 
 export default function BadgeCollection({ allBadges, title, showAmount, selected }) {
 
-  const [collectedBadgeValues, setCollectedBadgeValues] = useState([]);
+  // const [collectedBadgeValues, setCollectedBadgeValues] = useState([]);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const badgesArray = JSON.parse(localStorage.getItem('collected'));
-      setCollectedBadgeValues(badgesArray);
-      console.log('collectedBadgeValues', badgesArray);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     const badgesArray = JSON.parse(localStorage.getItem('collected'));
+  //     setCollectedBadgeValues(badgesArray);
+  //     console.log('collectedBadgeValues', badgesArray);
+  //   }
+  // }, []);
+
+  const collectedBadgeValues = getBadgesFromLocalStorage();
 
   let collectedBadgesAmount = 0;
   if (collectedBadgeValues) { collectedBadgesAmount = collectedBadgeValues.length }
@@ -49,7 +55,6 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
         </div>
       )}
 
-      <ARFilterNoSSR />
     </div>
   );
 }
