@@ -157,22 +157,9 @@ export default function ARFilter() {
                         target={1}
                     >
                         {/* light */}
-                        {/* <ambientLight intensity={1.5} /> */}
-
                         <directionalLight color="white" position={[0, 0, 10]} />
-                        {/* <directionalLight color="#ece1b3" intensity={4} position={[10, 10, 10]} />
-                        <directionalLight color="#ece1b3" intensity={2} position={[-10, 10, 10]} /> */}
 
                         {/* model */}
-                        {/* <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
-                            <Model scale={[4, 4, 4]} position={[0, 0.05, 0]} rotation={[Math.PI / 25, 0, 0]} /> */}
-                            {/* <HeadOccluder /> */}
-                            {/* <mesh position={[0, 0.1, -0.6]}>
-                                <boxGeometry attach="geometry" args={[0.8, 0.8, 0.8]} />
-                                <meshStandardMaterial attach="material" color="hotpink" />
-                            </mesh> */}
-                        {/* </group> */}
-
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
                             <Model />
                             <HeadOccluder />
