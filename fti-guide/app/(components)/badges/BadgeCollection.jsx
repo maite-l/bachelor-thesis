@@ -25,7 +25,7 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
   // }, []);
 
   // const collectedBadgeValues = getBadgesFromLocalStorage();
-  getBadgesFromLocalStorage();
+  // getBadgesFromLocalStorage();
   let collectedBadgeValues = ['bk6', 'leieboorden'];
 
   let collectedBadgesAmount = 0;
