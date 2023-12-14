@@ -3,6 +3,9 @@
 import styles from './BadgeCollection.module.css';
 import { useEffect, useState } from 'react';
 import BadgesOverview from './BadgesOverview';
+import dynamic from 'next/dynamic';
+const ARFilterNoSSR = dynamic(() => import('../AR-filter/ARFilter'), { ssr: false });
+
 
 export default function BadgeCollection({ allBadges, title, showAmount, selected }) {
 
@@ -45,6 +48,8 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
           )}
         </div>
       )}
+
+      <ARFilterNoSSR />
     </div>
   );
 }
