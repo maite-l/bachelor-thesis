@@ -9,13 +9,11 @@ export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount
         <div className={styles.container}>
             {filteredBadges.map(badge => (
                 <Link key={badge.slug} href={`/badges/${badge.slug}`}>
-                    {/* <SmallBadge
-                        key={badge.slug}
+                    <SmallBadge
                         name={badge.name}
                         version={ selected === badge.slug ? 'selected' : 'collected'}
                         className={styles.badge}
-                        image={badge.slug} /> */}
-                        test
+                        image={badge.slug} />
                 </Link>
             ))}
 
