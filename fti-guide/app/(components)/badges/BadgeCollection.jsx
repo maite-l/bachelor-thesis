@@ -42,7 +42,7 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
   return (
     <div>
       <h1 className={'title margin ' + styles.title}>{title}</h1>
-      <BadgesOverview filteredBadges={filteredBadges} uncollectedBadgesAmount={uncollectedBadgesAmount} selected={selected} />
+      {/* <BadgesOverview filteredBadges={filteredBadges} uncollectedBadgesAmount={uncollectedBadgesAmount} selected={selected} /> */}
 
       {showAmount && (
         <div className={'margin ' + styles.amount}>
