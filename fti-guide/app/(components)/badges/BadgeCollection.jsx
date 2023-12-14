@@ -7,7 +7,8 @@ import BadgesOverview from './BadgesOverview';
 const getBadgesFromLocalStorage = () => {
   if (typeof window !== 'undefined') {
     const badgesArray = JSON.parse(localStorage.getItem('collected'));
-    return badgesArray;
+    console.log('collectedBadgeValues', badgesArray);
+    // return badgesArray;
   }
 }
 
@@ -23,7 +24,8 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
   //   }
   // }, []);
 
-  const collectedBadgeValues = getBadgesFromLocalStorage();
+  // const collectedBadgeValues = getBadgesFromLocalStorage();
+  getBadgesFromLocalStorage();
 
   let collectedBadgesAmount = 0;
   if (collectedBadgeValues) { collectedBadgesAmount = collectedBadgeValues.length }
