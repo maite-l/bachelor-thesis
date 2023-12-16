@@ -20,6 +20,8 @@ export default function ARFilter() {
 
     const [showConfirmation, setShowConfirmation] = useState(false);
 
+    const [flipCamera, setFlipCamera] = useState(true);
+
     let canShare = false;
     if (typeof navigator !== 'undefined' && navigator.share) {
         canShare = true;
@@ -102,7 +104,21 @@ export default function ARFilter() {
 
     const handleSwitch = () => {
         arFilterRef.current.stopTracking();
+
         arFilterRef.current.switchCamera();
+        const ARView = document.getElementById('ARView');
+        const imgContainer = imgContainerRef.current;
+        console.log(imgContainer)
+        if (flipCamera) {
+            ARView.style.transform = "scaleX(1)";
+            imgContainer.style.transform = "scaleX(1)";
+        } else {
+            ARView.style.transform = "scaleX(-1)";
+            imgContainer.style.transform = "scaleX(-1)";
+        }
+        setFlipCamera(!flipCamera);
+
+
         arFilterRef.current.startTracking();
     };
 
