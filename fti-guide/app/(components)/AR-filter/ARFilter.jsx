@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, use } from "react";
 
 // import of the library
 import { ARView, ARAnchor } from "react-three-mind";
@@ -25,6 +25,22 @@ export default function ARFilter() {
         canShare = true;
     }
 
+    // useEffect(() => {
+    //     if (arFilterRef.current) {
+    //         return () => {
+    //             if (arFilterRef.current) {
+    //                 console.log('stopping');
+    //                 arFilterRef.current.stopTracking();
+    //             }
+    //             else {
+    //                 console.log('no ref');
+    //             }
+    //         }
+    //     }
+    // }, []);
+
+    // set a ref to the ar filter
+    const arFilterRef = useRef(null);
     // set a ref to the image container
     const imgContainerRef = useRef(null);
 
@@ -43,6 +59,8 @@ export default function ARFilter() {
 
         setImageV(dataV);
         setImageF(dataF);
+
+        arFilterRef.current.stopTracking();
     };
 
     const handleImageDownload = async () => {
@@ -77,34 +95,13 @@ export default function ARFilter() {
     };
 
     const handleNew = () => {
+        arFilterRef.current.startTracking();
         setImageV(null);
         setImageF(null);
     };
 
-
-    // determine scale and offset based on window width (could use better solution)
-    // const windowWidth = window.innerWidth;
     let scale = 2.2;
     let offset = 0;
-    // if (windowWidth < 320) {
-    //     scale = 4;
-    //     offset = 2.2;
-    // } else if (windowWidth < 375) {
-    //     scale = 2.8;
-    //     offset = 1.8;
-    // } else if (windowWidth < 425) {
-    //     scale = 2.5;
-    //     offset = 1.4;
-    // } else if (windowWidth < 550) {
-    //     scale = 2;
-    //     offset = 1.4;
-    // } else if (windowWidth < 650) {
-    //     scale = 1.8;
-    //     offset = 0.5;
-    // } else if (windowWidth < 820) {
-    //     scale = 1.7;
-    //     offset = 0.4;
-    // } 
 
     return (
         <div className={styles.ARfilter}>
@@ -158,6 +155,7 @@ export default function ARFilter() {
                     flipUserCamera={false}
                     gl={{ preserveDrawingBuffer: true }}
                     id="ARView"
+                    ref={arFilterRef}
                     style={{ width: "100vw", height: "100vh", zIndex: "-1", gridColumn: "1", gridRow: "1", transform: "scaleX(-1)" }}
                 >
                     <ARAnchor

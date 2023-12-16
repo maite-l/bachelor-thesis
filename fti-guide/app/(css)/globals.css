@@ -64,4 +64,5 @@ button {
 
 .event-title {
     color: var(--green-blue);
+    font-weight: 800;
 }
