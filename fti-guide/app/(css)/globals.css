@@ -5,6 +5,7 @@
     --white: #FBF3ED;
     --coral: #F27361;
     --purple-transparent: #6E33D533;
+    --green-blue: #8AFCD0;
     --spacing: clamp(0.9rem, 4vw, 1.5rem);
     --font-size--xsmall: clamp(0.8rem, 3vw, 0.9rem);
     --font-size--small: 1rem;
@@ -59,4 +60,8 @@ button {
     font-family: var(--font-lausanne);
     color: var(--purple);
     font-size: var(--font-size--small);
+}
+
+.event-title {
+    color: var(--green-blue);
 }

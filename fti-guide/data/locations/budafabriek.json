@@ -75,13 +75,13 @@
         },
         {
             "id": "conversation 2.0",
-            "message": "Hier is alvast een weetje over retro-games:",
+            "message": "Hier is alvast een weetje over retro-games.",
             "hideInput": true,
             "trigger": "conversation 2.1"
         },
         {
             "id": "conversation 2.1",
-            "message": "wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
+            "message": "Wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
             "hideInput": true,
             "trigger": "conversation 2.2"
         },

@@ -120,7 +120,7 @@
         },
         {
             "id": "conversation 4.0",
-            "message": "je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
+            "message": "Je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
             "hideInput": true,
             "trigger": {
                 "function": "addToLocalStorage",

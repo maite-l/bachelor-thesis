@@ -162,7 +162,8 @@
         },
         {
             "id": "option educatie",
-            "message": "Op FuturED maak je kennis met het onderwijs van de toekomst die niet zo veraf blijkt, en leer je hoe technologie in verschillende klassen kan worden geïntegreerd.",
+            "component": "<p>Op <span class='event-title'>FuturED</span> maak je kennis met het onderwijs van de toekomst die niet zo veraf blijkt, en leer je hoe technologie in verschillende klassen kan worden geïntegreerd.</p>",
+            "asMessage": true,
             "hideInput": true,
             "trigger": "option educatie options"
         },
@@ -184,8 +185,9 @@
         },
         {
             "id": "option games",
-            "message": "In de Unwrap Arena kan je de Vlaamse game-industrie ontdekken, meer leren over games van vroeger en nu en het zelfs opnemen tegen andere spelers in de esports arena.",
+            "component": "<p>In de <span class='event-title'>Unwrap Arena</span> kan je de Vlaamse game-industrie ontdekken, meer leren over games van vroeger en nu en het zelfs opnemen tegen andere spelers in de esports arena.</p>",
             "hideInput": true,
+            "asMessage": true,
             "trigger": "option games options"
         },
         {
@@ -206,8 +208,9 @@
         },
         {
             "id": "option films",
-            "message": "Tijdens het FTI festival worden verschillende films met een link met de game-industrie getoond op zaterdag, zondag en woensdag.",
+            "component": "<p>Tijdens het FTI festival worden verschillende <span class='event-title'>films</span> met een link met de game-industrie getoond op zaterdag, zondag en woensdag.</p>",
             "hideInput": true,
+            "asMessage": true,
             "trigger": "option films options"
         },
         {
@@ -228,8 +231,9 @@
         },
         {
             "id": "option kunst",
-            "message": "Ontdek een de toekomstgerichte installatie '(de) weg van de toekomst', gemaakt door Brusselse agency Hurea.",
+            "component": "<p>Ontdek een de toekomstgerichte installatie <span class='event-title'>'(de) weg van de toekomst'</span>, gemaakt door Brusselse agency Hurea.</p>",
             "hideInput": true,
+            "asMessage": true,
             "trigger": "option kunst options"
         },
         {
@@ -250,8 +254,9 @@
         },
         {
             "id": "option workshop",
-            "message": "Op woensdag worden er verschillende breakout sessions georganiseerd waar je meer kan leren over de technologie van morgen en hoe dit van toepassing kan zijn in het dagelijkse leven. Hiervoor heb je een gratis ticket nodig.",
+            "component": "<p>Op woensdag worden er verschillende <span class='event-title'>breakout sessions</span> georganiseerd waar je meer kan leren over de technologie van morgen en hoe dit van toepassing kan zijn in het dagelijkse leven. Hiervoor heb je een gratis ticket nodig.</p>",
             "hideInput": true,
+            "asMessage": true,
             "trigger": "option workshop options"
         },
         {

@@ -81,13 +81,13 @@
         },
         {
             "id": "conversation 2.0",
-            "message": "Hier is al een weetje over technologie in het onderwijs:",
+            "message": "Hier is al een weetje over technologie in het onderwijs.",
             "hideInput": true,
             "trigger": "conversation 2.1"
         },
         {
             "id": "conversation 2.1",
-            "message": "wist je dat kinderen nog altijd niet leren typen op school?",
+            "message": "Wist je dat kinderen nog altijd niet leren typen op school?",
             "hideInput": true,
             "trigger": "conversation 2.2"
         },
@@ -121,7 +121,7 @@
         },
         {
             "id": "conversation 4.0",
-            "message": "je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
+            "message": "Je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
             "hideInput": true,
             "trigger": {
                 "function": "addToLocalStorage",
