@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect, use } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 // import of the library
 import { ARView, ARAnchor } from "react-three-mind";
@@ -17,6 +17,9 @@ export default function ARFilter() {
 
     const [imageV, setImageV] = useState(null);
     const [imageF, setImageF] = useState(null);
+    const [isLoadingImg, setIsLoadingImg] = useState(false);
+
+    const [isLoadingFilter, setIsLoadingFilter] = useState(true);
 
     const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -26,6 +29,20 @@ export default function ARFilter() {
     if (typeof navigator !== 'undefined' && navigator.share) {
         canShare = true;
     }
+
+    // set a ref to the ar filter
+    const arFilterRef = useRef(null);
+    // set a ref to the image container
+    const imgContainerRef = useRef(null);
+
+
+    // no way to detect if the model is loaded, so setting a fake loading timeout
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoadingFilter(false);
+        }, 2000);
+    }, []);
+
 
     // useEffect(() => {
     //     if (arFilterRef.current) {
@@ -41,12 +58,10 @@ export default function ARFilter() {
     //     }
     // }, []);
 
-    // set a ref to the ar filter
-    const arFilterRef = useRef(null);
-    // set a ref to the image container
-    const imgContainerRef = useRef(null);
-
     const handleTakeImage = async () => {
+
+        setIsLoadingImg(true);
+
         const ARView = document.getElementById('ARView');
 
         // Get the video and filter elements
@@ -59,10 +74,9 @@ export default function ARFilter() {
         const canvasF = await html2canvas(filter, { backgroundColor: null });
         const dataF = canvasF.toDataURL('image/jpg');
 
+        setIsLoadingImg(false);
         setImageV(dataV);
         setImageF(dataF);
-
-        arFilterRef.current.stopTracking();
     };
 
     const handleImageDownload = async () => {
@@ -118,7 +132,6 @@ export default function ARFilter() {
         }
         setFlipCamera(!flipCamera);
 
-
         arFilterRef.current.startTracking();
     };
 
@@ -128,12 +141,19 @@ export default function ARFilter() {
     return (
         <div className={styles.ARfilter}>
 
+
+
             <div className={`${styles.confirmation} ${showConfirmation ? styles.confirmationVisible : styles.confirmationHidden}`}>
                 Foto opgeslagen!
             </div>
 
             <div className={`container margin ` + styles.container}>
                 <div className={`${styles.interface} ${styles.gridElement}`} >
+                    {isLoadingImg || isLoadingFilter ? (
+                        <div className={styles.loader}>
+                            <div className={styles.ldsEllipsis}><div></div><div></div><div></div><div></div></div>
+                        </div>
+                    ) : null}
                     <div>
                         {imageV && imageF &&
 
@@ -147,7 +167,7 @@ export default function ARFilter() {
                         }
                     </div>
                     <div className={styles.interfaceBottom}>
-                        {!imageV && !imageF &&
+                        {!imageV && !imageF && !isLoadingImg && !isLoadingFilter &&
                             <div className={styles.takePhoto}>
                                 <button type="button" onClick={handleTakeImage} className={styles.cameraButton}></button>
                                 <button type="button" onClick={handleSwitch} className={styles.switchCamera}>
@@ -185,11 +205,12 @@ export default function ARFilter() {
                 </div>
                 <ARView
                     // turn on preserveDrawingBuffer to be able to take a screenshot
-                    flipUserCamera={false}
-                    gl={{ preserveDrawingBuffer: true }}
+                    style={{ width: "100vw", height: "100vh", zIndex: "-1", gridColumn: "1", gridRow: "1", transform: "scaleX(-1)" }}
                     id="ARView"
                     ref={arFilterRef}
-                    style={{ width: "100vw", height: "100vh", zIndex: "-1", gridColumn: "1", gridRow: "1", transform: "scaleX(-1)" }}
+
+                    gl={{ preserveDrawingBuffer: true }}
+                    flipUserCamera={false}
                 >
                     <ARAnchor
                         // target is point on the facemesh the model will be attached to
