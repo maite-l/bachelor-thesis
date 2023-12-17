@@ -13,7 +13,28 @@ import html2canvas from 'html2canvas';
 import styles from './ARFilter.module.css';
 
 
-export default function ARFilter() {
+export default function ARFilter({ allBadges }) {
+
+    const [collectedBadgeValues, setCollectedBadgeValues] = useState([]);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const badgesArray = JSON.parse(localStorage.getItem('collected'));
+            setCollectedBadgeValues(badgesArray);
+        }
+    }, []);
+
+    let collectedBadgesAmount = 0;
+    if (collectedBadgeValues) { collectedBadgesAmount = collectedBadgeValues.length }
+    const uncollectedBadgesAmount = allBadges.length - collectedBadgesAmount;
+
+    let filteredBadges = [];
+    if (collectedBadgeValues) {
+        filteredBadges = allBadges.filter(badge => {
+            return collectedBadgeValues.includes(badge.slug);
+        });
+    }
+
 
     const [imageV, setImageV] = useState(null);
     const [imageF, setImageF] = useState(null);
@@ -141,8 +162,6 @@ export default function ARFilter() {
     return (
         <div className={styles.ARfilter}>
 
-
-
             <div className={`${styles.confirmation} ${showConfirmation ? styles.confirmationVisible : styles.confirmationHidden}`}>
                 Foto opgeslagen!
             </div>
@@ -156,14 +175,32 @@ export default function ARFilter() {
                     ) : null}
                     <div>
                         {imageV && imageF &&
-
                             <button type="button" onClick={handleNew} className={styles.buttonSecondary}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
                                     <path d="M0.723312 3.00954V3.00986V7.36423C0.723312 7.54203 0.791954 7.71223 0.913633 7.83747C1.03526 7.96265 1.19986 8.03266 1.37113 8.03266H5.60179H5.60184C5.72966 8.03277 5.85479 7.99384 5.96138 7.92061C6.06799 7.84736 6.15133 7.74303 6.2006 7.62063C6.24988 7.49822 6.26279 7.36342 6.23763 7.23337C6.21247 7.10332 6.15042 6.9841 6.05959 6.89072L6.05957 6.8907L4.56121 5.34853L4.52065 5.30678L4.56303 5.26689L5.49239 4.39195L5.51311 4.37149C5.51325 4.37135 5.51338 4.37122 5.51351 4.37108C6.50134 3.35491 7.75836 2.6606 9.12768 2.37514C10.4972 2.08964 11.9181 2.22581 13.2127 2.76658C14.5074 3.30735 15.6182 4.22864 16.4067 5.41511C17.1952 6.60157 17.6265 8.00068 17.6468 9.43767C17.6671 10.8747 17.2756 12.2861 16.521 13.4956C15.7663 14.7052 14.682 15.6593 13.4032 16.2386C12.1244 16.8179 10.708 16.9966 9.331 16.7522C7.954 16.5078 6.67771 15.8513 5.66148 14.8649L5.66142 14.8648C5.59952 14.8046 5.52678 14.7575 5.44739 14.7263C5.36801 14.6951 5.28349 14.6803 5.19863 14.6828C5.11378 14.6852 5.03017 14.7048 4.95258 14.7405C4.87498 14.7762 4.80486 14.8274 4.74628 14.8911C4.6877 14.9549 4.64181 15.03 4.61131 15.1122C4.58081 15.1943 4.56632 15.2819 4.56871 15.37C4.57109 15.458 4.59029 15.5446 4.62517 15.6249C4.66006 15.7052 4.70991 15.7775 4.77182 15.8378L4.77185 15.8378C6.3291 17.3555 8.39343 18.1986 10.5374 18.1928H10.5376H10.6535C12.0294 18.1734 13.3798 17.8064 14.5859 17.124C15.7921 16.4416 16.8171 15.4645 17.5707 14.2786C18.3244 13.0927 18.7836 11.7342 18.9078 10.3227C19.032 8.91112 18.8174 7.48982 18.283 6.18372C17.7485 4.87762 16.9106 3.72681 15.843 2.83233C14.7755 1.93787 13.5109 1.3271 12.1606 1.05357C10.8102 0.780032 9.41529 0.85207 8.09829 1.26337C6.78128 1.67468 5.58243 2.4127 4.60718 3.41273L4.60721 3.41276L4.60544 3.41444L3.64208 4.32159L3.60098 4.3603L3.56167 4.31977L1.82888 2.53268C1.73797 2.43901 1.62226 2.37546 1.49654 2.34986C1.37084 2.32427 1.24056 2.3377 1.12219 2.38854C1.00381 2.43938 0.902512 2.52543 0.831383 2.636C0.760241 2.74658 0.722561 2.87661 0.723312 3.00954Z" fill="#FBF3ED" stroke="#FBF3ED" strokeWidth="0.114583" />
                                 </svg>
                                 Opnieuw
                             </button>
-
+                        }
+                        {!imageV && !imageF && !isLoadingImg && !isLoadingFilter &&
+                            <div className={styles.badges}>
+                                {filteredBadges.map((badge, index) => (
+                                    <div key={index} className={styles.badge}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none" className={styles.border}>
+                                            <path d="M58.9622 67.5H20.0378L0.578235 34.0008L20.0378 0.5H58.9622L78.4218 34.0008L58.9622 67.5Z" stroke="#F27361" strokeWidth="4" strokeMiterlimit="10" />
+                                        </svg>
+                                        <img src={'images/badges/' + badge.slug + '.svg'} alt={badge.title} />
+                                    </div>
+                                ))}
+                                {Array.from({ length: uncollectedBadgesAmount }, (_, index) => (
+                                    <div key={index} className={`${styles.badge}`}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="#FBF3ED">
+                                            <path d="M58.9622 67.5H20.0378L0.578235 34.0008L20.0378 0.5H58.9622L78.4218 34.0008L58.9622 67.5Z" stroke="#6E33D5" strokeMiterlimit="10" />
+                                        </svg>
+                                        <p>?</p>
+                                    </div>
+                                ))}
+                            </div>
                         }
                     </div>
                     <div className={styles.interfaceBottom}>
@@ -225,7 +262,7 @@ export default function ARFilter() {
 
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
-                            <Model scale={[4, 4, 4]} position={[0, 0.05, 0]} rotation={[Math.PI / 25, 0, 0]} />
+                            <Model scale={[4, 4, 4]} position={[0, 0.05, 0]} rotation={[Math.PI / 25, 0, 0]} showBudafabriek={true} />
                             {/* <HeadOccluder /> */}
                             {/* <mesh position={[0, 0.1, -0.6]}>
                                 <boxGeometry attach="geometry" args={[0.8, 0.8, 0.8]} />

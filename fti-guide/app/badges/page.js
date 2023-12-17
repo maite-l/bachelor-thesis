@@ -18,7 +18,7 @@ export default function BadgesPage() {
 
       <p className={'title margin ' + styles.filterTitle}>Deel je Badges met stijl met coole <em>gezichtsfilters!</em></p>
 
-      <ARFilterNoSSR />
+      <ARFilterNoSSR allBadges={allBadges} />
     </main>
   )
 }
