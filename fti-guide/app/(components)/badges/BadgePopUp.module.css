@@ -42,6 +42,12 @@
     width: 40vw;
     min-height: 12.7rem;
     height: 40vw;
+    display: grid;
+    place-items: center;
+}
+.badgeContainer img {
+    width: 90%;
+    height: auto;
 }
 
 .congrats {

@@ -1,5 +1,6 @@
 import styles from './BadgePopUp.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function BadgePopUp({ badge, onClose }) {
 
@@ -16,6 +17,7 @@ export default function BadgePopUp({ badge, onClose }) {
                     <p className={'title ' + styles.name}>{badge.name}</p>
                     <div className={styles.badgeBackground}>
                         <div className={styles.badgeContainer}>
+                            <Image src={`/images/badges/` + badge.slug + `.svg`} alt={badge.name} width={71} height={61} />
                         </div>
                     </div>
                     <Link href="/badges" className={styles.primaryButton}>Bekijk nieuwe badge</Link>

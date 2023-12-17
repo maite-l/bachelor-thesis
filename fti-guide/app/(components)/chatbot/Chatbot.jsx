@@ -5,11 +5,13 @@ import { ThemeProvider } from 'styled-components';
 import { useEffect, useState } from 'react';
 import ChatbotHeader from './ChatbotHeader';
 import BadgePopUp from '../badges/BadgePopUp';
-
-
-
+import styles from './Chatbot.module.css';
 
 export default function Chatbot({ steps, slug, characterData, badge }) {
+
+    if (slug === undefined) {   
+        slug = "navigatie";
+    }
 
     const [chatSteps, setChatSteps] = useState([{
         "id": "placeholder",
@@ -68,7 +70,9 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
                 return rest;
             }));
 
-            setLoading(false);
+            setTimeout(() => {
+                setLoading(false);
+            }, 3500);
         }
     }, [slug]);
 
@@ -92,8 +96,9 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
                     <BadgePopUp badge={badge} onClose={() => setShowBadge(false)} />
                 </div>
             )}
-            <ThemeProvider theme={theme}>
-                {!loading && (
+            {!loading ? (
+                <ThemeProvider theme={theme}>
+
                     <ChatBot
                         headerComponent={<ChatbotHeader data={characterData} slug={slug} />}
                         hideBotAvatar="true"
@@ -159,8 +164,18 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
                             }
                         }}
                     />
-                )}
-            </ThemeProvider>
+                </ThemeProvider>
+            ) : (
+                <div className={styles.loading}>
+                    <div className={styles.content}>
+                        <img src={`/images/loading/` + slug + `.gif`} alt="" />
+                        <p>RoBob wordt opgeroepen!</p>
+                        <div className={styles.loader}>
+                            <div className={styles.ldsEllipsis}><div></div><div></div><div></div><div></div></div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
 
     )

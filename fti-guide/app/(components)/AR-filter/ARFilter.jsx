@@ -35,6 +35,7 @@ export default function ARFilter({ allBadges }) {
         });
     }
 
+    const [selectedBadges, setSelectedBadges] = useState([]);
 
     const [imageV, setImageV] = useState(null);
     const [imageF, setImageF] = useState(null);
@@ -78,6 +79,16 @@ export default function ARFilter({ allBadges }) {
     //         }
     //     }
     // }, []);
+
+    const handleBadgeClick = (badgeSlug) => {
+        if (selectedBadges.includes(badgeSlug)) {
+            // Badge is already selected, remove it
+            setSelectedBadges(selectedBadges.filter(slug => slug !== badgeSlug));
+        } else {
+            // Badge is not selected, add it
+            setSelectedBadges([...selectedBadges, badgeSlug]);
+        }
+    };
 
     const handleTakeImage = async () => {
 
@@ -185,10 +196,12 @@ export default function ARFilter({ allBadges }) {
                         {!imageV && !imageF && !isLoadingImg && !isLoadingFilter &&
                             <div className={styles.badges}>
                                 {filteredBadges.map((badge, index) => (
-                                    <div key={index} className={styles.badge}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none" className={styles.border}>
-                                            <path d="M58.9622 67.5H20.0378L0.578235 34.0008L20.0378 0.5H58.9622L78.4218 34.0008L58.9622 67.5Z" stroke="#F27361" strokeWidth="4" strokeMiterlimit="10" />
-                                        </svg>
+                                    <div key={index} className={styles.badge} onClick={() => handleBadgeClick(badge.slug)}>
+                                        {selectedBadges.includes(badge.slug) ? (
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="79" height="68" viewBox="0 0 79 68" fill="none" className={styles.border}>
+                                                <path d="M58.9622 67.5H20.0378L0.578235 34.0008L20.0378 0.5H58.9622L78.4218 34.0008L58.9622 67.5Z" stroke="#F27361" strokeWidth="4" strokeMiterlimit="10" />
+                                            </svg>
+                                        ) : null}
                                         <img src={'images/badges/' + badge.slug + '.svg'} alt={badge.title} />
                                     </div>
                                 ))}
@@ -262,7 +275,7 @@ export default function ARFilter({ allBadges }) {
 
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
-                            <Model scale={[4, 4, 4]} position={[0, 0.05, 0]} rotation={[Math.PI / 25, 0, 0]} showBudafabriek={true} />
+                            <Model scale={[4, 4, 4]} position={[0, 0.05, 0]} rotation={[Math.PI / 25, 0, 0]} selectedBadges={selectedBadges} />
                             {/* <HeadOccluder /> */}
                             {/* <mesh position={[0, 0.1, -0.6]}>
                                 <boxGeometry attach="geometry" args={[0.8, 0.8, 0.8]} />
