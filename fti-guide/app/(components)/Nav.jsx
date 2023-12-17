@@ -13,9 +13,9 @@ export default function Nav() {
                     </svg>
                     Home
                 </Link></li>
-                <li><Link href="/badges" className={`${pathname === '/badges' ? styles.active : ''} ${styles.navListItem}`}>
+                <li><Link href="/badges" className={`${pathname.startsWith('/badges') ? styles.active : ''} ${styles.navListItem}`}>
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 22.3683L8.49371 25.9759L7.32556 20.271L1.58991 20.0935L4.30617 14.9606L0.0249023 11.0809L5.35497 8.922L4.53114 3.15552L9.98083 4.98062L13 0.0254669L16.0193 4.98062L21.469 3.15552L20.6452 8.922L25.9753 11.0809L21.6937 14.9606L24.4103 20.0935L18.6746 20.271L17.5062 25.9759L13 22.3683Z" fill={pathname === '/badges' ? "#F27361" : "#6E33D5"} />
+                        <path d="M13 22.3683L8.49371 25.9759L7.32556 20.271L1.58991 20.0935L4.30617 14.9606L0.0249023 11.0809L5.35497 8.922L4.53114 3.15552L9.98083 4.98062L13 0.0254669L16.0193 4.98062L21.469 3.15552L20.6452 8.922L25.9753 11.0809L21.6937 14.9606L24.4103 20.0935L18.6746 20.271L17.5062 25.9759L13 22.3683Z" fill={pathname.startsWith('/badges') ? "#F27361" : "#6E33D5"} />
                     </svg>
                     Badges
                 </Link></li>

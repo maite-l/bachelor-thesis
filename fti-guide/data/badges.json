@@ -5,7 +5,7 @@
         "character": "RoBob de Gamer",
         "location": "Budafabriek",
         "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1snl!2sbe!4v1702540963311!5m2!1snl!2sbe",
-        "description": "Over de jaren heen hebben games zich ontwikkeld tot <em>meeslepende avonturen</em> met Hollywood-waardige verhalen. Het is als het verschil tussen een 8-bit melodie en een epische filmsoundtrack voor je oren én ogen!",
+        "description": "Wist je dat de <em>eerste game ooit</em> gemaakt werd in 1958? Het was een simpele tennis game. Het lijkt heel hard op de bekende oude game 'Pong'!",
         "world": "gamewereld"
     },
     {
@@ -14,7 +14,7 @@
         "character": "RoBob de Dromer",
         "location": "Leieboorden",
         "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0710338762688!2d3.2634894764486235!3d50.82984815997415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33b1d48fb6e03%3A0x49856de4c953a314!2sLeieboorden%20-%20Broelkaai%20%26%20Verzetskaai!5e0!3m2!1snl!2sbe!4v1702541167701!5m2!1snl!2sbe",
-        "description": "Over de jaren heen hebben games zich ontwikkeld tot meeslepende avonturen met Hollywood-waardige verhalen. Het is als het verschil tussen een 8-bit melodie en een epische filmsoundtrack voor je oren én ogen!",
+        "description": "Wist je dat (de) 'weg van de toekomst' is gemaakt door <em>Hurae</em>? Hurae is een Brusselse agency die al werkte voor onder andere UGent en VRT.",
         "world": "kunstwereld"
     },
     {
@@ -23,7 +23,7 @@
         "character": "RoBob de Filmfanaat",
         "location": "Budascoop",
         "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1260.0158609532045!2d3.263481682033209!3d50.83057633713478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2ddf66129%3A0x614bace16222e0c9!2sKunstencentrum%20BUDA%20%7C%20Budascoop!5e0!3m2!1snl!2sbe!4v1702541080009!5m2!1snl!2sbe",
-        "description": "Over de jaren heen hebben games zich ontwikkeld tot meeslepende avonturen met Hollywood-waardige verhalen. Het is als het verschil tussen een 8-bit melodie en een epische filmsoundtrack voor je oren én ogen!",
+        "description": "<em>Unreal Engine</em>, oorspronkelijk ontwikkeld voor games, wordt vaker en vaker bij het maken van films en series om visuele effecten en virtuele sets te maken. Misschien zag je de serie 'The Mandalorian'. Hier hebben per aflevering een aantal scenes een virtuele achtergrond, gemaakt in deze tool om games te maken!",
         "world": "filmwereld"
     },
     {
@@ -32,7 +32,7 @@
         "character": "RoBob de Inspirer",
         "location": "Budatoren",
         "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0181860870334!2d3.26212737644866!3d50.83082705990341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2cafc8e75%3A0xb460b9986b084352!2sBudatoren!5e0!3m2!1snl!2sbe!4v1702541229966!5m2!1snl!2sbe",
-        "description": "Over de jaren heen hebben games zich ontwikkeld tot meeslepende avonturen met Hollywood-waardige verhalen. Het is als het verschil tussen een 8-bit melodie en een epische filmsoundtrack voor je oren én ogen!",
+        "description": "Wist je dat je waarschijnlijk <em>al veel langer dan je denkt artificiële intelligentie gebruikt</em>? Een populair voorbeeld is Google Translate, dat al sinds 2016 AI gebruikt voor betere vertalingen. Misschien wist je toen zelfs nog niet wat AI was.",
         "world": "breakoutwereld"
     },
     {
@@ -41,7 +41,7 @@
         "character": "RoBob de Student",
         "location": "Broelkaai 6",
         "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0267106703764!2d3.2634136764487!3d50.83066915991469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2b7e3a531%3A0x356fa0ed0c08d1ad!2sBroelkaai%206%2C%208500%20Kortrijk!5e0!3m2!1snl!2sbe!4v1702541298094!5m2!1snl!2sbe",
-        "description": "Over de jaren heen hebben games zich ontwikkeld tot meeslepende avonturen met Hollywood-waardige verhalen. Het is als het verschil tussen een 8-bit melodie en een epische filmsoundtrack voor je oren én ogen!",
+        "description": "Wist je dat <em>kinderen nog altijd niet leren typen op school</em>? Hoewel dit de dag van vandaag dikwijls een cruciale vaardigheid is, is dit nog altijd een betaalde cursus buiten de lesuren op de meeste scholen.",
         "world": "educatiewereld"
     }
 ]
