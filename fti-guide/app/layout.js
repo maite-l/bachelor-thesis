@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+
         <title>RoBob - Jouw gids op FTI Kortrijk</title>
       </head>
       <body className={`${Lausanne.className} ${GTSuper.variable}`}>
