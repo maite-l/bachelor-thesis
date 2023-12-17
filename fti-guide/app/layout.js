@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="2fe7b9dfb30166a88281cf320b1b3c46.ico/manifest.json"></link>
         <meta name="msapplication-TileColor" content="#ffffff"></meta>
         <meta name="msapplication-TileImage" content="2fe7b9dfb30166a88281cf320b1b3c46.ico/ms-icon-144x144.png"></meta>
-        <meta name="theme-color" content="#ffffff"></meta>
+        <meta name="theme-color" content="#F27361"></meta>
         <title>RoBob - Jouw gids op FTI Kortrijk</title>
       </head>
       <body className={`${Lausanne.className} ${GTSuper.variable}`}>
