@@ -3,45 +3,22 @@
         "location": "budafabriek",
         "events": [
             {
-                "name": "het Gamer Toernooi",
-                "startTime": "2023-12-09T10:00:00",
-                "endTime": "2023-12-09T24:00:00",
-                "location": "Atelier 1"
+                "name": "de Bachelorproef Jury",
+                "startTime": "2023-12-17T09:00:00",
+                "endTime": "2023-12-17T18:00:00",
+                "location": "Aterlier 3"
             },
             {
-                "name": "het Gamer Toernooi 2",
-                "startTime": "2023-11-28T16:00:00",
-                "endTime": "2023-11-27T18:00:00",
-                "location": "Atelier 2"
+                "name": "de Retrodag",
+                "startTime": "2023-12-17T18:00:00",
+                "endTime": "2023-12-17T23:30:00",
+                "location": "de e-sports arena"
             },
             {
-                "name": "Iets anders",
-                "startTime": "2023-11-29T16:00:00",
-                "endTime": "2023-11-29T18:00:00",
-                "location": "Nog ergens anders"
-            }
-        ]
-    },
-    {
-        "location": "budascoop",
-        "events": [
-            {
-                "name": "het Gamer Toernooi",
-                "startTime": "2023-12-09T10:00:00",
-                "endTime": "2023-12-09T24:00:00",
-                "location": "Atelier 1"
-            },
-            {
-                "name": "het Gamer Toernooi 2",
-                "startTime": "2023-11-28T16:00:00",
-                "endTime": "2023-11-27T18:00:00",
-                "location": "Atelier 2"
-            },
-            {
-                "name": "Iets anders",
-                "startTime": "2023-11-29T16:00:00",
-                "endTime": "2023-11-29T18:00:00",
-                "location": "Nog ergens anders"
+                "name": "de Vlaamse topgame-dag",
+                "startTime": "2024-03-17T10:00:00",
+                "endTime": "2024-03-17T18:00:00",
+                "location": "de e-sports arena"
             }
         ]
     }

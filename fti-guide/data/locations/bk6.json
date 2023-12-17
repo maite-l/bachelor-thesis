@@ -164,7 +164,7 @@
                 },
                 {
                     "value": 3,
-                    "label": "Is er vandaag een event?",
+                    "label": "Is er hier vandaag iets speciaals te doen?",
                     "trigger": "option events 1"
                 }
             ],
@@ -223,7 +223,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje",
+                    "label": "Vertel eens een leuk weetje over technologie in het onderwijs",
                     "trigger": "option fact 1"
                 },
                 {
@@ -233,7 +233,7 @@
                 },
                 {
                     "value": 3,
-                    "label": "Zijn er hier bepaalde events?",
+                    "label": "Is er hier vandaag iets speciaals te doen?",
                     "trigger": "option events 1"
                 },
                 {

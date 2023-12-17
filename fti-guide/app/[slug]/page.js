@@ -30,7 +30,9 @@ const createMessage = (events) => {
     // get all events that are happening later today
     const todayEvents = events.filter(event => {
         const startTime = new Date(event.startTime);
-        return startTime.getDate() === now.getDate() && startTime >= now;
+        const startDate = (startTime.getFullYear()) + "/" + (startTime.getMonth() + 1) + "/" + (startTime.getDate());
+        const nowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + (now.getDate());
+        return startDate === nowDate && startTime >= now;
     });
 
     // add text to message based on the amount of current events
