@@ -179,7 +179,7 @@ export default function ARFilter({ allBadges }) {
                 >
                     <ARAnchor
                         // target is point on the facemesh the model will be attached to
-                        target={1}
+                        target={5}
                     >
                         {/* light */}
                         <ambientLight intensity={1.5} />
