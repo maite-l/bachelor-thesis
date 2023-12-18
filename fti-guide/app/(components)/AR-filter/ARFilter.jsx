@@ -191,7 +191,7 @@ export default function ARFilter({ allBadges }) {
                         {/* model */}
                         <group scale={[scale, scale, scale]} position={[0, 0, offset]}>
                             <Model scale={[4, 4, 4]} position={[0, 0.05, 0]} rotation={[Math.PI / 25, 0, 0]} selectedBadges={selectedBadges} />
-                            <HeadOccluder />
+                            {/* <HeadOccluder /> */}
                         </group>
 
                     </ARAnchor>

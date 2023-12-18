@@ -5,8 +5,8 @@
 </mask>
 <g mask="url(#mask0_1099_474)">
 <path d="M44.5344 21.6409L28.6524 28.3593L28.7253 34.0018L11.6404 42.7965L64.3748 60.7269L72.7846 55.8908L29.6074 41.442L38.5172 36.9178V31.2855L61.3378 20.4701L13.5606 5.15381L7.33643 9.49719L44.5344 21.6409Z" fill="#F27361" stroke="#FBF5ED" stroke-width="0.729" stroke-miterlimit="10"/>
-<path d="M28.8433 28.4803L38.6439 31.2214" stroke="#FBF5ED" stroke-width="0.729" stroke-miterlimit="10"/>
-<path d="M38.7506 36.8828L28.6948 33.6694" stroke="#FBF5ED" stroke-width="0.729" stroke-miterlimit="10"/>
+<path d="M28.8433 28.4803L38.6439 31.2214" stroke="#FBF5ED" stroke-width="0.6" stroke-miterlimit="10"/>
+<path d="M38.7506 36.8828L28.6948 33.6694" stroke="#FBF5ED" stroke-width="0.6" stroke-miterlimit="10"/>
 </g>
 <path d="M18.7672 62.5495L1 31.774L18.7672 1H54.303L72.0702 31.774L54.303 62.5495H18.7672Z" stroke="#6E33D5" stroke-miterlimit="10"/>
 </svg>
