@@ -20,7 +20,7 @@ export default function BadgeDetailCharacter({ badgeData, description }) {
                 <Media at="mobile">
                     <div className={styles.mobileContainer}>
                         <div className={styles.characterImageContainer}>
-                            <Image src={`/images/robob_` + badgeData.slug + `.svg`} alt={badgeData.character} width={130} height={160} />
+                            <Image src={`/images/talking/` + badgeData.slug + `.gif`} alt={badgeData.character} width={130} height={160} />
                         </div>
 
                         <div className={styles.descriptionBackground}>
@@ -48,7 +48,7 @@ export default function BadgeDetailCharacter({ badgeData, description }) {
                         </div>
 
                         <div className={styles.characterImageContainer}>
-                            <Image src={`/images/robob_` + badgeData.slug + `.svg`} alt={badgeData.character} width={130} height={160} />
+                            <Image src={`/images/talking/` + badgeData.slug + `.gif`} alt={badgeData.character} width={130} height={160} />
                         </div>
                     </div>
 

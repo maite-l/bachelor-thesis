@@ -42,10 +42,10 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="96x96" href="2fe7b9dfb30166a88281cf320b1b3c46.ico/favicon-96x96.png"></link>
         <link rel="icon" type="image/png" sizes="16x16" href="2fe7b9dfb30166a88281cf320b1b3c46.ico/favicon-16x16.png"></link>
         <link rel="manifest" href="2fe7b9dfb30166a88281cf320b1b3c46.ico/manifest.json"></link>
-        <meta name="msapplication-TileColor" content="#ffffff"></meta>
+        <meta name="msapplication-TileColor" content="#F27361"></meta>
         <meta name="msapplication-TileImage" content="2fe7b9dfb30166a88281cf320b1b3c46.ico/ms-icon-144x144.png"></meta>
         <meta name="theme-color" content="#F27361"></meta>
-        <title>RoBob - Jouw gids op FTI Kortrijk</title>
+        <title>RoBob - Jouw Gids op FTI Kortrijk</title>
       </head>
       <body className={`${Lausanne.className} ${GTSuper.variable}`}>
         <MediaContextProvider>

@@ -9,7 +9,7 @@
     --spacing: clamp(0.9rem, 4vw, 1.5rem);
     --font-size--xsmall: clamp(0.8rem, 3vw, 0.9rem);
     --font-size--small: 1rem;
-    --font-size--big: clamp(1.5rem, 4vw, 1.75rem);
+    --font-size--big: clamp(1.2rem, 4vw, 1.75rem);
 }
 
 html {

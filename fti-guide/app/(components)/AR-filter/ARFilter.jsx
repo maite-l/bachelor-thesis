@@ -134,8 +134,6 @@ export default function ARFilter({ allBadges }) {
     return (
         <div className={styles.ARfilter}>
 
-            <PhotoTakenInterface />
-
             <div className={`${styles.confirmation} ${showConfirmation ? styles.confirmationVisible : styles.confirmationHidden}`}>
                 Foto opgeslagen!
             </div>

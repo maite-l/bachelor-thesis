@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import ChatbotHeader from './ChatbotHeader';
 import BadgePopUp from '../badges/BadgePopUp';
 import styles from './Chatbot.module.css';
+import Image from 'next/image';
 
 export default function Chatbot({ steps, slug, characterData, badge }) {
 
@@ -168,7 +169,7 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
             ) : (
                 <div className={styles.loading}>
                     <div className={styles.content}>
-                        <img src={`/images/loading/` + slug + `.gif`} alt="" />
+                        <Image src={`/images/loading/` + slug + `.gif`} alt={slug} width={800} height={800} />
                         <p>RoBob wordt opgeroepen!</p>
                         <div className={styles.loader}>
                             <div className={styles.ldsEllipsis}><div></div><div></div><div></div><div></div></div>

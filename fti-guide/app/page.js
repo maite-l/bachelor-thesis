@@ -37,7 +37,7 @@ export default function Home() {
 
       <section className={'margin ' + styles.navigation}>
         <div className={styles.content}>
-          <Image src="/images/home/navBob.svg" alt="Navigatie RoBob" width={155} height={206} className={styles.img} />
+          <Image src="/images/talking/navigatie.gif" alt="Navigatie RoBob" width={155} height={206} className={styles.img} />
           <div className={styles.text}>
             <h2 className={'title '}>Laat RoBob je helpen met <em>ontdekken!</em></h2>
             <p>
