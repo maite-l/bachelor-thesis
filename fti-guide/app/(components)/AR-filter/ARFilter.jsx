@@ -128,7 +128,7 @@ export default function ARFilter({ allBadges }) {
         arFilterRef.current.startTracking();
     };
 
-    let scale = 1;
+    let scale = 1.5;
     let offset = 0;
 
     return (
