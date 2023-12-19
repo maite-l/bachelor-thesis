@@ -27,7 +27,7 @@
 
 .chatbotName {
     font-family: var(--font-gt-super);
-    font-size: var(--font-size--big);
+    font-size: clamp(1.3rem, 4vw, 1.75rem);
     margin-bottom: 0.3rem;
 }
 
