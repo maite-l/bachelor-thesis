@@ -146,7 +146,8 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
                             fontSize: 'var(--font-size--xsmall)',
                             padding: '18px',
                             fontFamily: 'var(--font-lausanne)',
-                            maxWidth: 'clamp(10.5rem, 40vw, 14rem)',
+                            width: '100%',
+                            height: '100%',
                             lineHeight: '1.5',
                         }}
                         bubbleStyle={{
@@ -183,7 +184,7 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
             ) : (
                 <div className={styles.loading}>
                     <div className={styles.content}>
-                        <Image src={`/images/loading/` + slug + `.gif`} alt={slug} width={800} height={800} />
+                        <Image src={`/images/loading/` + slug + `.gif`} alt={slug} width={800} height={800} priority={true} />
                         <p>RoBob wordt opgeroepen!</p>
                         <div className={styles.loader}>
                             <div className={styles.ldsEllipsis}><div></div><div></div><div></div><div></div></div>

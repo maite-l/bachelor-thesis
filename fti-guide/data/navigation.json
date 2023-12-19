@@ -53,14 +53,14 @@
                     "trigger": "location breakout"
                 },
                 {
-                    "value": 4,
-                    "label": "(de) weg van de toekomst",
-                    "trigger": "location paden"
-                },
-                {
                     "value": 5,
                     "label": "Films",
                     "trigger": "location films"
+                },
+                {
+                    "value": 4,
+                    "label": "(de) weg van de toekomst",
+                    "trigger": "location paden"
                 }
             ],
             "hideInput": true
@@ -99,14 +99,14 @@
             "id": "end options",
             "options": [
                 {
-                    "value": 1,
-                    "label": "Bedankt!",
-                    "trigger": "thanks"
-                },
-                {
                     "value": 2,
                     "label": "Ik zoek nog een ander evenement.",
                     "trigger": "opening 2"
+                },
+                {
+                    "value": 1,
+                    "label": "Bedankt!",
+                    "trigger": "thanks"
                 }
             ],
             "hideInput": true
@@ -138,6 +138,11 @@
                     "trigger": "option educatie"
                 },
                 {
+                    "value": 5,
+                    "label": "Films",
+                    "trigger": "option films"
+                },
+                {
                     "value": 2,
                     "label": "Games en alles daarrond",
                     "trigger": "option games"
@@ -151,11 +156,6 @@
                     "value": 4,
                     "label": "Workshops over de tech van morgen",
                     "trigger": "option workshop"
-                },
-                {
-                    "value": 5,
-                    "label": "Films",
-                    "trigger": "option films"
                 }
             ],
             "hideInput": true
