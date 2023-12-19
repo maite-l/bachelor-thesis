@@ -1,8 +1,8 @@
 'use client';
 
-import styles from './BadgeDetailTopBar.module.css';
+import styles from './TopBar.module.css';
 import Link from 'next/link';
-import MapPopUp from './badges/MapPopUp';
+import MapPopUp from './MapPopUp';
 import { useState } from 'react';
 
 export default function BadgeDetailTopBar({ location, link }) {

@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './BadgeDetailBadge.module.css';
+import styles from './BadgeInfo.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { createMedia } from "@artsy/fresnel";

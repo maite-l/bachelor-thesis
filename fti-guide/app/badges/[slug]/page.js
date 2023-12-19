@@ -2,9 +2,9 @@ import { getAllBadges, getBadgeData } from "../../../lib/data";
 import React from "react";
 import styles from './page.module.css';
 import BadgeCollection from "../../../app/(components)/badges/BadgeCollection";
-import BadgeDetailTopBar from "../../../app/(components)/BadgeDetailTopBar";
-import BadgeDetailBadge from "../../../app/(components)/BadgeDetailBadge";
-import BadgeDetailCharacter from "../../../app/(components)/BadgeDetailCharacter";
+import BadgeDetailTopBar from "../../(components)/badge-detail/TopBar";
+import BadgeDetailBadge from "../../(components)/badge-detail/BadgeInfo";
+import BadgeDetailCharacter from "../../(components)/badge-detail/Character";
 
 
 // generate all possible paths for this route
