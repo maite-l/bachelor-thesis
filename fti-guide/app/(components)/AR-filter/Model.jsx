@@ -637,15 +637,6 @@ function BudafabriekBadge({ selectedBadges, nodes, materials }) {
                         receiveShadow
                         geometry={nodes.Curve750.geometry}
                         material={materials.purple}
-                        position={[0.13, 0.15, 0.008]}
-                        rotation={[1.574, -0.003, -0.698]}
-                        scale={0.491}
-                    />
-                    <mesh
-                        castShadow
-                        receiveShadow
-                        geometry={nodes.Curve750.geometry}
-                        material={materials.purple}
                         position={[-0.13, 0.15, 0.008]}
                         rotation={[-1.568, -0.003, -0.698]}
                         scale={-0.491}

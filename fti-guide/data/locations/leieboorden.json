@@ -165,6 +165,11 @@
                     "value": 3,
                     "label": "Is er hier vandaag iets speciaals te doen?",
                     "trigger": "option events 1"
+                },
+                {
+                    "value": "badge",
+                    "label": "Hoe krijg ik een badge van jou?",
+                    "trigger": "option badge 1"
                 }
             ],
             "hideInput": true
@@ -206,6 +211,28 @@
             "trigger": "new question"
         },
         {
+            "id": "option badge 1",
+            "message": "Een badge kan je verdienen door mij te doen vertellen over deze interessante locatie!",
+            "hideInput": true,
+            "trigger": "option badge options"
+        },
+        {
+            "id": "option badge options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Ok, vertel maar!",
+                    "trigger": "conversation 1.0"
+                },
+                {
+                    "value": 2,
+                    "label": "Mischien later.",
+                    "trigger": "new question"
+                }
+            ],
+            "hideInput": true
+        },
+        {
             "id": "new question",
             "message": "Wil je nog iets weten?",
             "hideInput": true,
@@ -228,6 +255,11 @@
                     "value": 3,
                     "label": "Is er hier vandaag iets speciaals te doen?",
                     "trigger": "option events 1"
+                },
+                {
+                    "value": "badge",
+                    "label": "Hoe krijg ik een badge van jou?",
+                    "trigger": "option badge 1"
                 },
                 {
                     "value": 4,

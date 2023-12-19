@@ -52,6 +52,20 @@ export default function Chatbot({ steps, slug, characterData, badge }) {
             if (!locationsArray.includes(slug)) {
                 const newSteps = steps.filter(step => step.id !== "secondStart");
                 setChatSteps(newSteps);
+            } else {
+                const options1 = steps.find(step => step.id === "question options");
+                const index1 = steps.findIndex(step => step.id === "question options");
+
+                options1.options = options1.options.filter(option => option.value !== "badge");
+                newSteps[index1] = options1;
+
+                const options2 = steps.find(step => step.id === "new question options");
+                const index2 = steps.findIndex(step => step.id === "new question options");
+
+                options2.options = options2.options.filter(option => option.value !== "badge");
+                newSteps[index2] = options2;
+
+                setChatSteps(newSteps);
             }
 
             // go through all steps to parse the html and add functions
