@@ -5,6 +5,8 @@ import SmallBadge from './SmallBadge';
 
 export default function BadgesOverview({ filteredBadges, uncollectedBadgesAmount, selected }) {
 
+    console.log(filteredBadges);
+
     return (
         <div className={styles.container}>
             {filteredBadges.map(badge => (

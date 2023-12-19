@@ -1,10 +1,11 @@
-import { getConversationData } from "../../lib/data";
+import { getLocationData } from "../../lib/data";
 import Chatbot from "../(components)/chatbot/Chatbot";
 import React from "react";
 
 export default async function NavigationConversation() {
   // get navigation conversation data
-  const data = getConversationData('navigation');
+  const data = getLocationData('navigation');
+  console.log(data);
   let conversationData = data.conversation;
 
   return (

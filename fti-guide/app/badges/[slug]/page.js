@@ -1,4 +1,4 @@
-import { getAllBadges, getBadgeData } from "../../../lib/data";
+import { getAllBadges, getAllLocationSlugs, getLocationData } from "../../../lib/data";
 import React from "react";
 import styles from './page.module.css';
 import BadgeCollection from "../../../app/(components)/badges/BadgeCollection";
@@ -9,19 +9,16 @@ import BadgeDetailCharacter from "../../(components)/badge-detail/Character";
 
 // generate all possible paths for this route
 export async function generateStaticParams() {
-    const badges = getAllBadges();
-    const paths = badges.map((badge) => ({
-        slug: badge.slug,
-    }));
-    console.log(paths)
+    const paths = getAllLocationSlugs();
     return paths;
+
 }
 export const dynamicParams = false; // prevent other routes from being generated
 
 
 export default async function Badge({ params }) {
     const { slug } = params;
-    const badgeData = getBadgeData(slug);
+    const badgeData = getLocationData(slug).badge;
 
     let description;
     if (badgeData.description) {

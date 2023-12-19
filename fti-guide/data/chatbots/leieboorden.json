@@ -8,7 +8,7 @@
         },
         {
             "id": "firstStart",
-            "message": "Hallo, welkom op FuturED! Er zijn hier allerlei leuken dingen te ontdekken.",
+            "message": "Hoi, welkom bij (de) weg van de toekomst. Dit is een fascinerende kunstinstallatie.",
             "trigger": "firstStart options",
             "hideInput": true
         },
@@ -17,7 +17,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Wat leuk! Vertel me meer.",
+                    "label": "Ziet er speciaal uit! Vertel me meer.",
                     "trigger": "conversation 1.0"
                 },
                 {
@@ -30,13 +30,13 @@
         },
         {
             "id": "conversation 1.0",
-            "message": "Hier kan je bijleren over hoe we in de nabije toekomst zullen bijleren.",
+            "message": "Hier naast de rivier de Leie, zie je een toekomstgerichte kunstinstallatie.",
             "hideInput": true,
             "trigger": "conversation 1.1"
         },
         {
             "id": "conversation 1.1",
-            "message": "KU Leuven Kulak en Hogeschool VIVES stellen interactieve ervaringen voor om hun kennis over onderwijstechnologie toe te lichten.",
+            "message": "Het is een interactieve installatie!",
             "hideInput": true,
             "trigger": "conversation 1.2"
         },
@@ -45,7 +45,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Dat is al heel wat!",
+                    "label": "Hoe dan?",
                     "trigger": "conversation 1.3"
                 }
             ],
@@ -53,13 +53,7 @@
         },
         {
             "id": "conversation 1.3",
-            "message": "Er is nog meer!",
-            "hideInput": true,
-            "trigger": "conversation 1.4"
-        },
-        {
-            "id": "conversation 1.4",
-            "message": "Je ontdekt ook hoe de toekomstige klassen er zullen uitzien, van de kleuterklas tot hoger onderwijs.",
+            "message": "Ga zeker eens kijken naar de portalen waar de weg in verdwijnt om erachter te komen!",
             "hideInput": true,
             "trigger": "conversation 1.5"
         },
@@ -68,12 +62,12 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Wow, dat lijkt interessant!",
+                    "label": "Zal ik zeker doen.",
                     "trigger": "conversation 2.0"
                 },
                 {
                     "value": 2,
-                    "label": "Die interactieve ervaringen lijken me wel wat.",
+                    "label": "Ik ben benieuwd!",
                     "trigger": "conversation 2.0"
                 }
             ],
@@ -81,19 +75,24 @@
         },
         {
             "id": "conversation 2.0",
-            "message": "Hier is al een weetje over technologie in het onderwijs.",
+            "message": "Wist je dat deze installatie is gemaakt door Hurae?",
             "hideInput": true,
             "trigger": "conversation 2.1"
         },
         {
             "id": "conversation 2.1",
-            "message": "Wist je dat kinderen nog altijd niet leren typen op school?",
-            "hideInput": true,
-            "trigger": "conversation 2.2"
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Wat is dat?",
+                    "trigger": "conversation 2.2"
+                }
+            ],
+            "hideInput": true
         },
         {
             "id": "conversation 2.2",
-            "message": "Hoewel dit de dag van vandaag dikwijls een cruciale vaardigheid is, is dit nog altijd een betaalde cursus buiten de lesuren op de meeste scholen.",
+            "message": "Hurae is een Brusselse agency die al werkte voor onder andere UGent en VRT.",
             "hideInput": true,
             "trigger": "conversation 2.3"
         },
@@ -102,12 +101,12 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Dat meen je niet!",
+                    "label": "Wow, cool!",
                     "trigger": "conversation 3.0"
                 },
                 {
                     "value": 2,
-                    "label": "Ik wist dat eigenlijk al.",
+                    "label": "Lijkt nu al een interessante installatie!",
                     "trigger": "conversation 3.0"
                 }
             ],
@@ -115,7 +114,7 @@
         },
         {
             "id": "conversation 3.0",
-            "message": "Raar, hé? Hoe dan ook",
+            "message": "Geweldig, hé? Hoe dan ook",
             "hideInput": true,
             "trigger": "conversation 4.0"
         },
@@ -128,7 +127,7 @@
                 "arguments": {
                     "trigger": "conversation 4.1",
                     "key": "collected",
-                    "value": "bk6"
+                    "value": "leieboorden"
                 }
             }
         },
@@ -154,7 +153,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over technologie in het onderwijs",
+                    "label": "Vertel eens een leuk weetje over deze installatie.",
                     "trigger": "option fact 1"
                 },
                 {
@@ -177,37 +176,31 @@
         },
         {
             "id": "option fact 1",
-            "message": "Wist je dat kinderen nog altijd niet leren typen op school?",
+            "message": "Wist je dat deze installatie is gemaakt door Hurae?",
             "hideInput": true,
             "trigger": "option fact 2"
         },
         {
             "id": "option fact 2",
-            "message": "Hoewel dit de dag van vandaag dikwijls een cruciale vaardigheid is, is dit nog altijd een vrijblijvende en betaalde cursus op de meeste scholen.",
+            "message": "Dat is een Brusselse agency die al werkte voor onder andere voor UGent en VRT",
             "hideInput": true,
             "trigger": "new question"
         },
         {
             "id": "option location 1",
-            "message": "Hier kan je bijleren over hoe we in de nabije toekomst zullen bijleren.",
+            "message": "Hier naast de rivier de Leie, zie je een toekomstgerichte kunstinstallatie.",
             "hideInput": true,
             "trigger": "option location 2"
         },
         {
             "id": "option location 2",
-            "message": "KU Leuven Kulak en Hogeschool VIVES stellen interactieve ervaringen voor om hun kennis over onderwijstechnologie toe te lichten.",
+            "message": "Het is een interactieve installatie!",
             "hideInput": true,
             "trigger": "option location 3"
         },
         {
             "id": "option location 3",
-            "message": "Er is nog meer!",
-            "hideInput": true,
-            "trigger": "option location 4"
-        },
-        {
-            "id": "option location 4",
-            "message": "Je ontdekt ook hoe de toekomstige klassen er zullen uitzien, van de kleuterklas tot hoger onderwijs.",
+            "message": "Ga zeker eens kijken naar de portalen waar de weg in verdwijnt om het interactieve deel te ontdekken.",
             "hideInput": true,
             "trigger": "new question"
         },
@@ -250,7 +243,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over technologie in het onderwijs",
+                    "label": "Vertel eens een leuk weetje over deze installatie.",
                     "trigger": "option fact 1"
                 },
                 {
@@ -292,10 +285,18 @@
         "eventAnswerId": "option events 1"
     },
     "character": {
-        "name": "RoBob de Student",
+        "name": "RoBob de Dromer",
         "tags": {
-            "event": "FuturED",
-            "location": "Broelkaai 6"
+            "event": "(de) weg van de toekomst",
+            "location": "Leieboorden"
         }
+    },
+    "badge": {
+        "name": "Ontwerper",
+        "character": "RoBob de Dromer",
+        "location": "Leieboorden",
+        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0710338762688!2d3.2634894764486235!3d50.82984815997415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33b1d48fb6e03%3A0x49856de4c953a314!2sLeieboorden%20-%20Broelkaai%20%26%20Verzetskaai!5e0!3m2!1snl!2sbe!4v1702541167701!5m2!1snl!2sbe",
+        "description": "Wist je dat (de) 'weg van de toekomst' is gemaakt door <em>Hurae</em>? Hurae is een Brusselse agency die al werkte voor onder andere UGent en VRT.",
+        "world": "kunstwereld"
     }
 }

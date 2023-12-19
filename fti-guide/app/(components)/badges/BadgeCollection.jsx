@@ -34,7 +34,7 @@ export default function BadgeCollection({ allBadges, title, showAmount, selected
       {showAmount && (
         <div className={'margin ' + styles.amount}>
           {collectedBadgesAmount <= 0 && (
-            <p>Je hebt momenteel nog <em>geen badges</em>. Blijf zoeken naar de RoBob’s! Met een badge krijg je toegang tot een nieuwe <em>gezichtsfilter!</em></p>
+            <p>Je hebt momenteel nog <em>geen badges</em>. Blijf zoeken naar de RoBob's! Met een badge krijg je toegang tot een nieuwe <em>gezichtsfilter!</em></p>
           )}
           {collectedBadgesAmount > 0 && collectedBadgesAmount < allBadges.length && (
             <p>Goed bezig! Je hebt al <em>{collectedBadgesAmount}/{allBadges.length} badges</em> verzameld, blijf zo door gaan. Verzamel ze allemaal om toegang tot <em>alle gezichtsfilters</em> te krijgen!</p>

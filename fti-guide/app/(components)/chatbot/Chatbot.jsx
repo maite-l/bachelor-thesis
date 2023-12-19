@@ -8,7 +8,7 @@ import BadgePopUp from '../badges/BadgePopUp';
 import styles from './Chatbot.module.css';
 import Image from 'next/image';
 
-export default function Chatbot({ steps, slug, characterData, badge }) {
+export default function Chatbot({ steps, slug, characterData, badge, location, name }) {
 
     if (slug === undefined) {   
         slug = "navigatie";

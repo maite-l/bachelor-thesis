@@ -2,13 +2,13 @@
     "conversation": [
         {
             "id": "secondStart",
-            "message": "Ah hey, je bent terug!",
+            "message": "Leuk je weer te zien!",
             "trigger": "question",
             "hideInput": true
         },
         {
             "id": "firstStart",
-            "message": "Hallo daar! Welkom in de Budatoren, waar de Breakout Sessions plaatsvinden. Dit is een zeer interessante plek!",
+            "message": "Hey, welkom in de Budascoop, je zult je hier niet snel vervelen!",
             "trigger": "firstStart options",
             "hideInput": true
         },
@@ -17,7 +17,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Ik ben benieuwd! Vertel eens.",
+                    "label": "Echt? Vertel me meer.",
                     "trigger": "conversation 1.0"
                 },
                 {
@@ -30,7 +30,7 @@
         },
         {
             "id": "conversation 1.0",
-            "message": "Tijdens de breakout sessions op woensdag worden hier workshops gegeven.",
+            "message": "Op zaterdag, zondag en woensdag zijn er hier twee films te zien.",
             "hideInput": true,
             "trigger": "conversation 1.1"
         },
@@ -39,7 +39,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Wat kan ik hier bijleren?",
+                    "label": "Wat hebben deze films met het festival te maken?",
                     "trigger": "conversation 1.2"
                 }
             ],
@@ -47,13 +47,13 @@
         },
         {
             "id": "conversation 1.2",
-            "message": "De workshops gaan over hoe je de technologie van morgen zal kunnen toepassen in het dagelijkse leven.",
+            "message": "Deze films hebben altijd een link met de game-industrie, behalve op zaterdag.",
             "hideInput": true,
             "trigger": "conversation 1.3"
         },
         {
             "id": "conversation 1.3",
-            "message": "Bijvoorbeeld: hoe kan ChatGPT je leven makkelijker maken?",
+            "message": "Dan is het retro-dag, en worden er dus oude films gespeeld.",
             "hideInput": true,
             "trigger": "conversation 1.4"
         },
@@ -62,12 +62,12 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Klinkt interessant!",
+                    "label": "Klinkt tof!",
                     "trigger": "conversation 2.0"
                 },
                 {
                     "value": 2,
-                    "label": "Hm, dat wekt mijn nieuwschierigheid.",
+                    "label": "Oh, interessant.",
                     "trigger": "conversation 2.0"
                 }
             ],
@@ -75,44 +75,33 @@
         },
         {
             "id": "conversation 2.0",
-            "message": "Wist je dat je waarschijnlijk al veel langer dan je denkt artificiële intelligentie gebruikt?",
+            "message": "Nog snel een weetje:",
             "hideInput": true,
             "trigger": "conversation 2.1"
         },
         {
             "id": "conversation 2.1",
-            "options": [
-                {
-                    "value": 1,
-                    "label": "Echt waar?",
-                    "trigger": "conversation 2.2"
-                }
-            ],
-            "hideInput": true
+            "message": "Unreal Engine, oorspronkelijk ontwikkeld voor games, wordt vaker en vaker bij het maken van films en series om visuele effecten en virtuele sets te maken.",
+            "hideInput": true,
+            "trigger": "conversation 2.2"
         },
         {
             "id": "conversation 2.2",
-            "message": "Een populair voorbeeld is Google Translate, dat al sinds 2016 AI gebruikt voor betere vertalingen.",
+            "message": "Misschien zag je de serie 'The Mandalorian'. Hier hebben per aflevering een aantal scenes een virtuele achtergrond, gemaakt in deze tool om games te maken!",
             "hideInput": true,
             "trigger": "conversation 2.3"
         },
         {
             "id": "conversation 2.3",
-            "message": "Misschien wist je toen zelfs nog niet wat AI was.",
-            "hideInput": true,
-            "trigger": "conversation 2.4"
-        },
-        {
-            "id": "conversation 2.4",
             "options": [
                 {
                     "value": 1,
-                    "label": "Dat klopt!",
+                    "label": "Dat wist ik nog niet!",
                     "trigger": "conversation 3.0"
                 },
                 {
                     "value": 2,
-                    "label": "Dat kende ik toen wel al.",
+                    "label": "Die serie heb ik inderdaad gevolgd!",
                     "trigger": "conversation 3.0"
                 }
             ],
@@ -133,7 +122,7 @@
                 "arguments": {
                     "trigger": "conversation 4.1",
                     "key": "collected",
-                    "value": "budatoren"
+                    "value": "budascoop"
                 }
             }
         },
@@ -159,7 +148,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over technologie in het dagelijkse leven.",
+                    "label": "Vertel eens een leuk weetje over de link tussen films en games.",
                     "trigger": "option fact 1"
                 },
                 {
@@ -182,37 +171,31 @@
         },
         {
             "id": "option fact 1",
-            "message": "Wist je dat je waarschijnlijk al veel langer dan je denkt artificiële intelligentie gebruikt?",
+            "message": "Unreal Engine, oorspronkelijk ontwikkeld voor games, wordt vaker en vaker bij het maken van films en series om visuele effecten en virtuele sets te maken.",
             "hideInput": true,
             "trigger": "option fact 2"
         },
         {
             "id": "option fact 2",
-            "message": "Een populair voorbeeld is Google Translate, dat al sinds 2016 AI gebruikt voor betere vertalingen.",
-            "hideInput": true,
-            "trigger": "option fact 3"
-        },
-        {
-            "id": "option fact 3",
-            "message": "Misschien wist je toen zelfs nog niet wat AI was.",
+            "message": "Misschien zag je de serie 'The Mandalorian'. Hier hebben per aflevering een aantal scenes een virtuele achtergrond, gemaakt in deze tool om games te maken!",
             "hideInput": true,
             "trigger": "new question"
         },
         {
             "id": "option location 1",
-            "message": "Tijdens de breakout sessions op woensdag worden hier workshops gegeven.",
+            "message": "Op zaterdag, zondag en woensdag kun je hier films zien.",
             "hideInput": true,
             "trigger": "option location 2"
         },
         {
             "id": "option location 2",
-            "message": "De workshops gaan over hoe je de technologie van morgen zal kunnen toepassen in het dagelijkse leven.",
+            "message": "Deze films hebben altijd een link met de game-industrie, behalve op zaterdag.",
             "hideInput": true,
             "trigger": "option location 3"
         },
         {
             "id": "option location 3",
-            "message": "Bijvoorbeeld: hoe kan ChatGPT jou helpen?",
+            "message": "Dan is het retro-dag, en worden er dus oude films gespeeld.",
             "hideInput": true,
             "trigger": "new question"
         },
@@ -255,7 +238,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over technologie in het dagelijkse leven.",
+                    "label": "Vertel eens een leuk weetje over de link tussen films en games.",
                     "trigger": "option fact 1"
                 },
                 {
@@ -289,7 +272,7 @@
         }
     ],
     "optionalEventStep": {
-        "stepBeforeId": "conversation 3.0",
+        "stepBeforeId": "conversation 1.4",
         "optionLabels": [
             "Wat leuk!",
             "Intereseert me niet zo."
@@ -297,10 +280,18 @@
         "eventAnswerId": "option events 1"
     },
     "character": {
-        "name": "RoBob de Inspirer",
+        "name": "RoBob de Filmfan",
         "tags": {
-            "event": "Breakout Sessions",
-            "location": "Budatoren"
+            "event": "Films",
+            "location": "Budascoop"
         }
+    },
+    "badge": {
+        "name": "Cine Pionier",
+        "character": "RoBob de Filmfan",
+        "location": "Budascoop",
+        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1260.0158609532045!2d3.263481682033209!3d50.83057633713478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2ddf66129%3A0x614bace16222e0c9!2sKunstencentrum%20BUDA%20%7C%20Budascoop!5e0!3m2!1snl!2sbe!4v1702541080009!5m2!1snl!2sbe",
+        "description": "<em>Unreal Engine</em>, oorspronkelijk ontwikkeld voor games, wordt vaker en vaker bij het maken van films en series om visuele effecten en virtuele sets te maken. Misschien zag je de serie 'The Mandalorian'. Hier hebben per aflevering een aantal scenes een virtuele achtergrond, gemaakt in deze tool om games te maken!",
+        "world": "filmwereld"
     }
 }

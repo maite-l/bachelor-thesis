@@ -2,24 +2,31 @@ import fs from 'fs';
 import path from 'path';
 
 export function getAllLocationSlugs() {
-    const dataDirectory = path.join(process.cwd(), 'data/locations');
+    const dataDirectory = path.join(process.cwd(), 'data/chatbots');
     const filenames = fs.readdirSync(dataDirectory);
-    const paths = filenames.map((filename) => {
+
+    // filter out navigation.json
+    const filteredFilenames = filenames.filter((filename) => filename !== 'navigation.json');
+    const slugs = filteredFilenames.map((filename) => {
         const slug = filename.replace(/\.json$/, '');
         return { slug };
     });
-    return paths;
+    return slugs;
 }
 
-export function getConversationData(slug) {
+export function getLocationData(slug) {
     const dataDirectory = path.join(process.cwd(), 'data');
-    const fullPath = path.join(dataDirectory, `${slug}.json`);
+    const fullPath = path.join(dataDirectory, `chatbots/${slug}.json`);
     try {
         // Read the contents of the JSON file
         const fileContents = fs.readFileSync(fullPath, 'utf8');
 
         // Parse the JSON data
         const jsonData = JSON.parse(fileContents);
+
+        if (jsonData.badge) {
+            jsonData.badge.slug = slug;
+        }
 
         return jsonData;
     } catch (error) {
@@ -53,40 +60,29 @@ export function getEventsData(slug) {
 }
 
 export function getAllBadges() {
-    const dataDirectory = path.join(process.cwd(), 'data');
-    const fullPath = path.join(dataDirectory, `badges.json`);
-    try {
-        // Read the contents of the JSON file
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-        // Parse the JSON data
-        const jsonData = JSON.parse(fileContents);
+    const slugs = getAllLocationSlugs();
+    const badges = slugs.map((slug) => {
+        const dataDirectory = path.join(process.cwd(), 'data/chatbots');
+        const fullPath = path.join(dataDirectory, `${slug.slug}.json`);
+        try {
+            // Read the contents of the JSON file
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-        return jsonData;
-    } catch (error) {
-        // Handle errors (e.g., file not found, JSON parsing error)
-        console.error(`Error reading JSON file ${fullPath}:`, error);
-        return null; // Or throw an error if you want to handle it differently
+            // Parse the JSON data
+            const jsonData = JSON.parse(fileContents);
+
+            if (jsonData.badge) {
+                jsonData.badge.slug = slug.slug;
+            }
+
+            return jsonData.badge;
+        } catch (error) {
+            // Handle errors (e.g., file not found, JSON parsing error)
+            console.error(`Error reading JSON file ${fullPath}:`, error);
+            return null; // Or throw an error if you want to handle it differently
+        }
     }
-}
-
-export function getBadgeData(slug) {
-    const dataDirectory = path.join(process.cwd(), 'data');
-    const fullPath = path.join(dataDirectory, `badges.json`);
-    try {
-        // Read the contents of the JSON file
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-        // Parse the JSON data
-        const jsonData = JSON.parse(fileContents);
-
-        // Filter badges based on slug
-        const badgeData = jsonData.filter((badge) => badge.slug === slug);
-
-        return badgeData.length > 0 ? badgeData[0] : null;
-    } catch (error) {
-        // Handle errors (e.g., file not found, JSON parsing error)
-        console.error(`Error reading JSON file ${fullPath}:`, error);
-        return null; // Or throw an error if you want to handle it differently
-    }
+    );
+    return badges;
 }
