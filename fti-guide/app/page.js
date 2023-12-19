@@ -10,10 +10,10 @@ export default function Home() {
     <main className={styles.main}>
 
       <section className={'margin ' + styles.header}>
-        <Image src="/images/home/header.svg" alt="3 RoBobs" width={322} height={216} className={styles.img} priority={true}/>
+        <Image src="/images/home/header.svg" alt="3 RoBobs" width={322} height={216} className={styles.img} priority={true} />
         <h1 className={'title ' + styles.borderTop}>Vind je persoonlijke begeleider!</h1>
         <p>
-          Je hebt misschien al eens een <em>RoBob</em> tegengekomen? Als je hem eens met je <em>smartphone aantikt</em>, zal hij op je scherm tot leven komen om je te helpen!
+          Je hebt misschien al eens een <em>RoBob</em> tegengekomen? Als je hem eens op z'n <em>rechterknie</em> aantikt met je <em>smartphone</em>, zal hij op je scherm tot leven komen om je te helpen!
         </p>
       </section>
 
@@ -22,7 +22,7 @@ export default function Home() {
         <Marquee speed={25}>
           <div className={styles.badgesContainer}>
             {getAllBadges().map((badge) => (
-              <SmallBadge version={'home'} image={badge.slug} alt={badge.name} key={badge.slug}/>
+              <SmallBadge version={'home'} image={badge.slug} alt={badge.name} key={badge.slug} />
             ))}
           </div>
         </Marquee>
