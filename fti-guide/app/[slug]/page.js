@@ -1,7 +1,6 @@
 import { getAllLocationSlugs, getLocationData, getEventsData } from "../../lib/data";
 import Chatbot from "../(components)/chatbot/Chatbot";
 import React from "react";
-import styles from './page.module.css';
 
 // generate all possible paths for this route
 export async function generateStaticParams() {

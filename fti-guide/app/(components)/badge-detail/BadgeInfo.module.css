@@ -1,18 +1,4 @@
 
-
-
-/* @media (max-width: 820px) {
-    .desktop {
-        display: none;
-    }
-}
-
-@media (min-width: 821px) {
-    .mobile {
-        display: none;
-    }
-} */
-
 .containerMobile {
     display: flex;
     flex-direction: column;

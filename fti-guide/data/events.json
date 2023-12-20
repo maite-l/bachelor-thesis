@@ -3,12 +3,6 @@
         "location": "budafabriek",
         "events": [
             {
-                "name": "de Bachelorproef Jury",
-                "startTime": "2023-12-21T09:00:00",
-                "endTime": "2023-12-21T17:00:00",
-                "location": "Aterlier 3"
-            },
-            {
                 "name": "de Retrodag",
                 "startTime": "2024-03-16T10:00:00",
                 "endTime": "2024-03-16T18:00:00",
@@ -19,6 +13,17 @@
                 "startTime": "2024-03-17T10:00:00",
                 "endTime": "2024-03-17T18:00:00",
                 "location": "de e-sports arena"
+            }
+        ]
+    },
+    {
+        "location": "budascoop",
+        "events": [
+            {
+                "name": "'Retrofuture'",
+                "startTime": "2023-12-21T21:00:00",
+                "endTime": "2023-12-21T23:00:00",
+                "location": "Zaal 2"
             }
         ]
     }
