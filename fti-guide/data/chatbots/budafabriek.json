@@ -279,19 +279,11 @@
         ],
         "eventAnswerId": "option events 1"
     },
-    "character": {
-        "name": "RoBob de Gamer",
-        "tags": {
-            "event": "Unwrap Arena",
-            "location": "Budafabriek"
-        }
-    },
-    "badge": {
-        "name": "Unwrap Explorer",
-        "character": "RoBob de Gamer",
-        "location": "Budafabriek",
-        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1snl!2sbe!4v1702540963311!5m2!1snl!2sbe",
-        "description": "Wist je dat de <em>eerste game ooit</em> gemaakt werd in 1958? Het was een simpele tennis game. Het lijkt heel hard op de bekende oude game 'Pong'!",
-        "world": "gamewereld"
-    }
+    "characterName": "RoBob de Gamer",
+    "eventName": "Unwrap Arena",
+    "location": "Budafabriek",
+    "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1snl!2sbe!4v1702540963311!5m2!1snl!2sbe",
+    "fact": "Wist je dat de <em>eerste game ooit</em> gemaakt werd in 1958? Het was een simpele tennis game. Het lijkt heel hard op de bekende oude game 'Pong'!",
+    "badgeName": "Unwrap Explorer",
+    "world": "gamewereld"
 }

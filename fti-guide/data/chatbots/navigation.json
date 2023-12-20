@@ -304,8 +304,6 @@
             "end": true
         }
     ],
-    "character": {
-        "name": "RoBob de navigator",
-        "quote": "Ik zal je begeleiden naar je gewenste locatie!"
-    }
+    "characterName": "RoBob de Navigator",
+    "quote": "Ik zal je begeleiden naar je gewenste locatie!"
 }

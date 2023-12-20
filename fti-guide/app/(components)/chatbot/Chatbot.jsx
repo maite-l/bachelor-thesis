@@ -8,7 +8,7 @@ import BadgePopUp from '../badges/BadgePopUp';
 import styles from './Chatbot.module.css';
 import Image from 'next/image';
 
-export default function Chatbot({ steps, slug, characterData, badge, location, name }) {
+export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
 
     if (slug === undefined) {   
         slug = "navigatie";
@@ -102,20 +102,18 @@ export default function Chatbot({ steps, slug, characterData, badge, location, n
         userFontColor: 'var(--purple)',
     };
 
-    console.log(slug);
-
     return (
         <>
             {showBadge && (
                 <div>
-                    <BadgePopUp badge={badge} onClose={() => setShowBadge(false)} />
+                <BadgePopUp badgeName={badgeName} slug={slug} onClose={() => setShowBadge(false)} />
                 </div>
             )}
             {!loading ? (
                 <ThemeProvider theme={theme}>
 
                     <ChatBot
-                        headerComponent={<ChatbotHeader data={characterData} slug={slug} />}
+                        headerComponent={<ChatbotHeader data={chatheaderInfo} slug={slug} />}
                         hideBotAvatar="true"
                         hideUserAvatar="true"
                         hideSubmitButton="true"

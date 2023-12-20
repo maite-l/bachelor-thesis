@@ -11,34 +11,39 @@ import BadgeDetailCharacter from "../../(components)/badge-detail/Character";
 export async function generateStaticParams() {
     const paths = getAllLocationSlugs();
     return paths;
-
 }
 export const dynamicParams = false; // prevent other routes from being generated
 
 
 export default async function Badge({ params }) {
     const { slug } = params;
-    const badgeData = getLocationData(slug).badge;
-
-    let description;
-    if (badgeData.description) {
-        description = (
-            <p dangerouslySetInnerHTML={{ __html: badgeData.description }}></p>
+    const data = getLocationData(slug);
+    const location = data.location;
+    const map = data.mapLink;
+    const name = data.characterName;
+    let fact;
+    if (data.fact) {
+        fact = (
+            <p dangerouslySetInnerHTML={{ __html: data.fact }}></p>
         );
+    }
+    const badgeData = {
+        name: data.badgeName,
+        world: data.world,
     }
 
     return (
         <main className={styles.main}>
 
-            <BadgeDetailTopBar location={badgeData.location} link={badgeData.mapLink} />
+            <BadgeDetailTopBar location={location} link={map} />
 
             <div className="margin">
-                <BadgeDetailBadge badgeData={badgeData} />
+                <BadgeDetailBadge badgeData={badgeData} slug={slug} />
             </div>
 
             <div className="margin">
-                <h2 className={`title ` + styles.title}>Je hebt deze badge ontvangen van <em>{badgeData.character}</em></h2>
-                <BadgeDetailCharacter badgeData={badgeData} description={description} />
+                <h2 className={`title ` + styles.title}>Je hebt deze badge ontvangen van <em>{name}</em></h2>
+                <BadgeDetailCharacter fact={fact} slug={slug} name={name} />
             </div>
 
             <div>

@@ -8,7 +8,6 @@ import { useGLTF } from "@react-three/drei";
 export function Model(props) {
     const { nodes, materials } = useGLTF("/3d/model.gltf");
     const { selectedBadges } = props;
-    console.log(selectedBadges);
     return (
         <group {...props} dispose={null} renderOrder={3}>
             <mesh

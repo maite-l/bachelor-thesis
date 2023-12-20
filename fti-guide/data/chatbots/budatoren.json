@@ -296,19 +296,11 @@
         ],
         "eventAnswerId": "option events 1"
     },
-    "character": {
-        "name": "RoBob de Inspirer",
-        "tags": {
-            "event": "Breakout Sessions",
-            "location": "Budatoren"
-        }
-    },
-    "badge": {
-        "name": "Breakout Brainiac",
-        "character": "RoBob de Inspirer",
-        "location": "Budatoren",
-        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0181860870334!2d3.26212737644866!3d50.83082705990341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2cafc8e75%3A0xb460b9986b084352!2sBudatoren!5e0!3m2!1snl!2sbe!4v1702541229966!5m2!1snl!2sbe",
-        "description": "Wist je dat je waarschijnlijk <em>al veel langer dan je denkt artificiële intelligentie gebruikt</em>? Een populair voorbeeld is Google Translate, dat al sinds 2016 AI gebruikt voor betere vertalingen. Misschien wist je toen zelfs nog niet wat AI was.",
-        "world": "breakoutwereld"
-    }
+    "characterName": "RoBob de Inspirer",
+    "eventName": "Breakout Sessions",
+    "location": "Budatoren",
+    "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0181860870334!2d3.26212737644866!3d50.83082705990341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2cafc8e75%3A0xb460b9986b084352!2sBudatoren!5e0!3m2!1snl!2sbe!4v1702541229966!5m2!1snl!2sbe",
+    "fact": "Wist je dat je waarschijnlijk <em>al veel langer dan je denkt artificiële intelligentie gebruikt</em>? Een populair voorbeeld is Google Translate, dat al sinds 2016 AI gebruikt voor betere vertalingen. Misschien wist je toen zelfs nog niet wat AI was.",
+    "badgeName": "Breakout Brainiac",
+    "world": "breakoutwereld"
 }

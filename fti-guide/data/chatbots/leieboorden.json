@@ -284,19 +284,11 @@
         ],
         "eventAnswerId": "option events 1"
     },
-    "character": {
-        "name": "RoBob de Dromer",
-        "tags": {
-            "event": "(de) weg van de toekomst",
-            "location": "Leieboorden"
-        }
-    },
-    "badge": {
-        "name": "Ontwerper",
-        "character": "RoBob de Dromer",
-        "location": "Leieboorden",
-        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0710338762688!2d3.2634894764486235!3d50.82984815997415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33b1d48fb6e03%3A0x49856de4c953a314!2sLeieboorden%20-%20Broelkaai%20%26%20Verzetskaai!5e0!3m2!1snl!2sbe!4v1702541167701!5m2!1snl!2sbe",
-        "description": "Wist je dat (de) 'weg van de toekomst' is gemaakt door <em>Hurae</em>? Hurae is een Brusselse agency die al werkte voor onder andere UGent en VRT.",
-        "world": "kunstwereld"
-    }
+    "characterName": "RoBob de Dromer",
+    "eventName": "(de) weg van de toekomst",
+    "location": "Leieboorden",
+    "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0710338762688!2d3.2634894764486235!3d50.82984815997415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33b1d48fb6e03%3A0x49856de4c953a314!2sLeieboorden%20-%20Broelkaai%20%26%20Verzetskaai!5e0!3m2!1snl!2sbe!4v1702541167701!5m2!1snl!2sbe",
+    "fact": "Wist je dat (de) 'weg van de toekomst' is gemaakt door <em>Hurae</em>? Hurae is een Brusselse agency die al werkte voor onder andere UGent en VRT.",
+    "badgeName": "Ontwerper",
+    "world": "kunstwereld"
 }

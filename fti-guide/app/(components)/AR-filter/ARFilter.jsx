@@ -115,7 +115,6 @@ export default function ARFilter({ allBadges }) {
         arFilterRef.current.switchCamera();
         const ARView = document.getElementById('ARView');
         const imgContainer = imgContainerRef.current;
-        console.log(imgContainer)
         if (flipCamera) {
             ARView.style.transform = "scaleX(1)";
             imgContainer.style.transform = "scaleX(1)";

@@ -165,8 +165,6 @@ export default async function LocationConversation({ params }) {
     let conversationData = data.conversation;
     // get location specific events
     const events = getEventsData(slug);
-    // get badge info
-    const badge = data.badge;
 
     // if there are events, create a message out of relevant events and adjust the conversation data
     if (events) {
@@ -175,9 +173,23 @@ export default async function LocationConversation({ params }) {
         conversationData = adjustData(eventMessage, conversationData, stepData);
     }
 
+    const badgeName = data.badgeName;
+
+    // get chatheader info
+    let chatheaderInfo = {
+        characterName: data.characterName,
+    }
+    if (data.eventName && data.location) {
+        chatheaderInfo.eventName = data.eventName;
+        chatheaderInfo.location = data.location;
+    }
+    if (data.quote) {
+        chatheaderInfo.quote = data.quote;
+    }
+
     return (
         <main>
-            <Chatbot steps={conversationData} slug={slug} characterData={data.character} badge={badge} />
+            <Chatbot steps={conversationData} slug={slug} chatheaderInfo={chatheaderInfo} badgeName={badgeName} />
         </main>
     )
 }

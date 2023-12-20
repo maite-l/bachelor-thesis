@@ -72,11 +72,12 @@ export function getAllBadges() {
             // Parse the JSON data
             const jsonData = JSON.parse(fileContents);
 
-            if (jsonData.badge) {
-                jsonData.badge.slug = slug.slug;
-            }
+            const badgeData = {
+                slug: slug.slug,
+                name: jsonData.badgeName
+            };
 
-            return jsonData.badge;
+            return badgeData;
         } catch (error) {
             // Handle errors (e.g., file not found, JSON parsing error)
             console.error(`Error reading JSON file ${fullPath}:`, error);

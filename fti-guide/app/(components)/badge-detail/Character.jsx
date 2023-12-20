@@ -12,7 +12,7 @@ const { MediaContextProvider, Media } = createMedia({
     }
 });
 
-export default function BadgeDetailCharacter({ badgeData, description }) {
+export default function BadgeDetailCharacter({ fact, slug, name }) {
 
     return (
         <>
@@ -20,7 +20,7 @@ export default function BadgeDetailCharacter({ badgeData, description }) {
                 <Media at="mobile">
                     <div className={styles.mobileContainer}>
                         <div className={styles.characterImageContainer}>
-                            <Image src={`/images/talking/` + badgeData.slug + `.gif`} alt={badgeData.character} width={130} height={160} />
+                            <Image src={`/images/talking/` + slug + `.gif`} alt={name} width={130} height={160} />
                         </div>
 
                         <div className={styles.descriptionBackground}>
@@ -29,7 +29,7 @@ export default function BadgeDetailCharacter({ badgeData, description }) {
                                 <rect y="15" width="24" height="4" fill="#FBF3ED" />
                             </svg>
                             <div className={styles.descriptionContainer}>
-                                {description}
+                                {fact}
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ export default function BadgeDetailCharacter({ badgeData, description }) {
                     <div className={styles.tabletContainer}>
                         <div className={styles.descriptionBackground}>
                             <div className={styles.descriptionContainer}>
-                                {description}
+                                {fact}
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 28 30" fill="none">
                                 <path d="M26 15L2 2L2 27L26 15Z" fill="#FBF3ED" stroke="#6E33D5" />
@@ -48,7 +48,7 @@ export default function BadgeDetailCharacter({ badgeData, description }) {
                         </div>
 
                         <div className={styles.characterImageContainer}>
-                            <Image src={`/images/talking/` + badgeData.slug + `.gif`} alt={badgeData.character} width={130} height={160} />
+                            <Image src={`/images/talking/` + slug + `.gif`} alt={name} width={130} height={160} />
                         </div>
                     </div>
 

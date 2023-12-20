@@ -1,4 +1,4 @@
-import { getAllBadges, getBadges } from '../../lib/data';
+import { getAllBadges } from '../../lib/data';
 import BadgeCollection from '../(components)/badges/BadgeCollection';
 import styles from './page.module.css';
 import dynamic from 'next/dynamic';

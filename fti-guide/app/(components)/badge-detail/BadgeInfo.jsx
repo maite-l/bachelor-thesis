@@ -13,8 +13,7 @@ const { MediaContextProvider, Media } = createMedia({
     }
 });
 
-export default function BadgeDetailBadge({ badgeData }) {
-
+export default function BadgeDetailBadge({ badgeData, slug }) {
     return (
         <>
             <MediaContextProvider>
@@ -28,7 +27,7 @@ export default function BadgeDetailBadge({ badgeData }) {
                         <div className={styles.badge}>
                             <div className={styles.badgeBackground}>
                                 <div className={styles.badgeContainer}>
-                                    <Image src={`/images/badges/` + badgeData.slug + `.svg`} alt={badgeData.name} width={68} height={68} priority={true} className={styles.badgeImage} />
+                                    <Image src={`/images/badges/` + slug + `.svg`} alt={badgeData.name} width={68} height={68} priority={true} className={styles.badgeImage} />
                                 </div>
                             </div>
                             <Link
@@ -46,7 +45,7 @@ export default function BadgeDetailBadge({ badgeData }) {
                     <div className={styles.containerTablet}>
                         <div className={styles.badgeBackground}>
                             <div className={styles.badgeContainer}>
-                                <Image src={`/images/badges/` + badgeData.slug + `.svg`} alt={badgeData.name} width={68} height={68} priority={true} className={styles.badgeImage} />
+                                <Image src={`/images/badges/` + slug + `.svg`} alt={badgeData.name} width={68} height={68} priority={true} className={styles.badgeImage} />
                             </div>
                         </div>
 
