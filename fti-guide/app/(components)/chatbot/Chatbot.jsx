@@ -23,9 +23,9 @@ export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
     const [loading, setLoading] = useState(true);
     const [showBadge, setShowBadge] = useState(false);
 
-    const collectBadge = (key, value) => {
+    const collectBadge = (key, value, log) => {
 
-        if (slug !== "navigatie") {
+        if ((slug !== "navigatie") && (log.renderedSteps[log.renderedSteps.length - 1].id === "conversation badge")) {
 
             if (typeof window !== 'undefined') {
 
@@ -169,8 +169,8 @@ export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
                             borderRadius: '0px 20px',
                         }}
                         steps={chatSteps}
-                        handleEnd={() => {
-                            collectBadge('collected', slug);
+                        handleEnd={(log) => {
+                            collectBadge('collected', slug, log);
 
                         }}
                     />

@@ -128,10 +128,10 @@
             "id": "conversation 4.0",
             "message": "Je hebt veel bijgeleerd, toch? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
             "hideInput": true,
-            "trigger": "conversation 4.1"
+            "trigger": "conversation badge"
         },
         {
-            "id": "conversation 4.1",
+            "id": "conversation badge",
             "options": [
                 {
                     "value": 1,
