@@ -122,14 +122,7 @@
             "id": "conversation 4.0",
             "message": "Je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
             "hideInput": true,
-            "trigger": {
-                "function": "addToLocalStorage",
-                "arguments": {
-                    "trigger": "conversation 4.1",
-                    "key": "collected",
-                    "value": "leieboorden"
-                }
-            }
+            "trigger": "conversation 4.1"
         },
         {
             "id": "conversation 4.1",

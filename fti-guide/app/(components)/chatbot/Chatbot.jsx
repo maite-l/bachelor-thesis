@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
 
-    if (slug === undefined) {   
+    if (slug === undefined) {
         slug = "navigatie";
     }
 
@@ -21,23 +21,22 @@ export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
         "hideInput": true
     }]);
     const [loading, setLoading] = useState(true);
-    const [collectBadgeInNextStep, setCollectBadgeInNextStep] = useState(false);
     const [showBadge, setShowBadge] = useState(false);
 
-    const addToLocalStorage = (step, key, value) => {
-        // make sure we are on client side
+    const collectBadge = (key, value) => {
+
         if (typeof window !== 'undefined') {
+
             const existingArray = JSON.parse(localStorage.getItem(key)) || [];
 
             // check if the value is already in the array
             if (!existingArray.includes(value)) {
                 const newArray = [...existingArray, value];
                 localStorage.setItem(key, JSON.stringify(newArray));
-                setCollectBadgeInNextStep(true);
+                setShowBadge(true);
             }
-        }
 
-        return step;
+        }
     };
 
     useEffect(() => {
@@ -68,19 +67,14 @@ export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
                 setChatSteps(newSteps);
             }
 
-            // go through all steps to parse the html and add functions
+            // go through all steps to parse the html
             setChatSteps(prevSteps => prevSteps.map(step => {
-                const { trigger, component, ...rest } = step;
+                const { component, ...rest } = step;
                 if (component) {
                     let content = step.component;
                     rest.component = (
                         <div dangerouslySetInnerHTML={{ __html: content }}></div>
                     );
-                }
-                if (trigger && trigger.function === "addToLocalStorage") {
-                    rest.trigger = () => addToLocalStorage(trigger.arguments.trigger, trigger.arguments.key, trigger.arguments.value);
-                } else if (trigger) {
-                    rest.trigger = trigger;
                 }
                 return rest;
             }));
@@ -106,7 +100,7 @@ export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
         <>
             {showBadge && (
                 <div>
-                <BadgePopUp badgeName={badgeName} slug={slug} onClose={() => setShowBadge(false)} />
+                    <BadgePopUp badgeName={badgeName} slug={slug} onClose={() => setShowBadge(false)} />
                 </div>
             )}
             {!loading ? (
@@ -173,9 +167,8 @@ export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
                         }}
                         steps={chatSteps}
                         handleEnd={() => {
-                            if (collectBadgeInNextStep) {
-                                setShowBadge(true);
-                            }
+                            collectBadge('collected', slug);
+
                         }}
                     />
                 </ThemeProvider>
