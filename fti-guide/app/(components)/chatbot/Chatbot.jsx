@@ -25,17 +25,20 @@ export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
 
     const collectBadge = (key, value) => {
 
-        if (typeof window !== 'undefined') {
+        if (slug !== "navigatie") {
 
-            const existingArray = JSON.parse(localStorage.getItem(key)) || [];
+            if (typeof window !== 'undefined') {
 
-            // check if the value is already in the array
-            if (!existingArray.includes(value)) {
-                const newArray = [...existingArray, value];
-                localStorage.setItem(key, JSON.stringify(newArray));
-                setShowBadge(true);
+                const existingArray = JSON.parse(localStorage.getItem(key)) || [];
+
+                // check if the value is already in the array
+                if (!existingArray.includes(value)) {
+                    const newArray = [...existingArray, value];
+                    localStorage.setItem(key, JSON.stringify(newArray));
+                    setShowBadge(true);
+                }
+
             }
-
         }
     };
 
