@@ -86,9 +86,8 @@ const createMessage = (events) => {
             }
         }
     }
-    console.log(sundayEvents);
-    console.log(wednesdayEvents);
 
+    let extraEvents = (sundayEvents.length > 0) || (wednesdayEvents.length > 0) || (Object.keys(weekEvents).length);
 
     // add text to message based on the amount of current events
     if (currentEvents.length > 0) {
@@ -137,8 +136,33 @@ const createMessage = (events) => {
         }
     }
 
-    if (currentEvents.length === 0 && todayEvents.length === 0) {
+    if (currentEvents.length === 0 && todayEvents.length === 0 && extraEvents) {
         message = 'Vandaag zijn er geen evenementen, maar ';
+        if (Object.keys(weekEvents).length > 0) {
+            message += 'komende week wel: ';
+            for (let day in weekEvents) {
+                message += `op ${day} is er `;
+                if (weekEvents[day].length === 1) {
+                    message += `${weekEvents[day][0].name}`;
+                } else {
+                    for (let event of weekEvents[day]) {
+                        if (weekEvents[day].indexOf(event) === weekEvents[day].length - 1) {
+                            message += `en ${event.name}`;
+                        }
+                        else {
+                            message += `${event.name}, `;
+                        }
+                    }
+                }
+                if (Object.keys(weekEvents).indexOf(day) === Object.keys(weekEvents).length - 1) {
+                    message += '.';
+                }
+                else {
+                    message += ', ';
+                }
+            }
+        }
+        console.log(message);
     }
 
     let eventMessage = { message: message, answer: message };
