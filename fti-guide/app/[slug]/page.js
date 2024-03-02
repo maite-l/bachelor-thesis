@@ -37,6 +37,8 @@ const createMessage = (events) => {
     // get extra events based on day of the week
     let sundayEvents = [];
     let wednesdayEvents = [];
+    let weekEvents = {};
+    const daysOfTheWeek = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
     const dayOfWeek = now.getDay();
 
     if (dayOfWeek === 6 || dayOfWeek === 0) {
@@ -65,6 +67,24 @@ const createMessage = (events) => {
     }
     else {
         console.log('week');
+        const daysLeftInWeek = 5 - dayOfWeek;
+        console.log(daysLeftInWeek);
+        // for each day left in the week, add events to array per day, then add all to one array
+        for (let i = 1; i <= daysLeftInWeek; i++) {
+            let nextDay = new Date();
+            nextDay.setDate(now.getDate() + i);
+            let nextDate = nextDay.toLocaleDateString();
+            let nextDayEvents = events.filter(event => {
+                let startTime = new Date(event.startTime);
+                let startDate = startTime.toLocaleDateString();
+                return startDate == nextDate;
+            });
+            console.log(daysOfTheWeek[nextDay.getDay()]);
+            console.log(nextDayEvents);
+            if (nextDayEvents.length > 0) {
+                weekEvents[daysOfTheWeek[nextDay.getDay()]] = nextDayEvents;
+            }
+        }
     }
     console.log(sundayEvents);
     console.log(wednesdayEvents);
@@ -117,10 +137,14 @@ const createMessage = (events) => {
         }
     }
 
+    if (currentEvents.length === 0 && todayEvents.length === 0) {
+        message = 'Vandaag zijn er geen evenementen, maar ';
+    }
+
     let eventMessage = { message: message, answer: message };
 
     if (message === '') {
-        eventMessage.answer = 'Vandaag is zijn er geen evenementen.';
+        eventMessage.answer = 'Vandaag zijn er geen evenementen.';
     }
     return eventMessage;
 }
