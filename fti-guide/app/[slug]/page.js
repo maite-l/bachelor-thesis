@@ -34,6 +34,42 @@ const createMessage = (events) => {
         return startDate === nowDate && startTime >= now;
     });
 
+    // get extra events based on day of the week
+    let sundayEvents = [];
+    let wednesdayEvents = [];
+    const dayOfWeek = now.getDay();
+
+    if (dayOfWeek === 6 || dayOfWeek === 0) {
+        console.log('weekend');
+        let daysUntilWednesday = 3;
+        if (dayOfWeek === 6) {
+            sundayEvents = events.filter(event => {
+                let startTime = new Date(event.startTime);
+                let tommorow = new Date();
+                tommorow.setDate(now.getDate() + 1);
+                let startDate = startTime.toLocaleDateString();
+                tommorow = tommorow.toLocaleDateString();
+                return startDate == tommorow;
+            });
+            daysUntilWednesday = 4;
+        }
+        wednesdayEvents = events.filter(event => {
+            let startTime = new Date(event.startTime);
+            let endTime = new Date(event.endTime);
+            let tommorow = new Date();
+            tommorow.setDate(now.getDate() + daysUntilWednesday);
+            tommorow = tommorow.toLocaleDateString();
+            let startDate = startTime.toLocaleDateString();
+            return startDate == tommorow && endTime.getHours() > 12;
+        });
+    }
+    else {
+        console.log('week');
+    }
+    console.log(sundayEvents);
+    console.log(wednesdayEvents);
+
+
     // add text to message based on the amount of current events
     if (currentEvents.length > 0) {
         if (currentEvents.length === 1) {
