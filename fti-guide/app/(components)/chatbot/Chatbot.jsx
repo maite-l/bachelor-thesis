@@ -157,6 +157,8 @@ export default function Chatbot({ steps, slug, chatheaderInfo, badgeName }) {
                         customStyle={{
                             marginRight: '0px',
                             marginLeft: '12px',
+                            // marginTop: '-8px',
+                            // marginBottom: '2px',
                             boxShadow: 'none',
                             backgroundColor: 'var(--purple)',
                             color: 'var(--white)',

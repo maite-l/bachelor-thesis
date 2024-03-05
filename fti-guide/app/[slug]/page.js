@@ -34,61 +34,6 @@ const createMessage = (events) => {
         return startDate === nowDate && startTime >= now;
     });
 
-    // get extra events based on day of the week
-    let sundayEvents = [];
-    let wednesdayEvents = [];
-    let weekEvents = {};
-    const daysOfTheWeek = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag'];
-    const dayOfWeek = now.getDay();
-
-    if (dayOfWeek === 6 || dayOfWeek === 0) {
-        console.log('weekend');
-        let daysUntilWednesday = 3;
-        if (dayOfWeek === 6) {
-            sundayEvents = events.filter(event => {
-                let startTime = new Date(event.startTime);
-                let tommorow = new Date();
-                tommorow.setDate(now.getDate() + 1);
-                let startDate = startTime.toLocaleDateString();
-                tommorow = tommorow.toLocaleDateString();
-                return startDate == tommorow;
-            });
-            daysUntilWednesday = 4;
-        }
-        wednesdayEvents = events.filter(event => {
-            let startTime = new Date(event.startTime);
-            let endTime = new Date(event.endTime);
-            let tommorow = new Date();
-            tommorow.setDate(now.getDate() + daysUntilWednesday);
-            tommorow = tommorow.toLocaleDateString();
-            let startDate = startTime.toLocaleDateString();
-            return startDate == tommorow && endTime.getHours() > 12;
-        });
-    }
-    else {
-        console.log('week');
-        const daysLeftInWeek = 5 - dayOfWeek;
-        console.log(daysLeftInWeek);
-        // for each day left in the week, add events to array per day, then add all to one array
-        for (let i = 1; i <= daysLeftInWeek; i++) {
-            let nextDay = new Date();
-            nextDay.setDate(now.getDate() + i);
-            let nextDate = nextDay.toLocaleDateString();
-            let nextDayEvents = events.filter(event => {
-                let startTime = new Date(event.startTime);
-                let startDate = startTime.toLocaleDateString();
-                return startDate == nextDate;
-            });
-            console.log(daysOfTheWeek[nextDay.getDay()]);
-            console.log(nextDayEvents);
-            if (nextDayEvents.length > 0) {
-                weekEvents[daysOfTheWeek[nextDay.getDay()]] = nextDayEvents;
-            }
-        }
-    }
-
-    let extraEvents = (sundayEvents.length > 0) || (wednesdayEvents.length > 0) || (Object.keys(weekEvents).length);
-
     // add text to message based on the amount of current events
     if (currentEvents.length > 0) {
         if (currentEvents.length === 1) {
@@ -134,35 +79,6 @@ const createMessage = (events) => {
                 }
             });
         }
-    }
-
-    if (currentEvents.length === 0 && todayEvents.length === 0 && extraEvents) {
-        message = 'Vandaag zijn er geen evenementen, maar ';
-        if (Object.keys(weekEvents).length > 0) {
-            message += 'komende week wel: ';
-            for (let day in weekEvents) {
-                message += `op ${day} is er `;
-                if (weekEvents[day].length === 1) {
-                    message += `${weekEvents[day][0].name}`;
-                } else {
-                    for (let event of weekEvents[day]) {
-                        if (weekEvents[day].indexOf(event) === weekEvents[day].length - 1) {
-                            message += `en ${event.name}`;
-                        }
-                        else {
-                            message += `${event.name}, `;
-                        }
-                    }
-                }
-                if (Object.keys(weekEvents).indexOf(day) === Object.keys(weekEvents).length - 1) {
-                    message += '.';
-                }
-                else {
-                    message += ', ';
-                }
-            }
-        }
-        console.log(message);
     }
 
     let eventMessage = { message: message, answer: message };

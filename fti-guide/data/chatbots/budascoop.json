@@ -196,6 +196,12 @@
             "id": "option events 1",
             "message": "Vandaag zijn er hier geen evenementen.",
             "hideInput": true,
+            "trigger": "option events 2"
+        },
+        {
+            "id": "option events 2",
+            "message": "Bezoek ftikortrijk.be voor meer info over toekomstige events.",
+            "hideInput": true,
             "trigger": "new question"
         },
         {
