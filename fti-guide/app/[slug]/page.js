@@ -15,24 +15,42 @@ const dateToTimeString = (date) => {
     return `${hours}:${minutes}`;
 }
 
-const createMessage = (events) => {
-    let message = '';
-    const now = new Date();
-
-    // get all events that are currently happening
-    const currentEvents = events.filter(event => {
-        const startTime = new Date(event.startTime);
-        const endTime = new Date(event.endTime);
-        return now >= startTime && now <= endTime;
-    });
-
-    // get all events that are happening later today
+const getLaterTodayEvents = (events, now) => {
     const todayEvents = events.filter(event => {
         const startTime = new Date(event.startTime);
         const startDate = (startTime.getFullYear()) + "/" + (startTime.getMonth() + 1) + "/" + (startTime.getDate());
         const nowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + (now.getDate());
         return startDate === nowDate && startTime >= now;
     });
+    return todayEvents;
+}
+const getCurrentEvents = (events, now) => {
+    const currentEvents = events.filter(event => {
+        const startTime = new Date(event.startTime);
+        const endTime = new Date(event.endTime);
+        return now >= startTime && now <= endTime;
+    });
+    return currentEvents;
+}
+const getTodayEvents = (events, now) => {
+    const todayEvents = events.filter(event => {
+        const startTime = new Date(event.startTime);
+        const startDate = (startTime.getFullYear()) + "/" + (startTime.getMonth() + 1) + "/" + (startTime.getDate());
+        const nowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + (now.getDate());
+        return startDate === nowDate;
+    });
+    return todayEvents;
+}
+
+const createMessage = (events) => {
+    let message = '';
+    const now = new Date();
+
+    // get all events that are currently happening
+    const currentEvents = getCurrentEvents(events, now);
+
+    // get all events that are happening later today
+    const todayEvents = getLaterTodayEvents(events, now);
 
     // add text to message based on the amount of current events
     if (currentEvents.length > 0) {
@@ -85,6 +103,70 @@ const createMessage = (events) => {
 
     if (message === '') {
         eventMessage.answer = 'Vandaag zijn er geen evenementen.';
+    }
+    return eventMessage;
+}
+
+const createMessageBudascoop = (events) => {
+    let message = '';
+    const now = new Date();
+
+    // get all events that are happening later today
+    const todayEvents = getLaterTodayEvents(events, now);
+
+    // add text to message based on the amount of events later today
+    if (todayEvents.length > 0) {
+        if (todayEvents.length === 1) {
+            const startTime = new Date(todayEvents[0].startTime);
+            const startTimeString = dateToTimeString(startTime);
+            const endTime = new Date(todayEvents[0].endTime);
+            const endTimeString = dateToTimeString(endTime);
+            message += `Later vandaag speelt '${todayEvents[0].name}' in ${todayEvents[0].location} van ${startTimeString}u tot ${endTimeString}u.`;
+        }
+        else {
+            message += `Later vandaag spelen er ${todayEvents.length} films: `;
+            todayEvents.forEach(event => {
+                const startTime = new Date(event.startTime);
+                const startTimeString = dateToTimeString(startTime);
+
+                if (todayEvents.indexOf(event) === todayEvents.length - 1) {
+                    message += `en '${event.name}' om ${startTimeString}u in ${event.location}.`;
+                }
+                else {
+                    message += `'${event.name}' om ${startTimeString}u in ${event.location}, `;
+                }
+            });
+        }
+    }
+
+    let eventMessage = { message: message, answer: message };
+
+    if (message === '') {
+        eventMessage.answer = 'Vandaag spelen er geen films.';
+    }
+    return eventMessage;
+}
+
+const createMessageBudalys = (events) => {
+    let message = '';
+    const now = new Date();
+
+    // get all events that are happening later today
+    const todayEvents = getTodayEvents(events, now);
+
+    // add text to message based on the amount of events later today
+    if (todayEvents.length > 0) {
+        const startTime = new Date(todayEvents[0].startTime);
+        const startTimeString = dateToTimeString(startTime);
+        const endTime = new Date(todayEvents[0].endTime);
+        const endTimeString = dateToTimeString(endTime);
+        message += `Vandaag zijn er workshops van ${startTimeString}u tot ${endTimeString}u. `;
+    }
+
+    let eventMessage = { message: message, answer: message };
+
+    if (message === '') {
+        eventMessage.answer = 'Vandaag zijn er helaas geen workshops.';
     }
     return eventMessage;
 }
@@ -168,7 +250,14 @@ export default async function LocationConversation({ params }) {
     // if there are events, create a message out of relevant events and adjust the conversation data
     if (events) {
         const stepData = data.optionalEventStep;
-        const eventMessage = createMessage(events);
+        let eventMessage;
+        if (slug === 'budascoop') {
+            eventMessage = createMessageBudascoop(events);
+        } else if (slug === 'budalys') {
+            eventMessage = createMessageBudalys(events);
+        } else {
+            eventMessage = createMessage(events);
+        }
         conversationData = adjustData(eventMessage, conversationData, stepData);
     }
 

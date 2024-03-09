@@ -8,7 +8,13 @@
         },
         {
             "id": "firstStart",
-            "message": "Hey daar, welkom in de Unwrap Arena! Er is hier heel wat te beleven.",
+            "message": "Hey daar, welkom in de Unwrap Arena! Ontdek hier de bruisende wereld van gaming en neem een diepe duik neemt in de Vlaamse game-industrie. Ontdek de evolutie van games van vroeger tot nu, leer over de ontwikkeling achter je favoriete games, en ga de strijd aan in onze esports arena. ",
+            "trigger": "firstStart 2",
+            "hideInput": true
+        },
+        {
+            "id": "firstStart 2",
+            "message": "Dit is je kans om de grenzen van gametechnologie te verkennen, kennis te maken met professionele gameontwikkelaars, en deel te nemen aan competitief gamen.",
             "trigger": "firstStart options",
             "hideInput": true
         },
@@ -17,7 +23,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Echt? Ik ben benieuwd, vertel eens wat er hier allemaal te doen is.",
+                    "label": "Vertel me alles!",
                     "trigger": "conversation 1.0"
                 },
                 {
@@ -30,44 +36,38 @@
         },
         {
             "id": "conversation 1.0",
-            "message": "Hier in de Unwrap Arena kan je de game-industrie ontdekken, met nadruk op Vlaamse successen. Ervaar de evolutie van games van retro tot nu.",
+            "message": "Ontdek Vlaamse successen in de game-industrie zoals Baldur's Gate 3, You Suck at Parking, en meer. Deze expo neemt je mee achter de schermen van gameontwikkeling en toont je games die internationaal succes hebben behaald.",
             "hideInput": true,
             "trigger": "conversation 1.1"
         },
         {
             "id": "conversation 1.1",
-            "message": "Je kan ook leren hoe games ontwikkelen een serieuze job is.",
-            "hideInput": true,
-            "trigger": "conversation 1.2"
-        },
-        {
-            "id": "conversation 1.2",
             "options": [
                 {
                     "value": 1,
                     "label": "Kan ik hier ook iets zelf doen?",
-                    "trigger": "conversation 1.3"
+                    "trigger": "conversation 1.2"
                 }
             ],
             "hideInput": true
         },
         {
-            "id": "conversation 1.3",
-            "message": "In de arcadehal kan je het zelfs opnemen tegen je vrienden en familie in iconische retro-games!",
+            "id": "conversation 1.2",
+            "message": "In onze esports arena kan je zelf deelnemen aan de actie. Ga de uitdaging aan met professionele esporters of vrienden, of herleef je jeugd met onze selectie van retro arcade games. Van flipperkasten tot air hockey, er is voor elk wat wils.",
             "hideInput": true,
-            "trigger": "conversation 1.4"
+            "trigger": "conversation 1.3"
         },
         {
-            "id": "conversation 1.4",
+            "id": "conversation 1.3",
             "options": [
                 {
                     "value": 1,
-                    "label": "Daar kijk ik naar uit!",
+                    "label": "Dat zie ik wel zitten!",
                     "trigger": "conversation 2.0"
                 },
                 {
                     "value": 2,
-                    "label": "Ik zal me bij de info houden.",
+                    "label": "Ik zal me bij de expo houden.",
                     "trigger": "conversation 2.0"
                 }
             ],
@@ -75,24 +75,18 @@
         },
         {
             "id": "conversation 2.0",
-            "message": "Hier is alvast een weetje over retro-games.",
+            "message": "Hier is alvast een weetje over de Vlaamse game-industrie.",
             "hideInput": true,
             "trigger": "conversation 2.1"
         },
         {
             "id": "conversation 2.1",
-            "message": "Wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
+            "message": "Baldur's Gate 3, een parel uit Vlaanderen, bereikte op zijn piek 875 duizend gelijktijdige spelers. Dat is bijna 10 keer zoveel als het aantal inwoners van Kortrijk!",
             "hideInput": true,
             "trigger": "conversation 2.2"
         },
         {
             "id": "conversation 2.2",
-            "message": "Het lijkt heel hard op de bekende oude game 'Pong'!",
-            "hideInput": true,
-            "trigger": "conversation 2.3"
-        },
-        {
-            "id": "conversation 2.3",
             "options": [
                 {
                     "value": 1,
@@ -146,13 +140,28 @@
                 },
                 {
                     "value": 2,
-                    "label": "Wat is er hier te vinden?",
+                    "label": "Wat kan ik doen in de Unwrap Arena?",
                     "trigger": "option location 1"
                 },
                 {
                     "value": 3,
                     "label": "Is er hier vandaag iets speciaals te doen?",
                     "trigger": "option events 1"
+                },
+                {
+                    "value": 4,
+                    "label": "Wat zijn de openingsuren van de Unwrap Arena?",
+                    "trigger": "option hours 1"
+                },
+                {
+                    "value": 5,
+                    "label": "Zijn er speciale exposities in de Unwrap Arena?",
+                    "trigger": "option expo 1"
+                },
+                {
+                    "value": 6,
+                    "label": "Kan ik zelf ook gamen in de Unwrap Arena?",
+                    "trigger": "option gaming 1"
                 },
                 {
                     "value": "badge",
@@ -164,43 +173,55 @@
         },
         {
             "id": "option fact 1",
-            "message": "Wist je dat de eerste game ooit gemaakt werd in 1958? Het was een simpele tennis game.",
-            "hideInput": true,
-            "trigger": "option fact 2"
-        },
-        {
-            "id": "option fact 2",
-            "message": "Het lijkt heel hard op de bekende oude game 'Pong'!",
+            "message": "Baldur's Gate 3, een parel uit Vlaanderen, bereikte op zijn piek 875 duizend gelijktijdige spelers. Dat is bijna 10 keer zoveel als het aantal inwoners van Kortrijk!",
             "hideInput": true,
             "trigger": "new question"
         },
         {
             "id": "option location 1",
-            "message": "Hier in de Unwrap Arena kan je de game-industrie ontdekken, met nadruk op Vlaamse successen. Ervaar de evolutie van games van retro tot nu.",
+            "message": "Ontdek de bruisende wereld van gaming in de Unwrap Arena, waar je een diepe duik neemt in de Vlaamse game-industrie. ",
             "hideInput": true,
             "trigger": "option location 2"
         },
         {
             "id": "option location 2",
-            "message": "Je kan ook leren hoe games ontwikkelen een serieuze job is.",
+            "message": "Ontdek de evolutie van games van vroeger tot nu, leer over de ontwikkeling achter je favoriete games, en ga de strijd aan in onze esports arena.",
             "hideInput": true,
             "trigger": "option location 3"
         },
         {
             "id": "option location 3",
-            "message": "In de arcadehal kan je het zelfs opnemen tegen je vrienden en familie in iconische retro-games!",
+            "message": "Dit is je kans om de grenzen van gametechnologie te verkennen, kennis te maken met professionele gameontwikkelaars, en deel te nemen aan competitief gamen.",
             "hideInput": true,
             "trigger": "new question"
         },
         {
             "id": "option events 1",
-            "message": "Vandaag zijn er hier geen evenementen.",
+            "message": "Helaas zijn er hier vandaag geen evenementen.",
             "hideInput": true,
             "trigger": "option events 2"
         },
         {
             "id": "option events 2",
             "message": "Bezoek ftikortrijk.be voor meer info over toekomstige events.",
+            "hideInput": true,
+            "trigger": "new question"
+        },
+        {
+            "id": "option hours 1",
+            "message": "In het weekend zijn we open van 10u tot 18u, en in de week van 9u tot 18u.",
+            "hideInput": true,
+            "trigger": "new question"
+        },
+        {
+            "id": "option expo 1",
+            "message": "Ja, je kunt Vlaamse successen in de game-industrie ontdekken zoals Baldur's Gate 3 en You Suck at Parking. Deze expo neemt je mee achter de schermen van gameontwikkeling en toont games die internationaal succes hebben behaald.",
+            "hideInput": true,
+            "trigger": "new question"
+        },
+        {
+            "id": "option gaming 1",
+            "message": "Ja, in onze esports arena kan je zelf deelnemen aan de actie. Ga de uitdaging aan met professionele esporters of vrienden, of herleef je jeugd met onze selectie van retro arcade games. Van flipperkasten tot air hockey, er is voor elk wat wils.",
             "hideInput": true,
             "trigger": "new question"
         },
@@ -226,7 +247,7 @@
                 },
                 {
                     "value": 2,
-                    "label": "Mischien later.",
+                    "label": "Misschien later.",
                     "trigger": "new question"
                 }
             ],
@@ -242,7 +263,7 @@
                 },
                 {
                     "value": 2,
-                    "label": "Wat is er hier te vinden?",
+                    "label": "Wat kan ik doen in de Unwrap Arena?",
                     "trigger": "option location 1"
                 },
                 {
@@ -251,13 +272,28 @@
                     "trigger": "option events 1"
                 },
                 {
+                    "value": 4,
+                    "label": "Wat zijn de openingsuren van de Unwrap Arena?",
+                    "trigger": "option hours 1"
+                },
+                {
+                    "value": 5,
+                    "label": "Zijn er speciale exposities in de Unwrap Arena?",
+                    "trigger": "option expo 1"
+                },
+                {
+                    "value": 6,
+                    "label": "Kan ik zelf ook gamen in de Unwrap Arena?",
+                    "trigger": "option gaming 1"
+                },
+                {
                     "value": "badge",
                     "label": "Hoe krijg ik een badge van jou?",
                     "trigger": "option badge 1"
                 },
                 {
-                    "value": 4,
-                    "label": "Nee, dank je",
+                    "value": 7,
+                    "label": "Nee, dank je.",
                     "trigger": "end"
                 }
             ],
@@ -282,7 +318,7 @@
     "eventName": "Unwrap Arena",
     "location": "Budafabriek",
     "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1snl!2sbe!4v1702540963311!5m2!1snl!2sbe",
-    "fact": "Wist je dat de <em>eerste game ooit</em> gemaakt werd in 1958? Het was een simpele tennis game. Het lijkt heel hard op de bekende oude game 'Pong'!",
+    "fact": "<em>Baldur's Gate 3</em>, een parel uit Vlaanderen, bereikte op zijn piek <em>875 duizend gelijktijdige spelers</em>. Dat is bijna 10 keer zoveel als het aantal inwoners van Kortrijk!",
     "badgeName": "Unwrap Explorer",
     "world": "gamewereld"
 }

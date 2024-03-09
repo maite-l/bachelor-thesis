@@ -8,7 +8,19 @@
         },
         {
             "id": "firstStart",
-            "message": "Hallo, welkom op FuturED! Er zijn hier allerlei leuken dingen te ontdekken.",
+            "message": "Hallo, welkom op FuturED! Ontdek het onderwijs van de toekomst, die dichterbij is dan je denkt.",
+            "trigger": "firstStart 2",
+            "hideInput": true
+        },
+        {
+            "id": "firstStart 2",
+            "message": "Ontdek hier de impact van virtual reality, duik in interactieve leermodules en zie hoe innovaties zoals robotica en augmented reality het leren spannender, efficiënter en toegankelijker maken.",
+            "trigger": "firstStart 3",
+            "hideInput": true
+        },
+        {
+            "id": "firstStart 3",
+            "message": "FuturED brengt je van het coderen van bewegende robotballen tot het beleven van ruimtereizen zonder de aarde te verlaten, en biedt een breed spectrum aan fascinerende en educatieve ervaringen voor alle leeftijden.",
             "trigger": "firstStart options",
             "hideInput": true
         },
@@ -30,13 +42,13 @@
         },
         {
             "id": "conversation 1.0",
-            "message": "Hier kan je bijleren over hoe we in de nabije toekomst zullen bijleren.",
+            "message": "FuturED bestaat uit 3 interactieve ervaringen.",
             "hideInput": true,
             "trigger": "conversation 1.1"
         },
         {
             "id": "conversation 1.1",
-            "message": "KU Leuven Kulak en Hogeschool VIVES stellen interactieve ervaringen voor om hun kennis over onderwijstechnologie toe te lichten.",
+            "message": "De eerste is 'De Klas van de Toekomst'. Betreed de innovatieve Pop-up Classroom waar leren opwindend wordt gemaakt door technologie. Deze ervaring vind je in de Paardenstallen.",
             "hideInput": true,
             "trigger": "conversation 1.2"
         },
@@ -45,7 +57,12 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Dat is al heel wat!",
+                    "label": "Cool!",
+                    "trigger": "conversation 1.3"
+                },
+                {
+                    "value": 2,
+                    "label": "Wat is er nog meer?",
                     "trigger": "conversation 1.3"
                 }
             ],
@@ -53,13 +70,13 @@
         },
         {
             "id": "conversation 1.3",
-            "message": "Er is nog meer!",
+            "message": "'De Muur van Digitale Leermogelijkheden', te vinden in BK6.",
             "hideInput": true,
             "trigger": "conversation 1.4"
         },
         {
             "id": "conversation 1.4",
-            "message": "Je ontdekt ook hoe de toekomstige klassen er zullen uitzien, van de kleuterklas tot hoger onderwijs.",
+            "message": "Verken het menselijk lichaam met augmented reality of test je wiskundige vaardigheden. KU Leuven Kulak toont hoe technologie wordt ingezet in haar opleidingen. Ontdek de onbegrensde mogelijkheden van digitale educatie.",
             "hideInput": true,
             "trigger": "conversation 1.5"
         },
@@ -69,11 +86,39 @@
                 {
                     "value": 1,
                     "label": "Wow, dat lijkt interessant!",
+                    "trigger": "conversation 1.6"
+                },
+                {
+                    "value": 2,
+                    "label": "En het laatste?",
+                    "trigger": "conversation 1.6"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "conversation 1.6",
+            "message": "'FutureTech in de Klas', ook in BK6.",
+            "hideInput": true,
+            "trigger": "conversation 1.7"
+        },
+        {
+            "id": "conversation 1.7",
+            "message": "Ontdek met Hogeschool Vives hoe technologie de weg effent in het onderwijs van morgen: ervaar educatieve technologie als een dynamische knikkerbaan vol hoogtes en laagtes, waar je speels door de toekomst van onderwijs zal worden geleid vol virtual reality, artificiële intelligentie en STEM toepassingen!",
+            "hideInput": true,
+            "trigger": "conversation 1.8"
+        },
+        {
+            "id": "conversation 1.8",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Wat leuk!",
                     "trigger": "conversation 2.0"
                 },
                 {
                     "value": 2,
-                    "label": "Die interactieve ervaringen lijken me wel wat.",
+                    "label": "Daar ga ik zeker heen.",
                     "trigger": "conversation 2.0"
                 }
             ],
@@ -152,13 +197,28 @@
                 },
                 {
                     "value": 2,
-                    "label": "Wat is er hier te vinden?",
+                    "label": "Wat kan ik verwachten in FuturED?",
                     "trigger": "option location 1"
                 },
                 {
                     "value": 3,
                     "label": "Is er hier vandaag iets speciaals te doen?",
                     "trigger": "option events 1"
+                },
+                {
+                    "value": 4,
+                    "label": "Wat zijn de openingsuren van FuturED?",
+                    "trigger": "option hours 1"
+                },
+                {
+                    "value": 5,
+                    "label": "Wat voor interactieve ervaringen zijn er bij FuturED?",
+                    "trigger": "option experiences 1"
+                },
+                {
+                    "value": 6,
+                    "label": "Zijn er workshops beschikbaar bij FuturED?",
+                    "trigger": "option workshops 1"
                 },
                 {
                     "value": "badge",
@@ -182,25 +242,19 @@
         },
         {
             "id": "option location 1",
-            "message": "Hier kan je bijleren over hoe we in de nabije toekomst zullen bijleren.",
+            "message": "Ontdek het onderwijs van de toekomst in FuturED, waar de toekomst van het onderwijs dichterbij is dan je denkt.",
             "hideInput": true,
             "trigger": "option location 2"
         },
         {
             "id": "option location 2",
-            "message": "KU Leuven Kulak en Hogeschool VIVES stellen interactieve ervaringen voor om hun kennis over onderwijstechnologie toe te lichten.",
+            "message": "Ontdek hier de impact van virtual reality, duik in interactieve leermodules en zie hoe innovaties zoals robotica en augmented reality het leren spannender, efficiënter en toegankelijker maken.",
             "hideInput": true,
             "trigger": "option location 3"
         },
         {
             "id": "option location 3",
-            "message": "Er is nog meer!",
-            "hideInput": true,
-            "trigger": "option location 4"
-        },
-        {
-            "id": "option location 4",
-            "message": "Je ontdekt ook hoe de toekomstige klassen er zullen uitzien, van de kleuterklas tot hoger onderwijs.",
+            "message": "FuturED brengt je van het coderen van bewegende robotballen tot het beleven van ruimtereizen zonder de aarde te verlaten, en biedt een breed spectrum aan fascinerende en educatieve ervaringen voor alle leeftijden.",
             "hideInput": true,
             "trigger": "new question"
         },
@@ -213,6 +267,24 @@
         {
             "id": "option events 2",
             "message": "Bezoek ftikortrijk.be voor meer info over toekomstige events.",
+            "hideInput": true,
+            "trigger": "new question"
+        },
+        {
+            "id": "option hours 1",
+            "message": "In het weekend zijn we open van 10u tot 18u, en in de week van 9u tot 18u.",
+            "hideInput": true,
+            "trigger": "new question"
+        },
+        {
+            "id": "option experiences 1",
+            "message": "FuturED heeft verschillende interactieve exposities, zoals de 'Pop-up Classroom' waar technologie leren spannend maakt, en de 'Muur van digitale leermogelijkheden' waar je het menselijk lichaam met augmented reality kunt verkennen. Ook kun je 'FutureTech in de Klas' ontdekken, waar educatieve technologie je door de toekomst van onderwijs leidt.",
+            "hideInput": true,
+            "trigger": "new question"
+        },
+        {
+            "id": "option workshops 1",
+            "message": "Ja, FuturED biedt boeiende workshops en expo's waar je hands-on kunt leren over de nieuwste onderwijstechnologieën en hun toepassingen. Elk biedt een unieke kans om te leren door te doen.",
             "hideInput": true,
             "trigger": "new question"
         },
@@ -263,12 +335,27 @@
                     "trigger": "option events 1"
                 },
                 {
+                    "value": 4,
+                    "label": "Wat zijn de openingsuren van FuturED?",
+                    "trigger": "option hours 1"
+                },
+                {
+                    "value": 5,
+                    "label": "Wat voor interactieve ervaringen zijn er bij FuturED?",
+                    "trigger": "option experiences 1"
+                },
+                {
+                    "value": 6,
+                    "label": "Zijn er workshops beschikbaar bij FuturED?",
+                    "trigger": "option workshops 1"
+                },
+                {
                     "value": "badge",
                     "label": "Hoe krijg ik een badge van jou?",
                     "trigger": "option badge 1"
                 },
                 {
-                    "value": 4,
+                    "value": 7,
                     "label": "Nee, dank je",
                     "trigger": "end"
                 }
@@ -292,7 +379,7 @@
     },
     "characterName": "RoBob de Student",
     "eventName": "FuturED",
-    "location": "Broelkaai 6",
+    "location": "Broelkaai 6 & Paardenstallen",
     "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0267106703764!2d3.2634136764487!3d50.83066915991469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2b7e3a531%3A0x356fa0ed0c08d1ad!2sBroelkaai%206%2C%208500%20Kortrijk!5e0!3m2!1snl!2sbe!4v1702541298094!5m2!1snl!2sbe",
     "fact": "Wist je dat <em>kinderen nog altijd niet leren typen op school</em>? Hoewel dit de dag van vandaag dikwijls een cruciale vaardigheid is, is dit nog altijd een betaalde cursus buiten de lesuren op de meeste scholen.",
     "badgeName": "Leergoeroe",

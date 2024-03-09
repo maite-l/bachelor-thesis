@@ -4,8 +4,8 @@
         "events": [
             {
                 "name": "de Retrodag",
-                "startTime": "2024-03-06T10:00:00",
-                "endTime": "2024-03-06T18:00:00",
+                "startTime": "2024-03-09T14:30:00",
+                "endTime": "2024-03-09T15:40:00",
                 "location": "de e-sports arena"
             },
             {
@@ -20,10 +20,35 @@
         "location": "budascoop",
         "events": [
             {
-                "name": "'Retrofuture'",
-                "startTime": "2023-12-21T21:00:00",
-                "endTime": "2023-12-21T23:00:00",
-                "location": "Zaal 2"
+                "name": "Vos en Haas Redden het Bos",
+                "startTime": "2024-03-17T14:30:00",
+                "endTime": "2024-03-17T15:40:00",
+                "location": "zaal 3"
+            },
+            {
+                "name": "Jack & The Cuckoo-Clock Heart",
+                "startTime": "2024-03-17T16:00:00",
+                "endTime": "2024-03-17T17:35:00",
+                "location": "zaal 3"
+            },
+            {
+                "name": "Spider-Man: Into The Spider-Verse",
+                "startTime": "2024-03-17T18:30:00",
+                "endTime": "2024-03-17T20:30:00",
+                "location": "zaal 3"
+            }
+        ]
+    },
+    {
+        "location": "budalys",
+        "events": [
+            {
+                "startTime": "2024-03-16T10:00:00",
+                "endTime": "2024-03-16T18:00:00"
+            },
+            {
+                "startTime": "2024-03-17T10:00:00",
+                "endTime": "2024-03-17T18:00:00"
             }
         ]
     }

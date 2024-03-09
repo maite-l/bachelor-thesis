@@ -48,44 +48,28 @@
                     "trigger": "location unwrap"
                 },
                 {
-                    "value": 3,
-                    "label": "Breakout sessies",
-                    "trigger": "location breakout"
-                },
-                {
                     "value": 5,
                     "label": "Films",
                     "trigger": "location films"
-                },
-                {
-                    "value": 4,
-                    "label": "(de) weg van de toekomst",
-                    "trigger": "location paden"
                 }
             ],
             "hideInput": true
         },
         {
             "id": "location futureED",
-            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>FuturED is te vinden in Broelkaai 6.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0267106703764!2d3.2634136764487!3d50.83066915991469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2b7e3a531%3A0x356fa0ed0c08d1ad!2sBroelkaai%206%2C%208500%20Kortrijk!5e0!3m2!1snl!2sbe!4v1702541298094!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Broelkaai+6,+8500+Kortrijk/@50.8306692,3.2634137,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33ae2b7e3a531:0x356fa0ed0c08d1ad!8m2!3d50.8306658!4d3.2659886!16s%2Fg%2F11gfngy6v8?authuser=2&entry=ttu'>Open op Google Maps</a></div>",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>FuturED is te vinden in Broelkaai 6,</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0267106703764!2d3.2634136764487!3d50.83066915991469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2b7e3a531%3A0x356fa0ed0c08d1ad!2sBroelkaai%206%2C%208500%20Kortrijk!5e0!3m2!1snl!2sbe!4v1702541298094!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Broelkaai+6,+8500+Kortrijk/@50.8306692,3.2634137,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33ae2b7e3a531:0x356fa0ed0c08d1ad!8m2!3d50.8306658!4d3.2659886!16s%2Fg%2F11gfngy6v8?authuser=2&entry=ttu'>Open op Google Maps</a></div>",
+            "hideInput": true,
+            "trigger": "location futureED 2"
+        },
+        {
+            "id": "location futureED 2",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>en ook in de Paardenstallen.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.01352634568!2d3.2629228765255305!3d50.83091337166742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33b5085192439%3A0x983cd5e1b89d35bb!2sPaardenstallen!5e0!3m2!1sen!2sbe!4v1710000959186!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Paardenstallen/@50.8309134,3.2629229,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33b5085192439:0x983cd5e1b89d35bb!8m2!3d50.8309134!4d3.2654978!16s%2Fg%2F11n7vszs21?entry=ttu'>Open op Google Maps</a></div>",
             "hideInput": true,
             "trigger": "end options"
         },
         {
             "id": "location unwrap",
             "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De Unwrap Arena is te vinden in de Budafabriek.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1snl!2sbe!4v1702540963311!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/BUDAfabriek/@50.8315457,3.2630413,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33afcb2d35a69:0xb3e9316f20e0416a!8m2!3d50.8315457!4d3.2630413!16s%2Fg%2F11b7lg6lvg?authuser=2&entry=ttu'>Open op Google Maps</a></div>",
-            "hideInput": true,
-            "trigger": "end options"
-        },
-        {
-            "id": "location breakout",
-            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De breakout sessies zijn te vinden in de Tacktoren.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0181860870334!2d3.26212737644866!3d50.83082705990341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2cafc8e75%3A0xb460b9986b084352!2sBudatoren!5e0!3m2!1snl!2sbe!4v1702541229966!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Budatoren/@50.8315457,3.2630413,17z/data=!4m6!3m5!1s0x47c33ae2cafc8e75:0xb460b9986b084352!8m2!3d50.8308237!4d3.2647023!16s%2Fg%2F1pp2tkmxg?authuser=2&entry=ttu'>Open op Google Maps</a></div>",
-            "hideInput": true,
-            "trigger": "end options"
-        },
-        {
-            "id": "location paden",
-            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>'(de) weg van de toekomst' is te vinden aan de Leieboorden.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0710338762688!2d3.2634894764486235!3d50.82984815997415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33b1d48fb6e03%3A0x49856de4c953a314!2sLeieboorden%20-%20Broelkaai%20%26%20Verzetskaai!5e0!3m2!1snl!2sbe!4v1702541167701!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Leieboorden+-+Broelkaai+%26+Verzetskaai/@50.8298482,3.2634895,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33b1d48fb6e03:0x49856de4c953a314!8m2!3d50.8298448!4d3.2660644!16s%2Fg%2F1tqtx0wq?authuser=2&entry=ttu'>Open op Google Maps</a></div>",
             "hideInput": true,
             "trigger": "end options"
         },
@@ -146,16 +130,6 @@
                     "value": 2,
                     "label": "Games en alles daarrond",
                     "trigger": "option games"
-                },
-                {
-                    "value": 3,
-                    "label": "Kunstinstallaties over de toekomst",
-                    "trigger": "option kunst"
-                },
-                {
-                    "value": 4,
-                    "label": "Workshops over de tech van morgen",
-                    "trigger": "option workshop"
                 }
             ],
             "hideInput": true
@@ -224,52 +198,6 @@
                 {
                     "value": 2,
                     "label": "Niet helemaal waar ik naar op zoek ben.",
-                    "trigger": "new search"
-                }
-            ],
-            "hideInput": true
-        },
-        {
-            "id": "option kunst",
-            "component": "<p>Ontdek een de toekomstgerichte installatie <span class='event-title'>'(de) weg van de toekomst'</span>, gemaakt door Brusselse agency Hurea.</p>",
-            "hideInput": true,
-            "asMessage": true,
-            "trigger": "option kunst options"
-        },
-        {
-            "id": "option kunst options",
-            "options": [
-                {
-                    "value": 1,
-                    "label": "Dat klinkt als iets waar ik naartoe wil. Waar is het precies?",
-                    "trigger": "location paden"
-                },
-                {
-                    "value": 2,
-                    "label": "Interesseert mij niet zo.",
-                    "trigger": "new search"
-                }
-            ],
-            "hideInput": true
-        },
-        {
-            "id": "option workshop",
-            "component": "<p>Op woensdag worden er verschillende <span class='event-title'>breakout sessions</span> georganiseerd waar je meer kan leren over de technologie van morgen en hoe dit van toepassing kan zijn in het dagelijkse leven. Hiervoor heb je een gratis ticket nodig.</p>",
-            "hideInput": true,
-            "asMessage": true,
-            "trigger": "option workshop options"
-        },
-        {
-            "id": "option workshop options",
-            "options": [
-                {
-                    "value": 1,
-                    "label": "Ik ben benieuwd, waar vind ik dit op het festival?",
-                    "trigger": "location breakout"
-                },
-                {
-                    "value": 2,
-                    "label": "Lijkt niet echt iets voor mij.",
                     "trigger": "new search"
                 }
             ],

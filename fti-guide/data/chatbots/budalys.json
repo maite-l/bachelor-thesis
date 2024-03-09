@@ -2,13 +2,19 @@
     "conversation": [
         {
             "id": "secondStart",
-            "message": "Ah hey, je bent terug!",
+            "message": "Oh hey, jij weer!",
             "trigger": "question",
             "hideInput": true
         },
         {
             "id": "firstStart",
-            "message": "Hallo daar! Welkom in de Budatoren, waar de Breakout Sessions plaatsvinden. Dit is een zeer interessante plek!",
+            "message": "Hey daar, welkom bij Bouw en Codeer! Duik in de wereld van Minecraft Education en leer spelenderwijs programmeren.",
+            "trigger": "firstStart 2",
+            "hideInput": true
+        },
+        {
+            "id": "firstStart 2",
+            "message": "Deze workshop is perfect voor jonge tech-enthousiastelingen die de basis van het coderen willen ontdekken door middel van visuele blokjes.",
             "trigger": "firstStart options",
             "hideInput": true
         },
@@ -17,7 +23,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Ik ben benieuwd! Vertel eens.",
+                    "label": "Vertel me alles!",
                     "trigger": "conversation 1.0"
                 },
                 {
@@ -30,44 +36,27 @@
         },
         {
             "id": "conversation 1.0",
-            "message": "Tijdens de breakout sessions op woensdag worden hier workshops gegeven.",
+            "message": "Deelnemen aan de 'Bouw & Codeer met Minecraft Education' workshop is een uitstekende manier voor jongeren om cruciale digitale vaardigheden te ontwikkelen in een leuke en vertrouwde omgeving.",
             "hideInput": true,
             "trigger": "conversation 1.1"
         },
         {
             "id": "conversation 1.1",
-            "options": [
-                {
-                    "value": 1,
-                    "label": "Wat kan ik hier bijleren?",
-                    "trigger": "conversation 1.2"
-                }
-            ],
-            "hideInput": true
+            "message": "Niet alleen verbeter je je programmeervaardigheden, maar je leert ook logisch denken, probleemoplossend werken en creativiteit, allemaal essentiële vaardigheden voor de toekomst.",
+            "hideInput": true,
+            "trigger": "conversation 1.2"
         },
         {
             "id": "conversation 1.2",
-            "message": "De workshops gaan over hoe je de technologie van morgen zal kunnen toepassen in het dagelijkse leven.",
-            "hideInput": true,
-            "trigger": "conversation 1.3"
-        },
-        {
-            "id": "conversation 1.3",
-            "message": "Bijvoorbeeld: hoe kan ChatGPT je leven makkelijker maken?",
-            "hideInput": true,
-            "trigger": "conversation 1.4"
-        },
-        {
-            "id": "conversation 1.4",
             "options": [
                 {
                     "value": 1,
-                    "label": "Klinkt interessant!",
+                    "label": "Wat leuk!",
                     "trigger": "conversation 2.0"
                 },
                 {
                     "value": 2,
-                    "label": "Hm, dat wekt mijn nieuwschierigheid.",
+                    "label": "Is er nog iets dat ik moet weten?",
                     "trigger": "conversation 2.0"
                 }
             ],
@@ -75,44 +64,33 @@
         },
         {
             "id": "conversation 2.0",
-            "message": "Wist je dat je waarschijnlijk al veel langer dan je denkt artificiële intelligentie gebruikt?",
+            "message": "Deze workshop is perfect voor kinderen tussen 7 en 16 jaar en loopt van 10u tot 18u op zaterdag 16 en zondag 17 maart.",
             "hideInput": true,
             "trigger": "conversation 2.1"
         },
         {
             "id": "conversation 2.1",
-            "options": [
-                {
-                    "value": 1,
-                    "label": "Echt waar?",
-                    "trigger": "conversation 2.2"
-                }
-            ],
-            "hideInput": true
+            "message": "Hier heb je ook nog een leuk weetje:",
+            "hideInput": true,
+            "trigger": "conversation 2.2"
         },
         {
             "id": "conversation 2.2",
-            "message": "Een populair voorbeeld is Google Translate, dat al sinds 2016 AI gebruikt voor betere vertalingen.",
+            "message": "Een Zweedse school voerde in 2013 een verplichte cursus Minecraft in voor alle 13-jarige studenten, en niet de Education editie. Tijdens deze lessen leerden ze over plannen, over het bouwen van steden, en zelfs over milieu-problemen.",
             "hideInput": true,
             "trigger": "conversation 2.3"
         },
         {
             "id": "conversation 2.3",
-            "message": "Misschien wist je toen zelfs nog niet wat AI was.",
-            "hideInput": true,
-            "trigger": "conversation 2.4"
-        },
-        {
-            "id": "conversation 2.4",
             "options": [
                 {
                     "value": 1,
-                    "label": "Dat klopt!",
+                    "label": "Wow, echt waar?",
                     "trigger": "conversation 3.0"
                 },
                 {
                     "value": 2,
-                    "label": "Dat kende ik toen wel al.",
+                    "label": "Dat zou ik ook wel willen!",
                     "trigger": "conversation 3.0"
                 }
             ],
@@ -120,13 +98,13 @@
         },
         {
             "id": "conversation 3.0",
-            "message": "Interessant, vind je niet?",
+            "message": "Cool, hé? Hoe dan ook",
             "hideInput": true,
             "trigger": "conversation 4.0"
         },
         {
             "id": "conversation 4.0",
-            "message": "Je hebt veel bijgeleerd, toch? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
+            "message": "Je hebt veel bijgeleerd, niet? Dit verdient een belonging. Ik heb er speciaal voor jou een gemaakt!",
             "hideInput": true,
             "trigger": "conversation badge"
         },
@@ -143,7 +121,7 @@
         },
         {
             "id": "question",
-            "message": "Waarmee kan ik je helpen?",
+            "message": "Wat wil je weten?",
             "hideInput": true,
             "trigger": "question options"
         },
@@ -152,18 +130,23 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over technologie in het dagelijkse leven.",
+                    "label": "Vertel eens een leuk weetje over games",
                     "trigger": "option fact 1"
                 },
                 {
                     "value": 2,
-                    "label": "Wat is er hier te vinden?",
+                    "label": "Wat kan ik leren in de Minecraft Education workshop? Waarom zou ik deelnemen?",
                     "trigger": "option location 1"
                 },
                 {
                     "value": 3,
-                    "label": "Is er hier vandaag iets speciaals te doen?",
+                    "label": "Kan ik vandaag deelnemen aan de workshop?",
                     "trigger": "option events 1"
+                },
+                {
+                    "value": 5,
+                    "label": "Voor welke leeftijd is de Minecraft workshop bedoeld?",
+                    "trigger": "option age 1"
                 },
                 {
                     "value": "badge",
@@ -175,45 +158,44 @@
         },
         {
             "id": "option fact 1",
-            "message": "Wist je dat je waarschijnlijk al veel langer dan je denkt artificiële intelligentie gebruikt?",
-            "hideInput": true,
-            "trigger": "option fact 2"
-        },
-        {
-            "id": "option fact 2",
-            "message": "Een populair voorbeeld is Google Translate, dat al sinds 2016 AI gebruikt voor betere vertalingen.",
-            "hideInput": true,
-            "trigger": "option fact 3"
-        },
-        {
-            "id": "option fact 3",
-            "message": "Misschien wist je toen zelfs nog niet wat AI was.",
+            "message": "Een Zweedse school voerde in 2013 een verplichte cursus Minecraft in voor alle 13-jarige studenten, en niet de Education editie. Tijdens deze lessen leerden ze over plannen, over het bouwen van steden, en zelfs over milieu-problemen.",
             "hideInput": true,
             "trigger": "new question"
         },
         {
             "id": "option location 1",
-            "message": "Tijdens de breakout sessions op woensdag worden hier workshops gegeven.",
+            "message": "Deelnemen aan de 'Bouw & Codeer met Minecraft Education' workshop is een uitstekende manier voor jongeren om cruciale digitale vaardigheden te ontwikkelen in een leuke en vertrouwde omgeving.",
             "hideInput": true,
             "trigger": "option location 2"
         },
         {
             "id": "option location 2",
-            "message": "De workshops gaan over hoe je de technologie van morgen zal kunnen toepassen in het dagelijkse leven.",
-            "hideInput": true,
-            "trigger": "option location 3"
-        },
-        {
-            "id": "option location 3",
-            "message": "Bijvoorbeeld: hoe kan ChatGPT jou helpen?",
-            "hideInput": true,
+            "message": "Niet alleen verbeter je je programmeervaardigheden, maar je leert ook logisch denken, probleemoplossend werken en creativiteit, allemaal essentiële vaardigheden voor de toekomst.",
             "trigger": "new question"
         },
         {
             "id": "option events 1",
-            "message": "Vandaag zijn er hier geen evenementen.",
+            "message": "Helaas zijn er vandaag geen workshops.",
+            "hideInput": true,
+            "trigger": "option events 2"
+        },
+        {
+            "id": "option events 2",
+            "message": "Bezoek ftikortrijk.be voor meer info over toekomstige workshops.",
             "hideInput": true,
             "trigger": "new question"
+        },
+        {
+            "id": "option age 1",
+            "message": "Deze workshop is perfect voor kinderen tussen 7 en 16 jaar die de basis van het coderen willen ontdekken door middel van visuele blokjes.",
+            "hideInput": true,
+            "trigger": "new question"
+        },
+        {
+            "id": "new question",
+            "message": "Wil je nog iets weten?",
+            "hideInput": true,
+            "trigger": "new question options"
         },
         {
             "id": "option badge 1",
@@ -231,35 +213,34 @@
                 },
                 {
                     "value": 2,
-                    "label": "Mischien later.",
+                    "label": "Misschien later.",
                     "trigger": "new question"
                 }
             ],
             "hideInput": true
         },
         {
-            "id": "new question",
-            "message": "Wil je nog iets weten?",
-            "hideInput": true,
-            "trigger": "new question options"
-        },
-        {
             "id": "new question options",
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over technologie in het dagelijkse leven.",
+                    "label": "Vertel eens een leuk weetje over games",
                     "trigger": "option fact 1"
                 },
                 {
                     "value": 2,
-                    "label": "Wat is er hier te vinden?",
+                    "label": "Wat kan ik leren in de Minecraft Education workshop? Waarom zou ik deelnemen?",
                     "trigger": "option location 1"
                 },
                 {
                     "value": 3,
-                    "label": "Is er hier vandaag iets speciaals te doen?",
+                    "label": "Kan ik vandaag deelnemen aan de workshop?",
                     "trigger": "option events 1"
+                },
+                {
+                    "value": 5,
+                    "label": "Voor welke leeftijd is de Minecraft workshop bedoeld?",
+                    "trigger": "option age 1"
                 },
                 {
                     "value": "badge",
@@ -267,8 +248,8 @@
                     "trigger": "option badge 1"
                 },
                 {
-                    "value": 4,
-                    "label": "Nee, dank je",
+                    "value": 6,
+                    "label": "Nee, dank je.",
                     "trigger": "end"
                 }
             ],
@@ -284,16 +265,16 @@
     "optionalEventStep": {
         "stepBeforeId": "conversation 3.0",
         "optionLabels": [
-            "Wat leuk!",
-            "Intereseert me niet zo."
+            "Dan doe ik meteen mee!",
+            "Misschien later."
         ],
         "eventAnswerId": "option events 1"
     },
-    "characterName": "RoBob de Inspirer",
-    "eventName": "Breakout Sessions",
-    "location": "Budatoren",
-    "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0181860870334!2d3.26212737644866!3d50.83082705990341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2cafc8e75%3A0xb460b9986b084352!2sBudatoren!5e0!3m2!1snl!2sbe!4v1702541229966!5m2!1snl!2sbe",
-    "fact": "Wist je dat je waarschijnlijk <em>al veel langer dan je denkt artificiële intelligentie gebruikt</em>? Een populair voorbeeld is Google Translate, dat al sinds 2016 AI gebruikt voor betere vertalingen. Misschien wist je toen zelfs nog niet wat AI was.",
-    "badgeName": "Breakout Brainiac",
-    "world": "breakoutwereld"
+    "characterName": "RoBob de Bouwer",
+    "eventName": "Bouw & Codeer",
+    "location": "Budalys",
+    "mapLink": "embed",
+    "fact": "Een Zweedse school voerde in 2013 een <em>verplichte cursus Minecraft</em> in voor alle 13-jarige studenten, en niet de Education editie. Tijdens deze lessen leerden ze over plannen, over het bouwen van steden, en zelfs over milieu-problemen.",
+    "badgeName": "Minecraft Coder",
+    "world": "codeerwereld"
 }

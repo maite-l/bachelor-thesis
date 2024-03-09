@@ -8,7 +8,7 @@
         },
         {
             "id": "firstStart",
-            "message": "Hey, welkom in de Budascoop, je zult je hier niet snel vervelen!",
+            "message": "Hey, welkom in de Budascoop, je zult je hier niet snel vervelen! Tijdens het FTI festival worden hier verschillende films met een link met de game-industrie getoond. Een perfecte manier om even te ontspannen tussen de activiteiten door.",
             "trigger": "firstStart options",
             "hideInput": true
         },
@@ -30,7 +30,7 @@
         },
         {
             "id": "conversation 1.0",
-            "message": "Op zaterdag, zondag en woensdag zijn er hier twee films te zien.",
+            "message": "Op zaterdag, zondag en woensdag kun je hier films zien.",
             "hideInput": true,
             "trigger": "conversation 1.1"
         },
@@ -141,7 +141,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Vertel eens een leuk weetje over de link tussen films en games.",
+                    "label": "Heb je een leuk weetje over gaming en cinema?",
                     "trigger": "option fact 1"
                 },
                 {
@@ -151,8 +151,13 @@
                 },
                 {
                     "value": 3,
-                    "label": "Is er hier vandaag iets speciaals te doen?",
+                    "label": "Is er hier vandaag een film van het festival te zien?",
                     "trigger": "option events 1"
+                },
+                {
+                    "value": 4,
+                    "label": "Welke films kan ik bekijken tijdens het FTI festival?",
+                    "trigger": "option films 1"
                 },
                 {
                     "value": "badge",
@@ -194,15 +199,115 @@
         },
         {
             "id": "option events 1",
-            "message": "Vandaag zijn er hier geen evenementen.",
+            "message": "Vandaag zijn er hier geen films.",
             "hideInput": true,
             "trigger": "option events 2"
         },
         {
             "id": "option events 2",
-            "message": "Bezoek ftikortrijk.be voor meer info over toekomstige events.",
+            "message": "Bezoek ftikortrijk.be voor meer info over toekomstige films.",
             "hideInput": true,
             "trigger": "new question"
+        },
+        {
+            "id": "option films 1",
+            "message": "Op het programma staan:",
+            "hideInput": true,
+            "trigger": "option films 2"
+        },
+        {
+            "id": "option films 2",
+            "message": "Vos & Haas redden het bos",
+            "hideInput": true,
+            "trigger": "option films 3"
+        },
+        {
+            "id": "option films 3",
+            "message": "Spider-Man: Into the Spider-Verse",
+            "hideInput": true,
+            "trigger": "option films 4"
+        },
+        {
+            "id": "option films 4",
+            "message": "Jack and the Cuckoo Clock Heart",
+            "hideInput": true,
+            "trigger": "option film options"
+        },
+        {
+            "id": "option film options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Vertel me wat meer over 'Vos & Haas redden het bos'",
+                    "trigger": "option vos&haas"
+                },
+                {
+                    "value": 2,
+                    "label": "Over wat gaat 'Spider-Man: Into the Spider-Verse'",
+                    "trigger": "option spiderman"
+                },
+                {
+                    "value": 3,
+                    "label": "Kun je me wat meer vertellen over 'Jack and the Cuckoo Clock Heart'?",
+                    "trigger": "option jack"
+                },
+                {
+                    "value": 4,
+                    "label": "Ok, bedankt!",
+                    "trigger": "new question"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option vos&haas",
+            "message": "Ga mee op avontuur met Vos en Haas in een spannend verhaal over vriendschap en ontdekking. Wanneer Uil plotseling verdwijnt, leidt hun zoektocht naar mysterieuze gebeurtenissen in het bos.",
+            "hideInput": true,
+            "trigger": "more film info"
+        },
+        {
+            "id": "option jack",
+            "message": "Beleef het hartverwarmende verhaal van Jack, wiens leven letterlijk wordt aangedreven door een klok. Zijn reis door liefde en verlies toont de kracht van het hart en de gevolgen van passie.",
+            "hideInput": true,
+            "trigger": "more film info"
+        },
+        {
+            "id": "option spiderman",
+            "message": "Volg tiener Miles Morales en een team van Spider-Personen uit verschillende dimensies terwijl ze samenwerken om een bedreiging voor alle realiteiten te stoppen. Een visueel spektakel dat de grenzen van animatie en storytelling in films verkent.",
+            "hideInput": true,
+            "trigger": "more film info"
+        },
+        {
+            "id": "more film info",
+            "message": "Wil je info over een andere film?",
+            "hideInput": true,
+            "trigger": "more film info options"
+        },
+        {
+            "id": "more film info options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Vertel me wat meer over 'Vos & Haas redden het bos'",
+                    "trigger": "option vos&haas"
+                },
+                {
+                    "value": 2,
+                    "label": "Over wat gaat 'Spider-Man: Into the Spider-Verse'",
+                    "trigger": "option spiderman"
+                },
+                {
+                    "value": 3,
+                    "label": "Kun je me wat meer vertellen over 'Jack and the Cuckoo Clock Heart'?",
+                    "trigger": "option jack"
+                },
+                {
+                    "value": 4,
+                    "label": "Nee, bedankt.",
+                    "trigger": "new question"
+                }
+            ],
+            "hideInput": true
         },
         {
             "id": "option badge 1",
