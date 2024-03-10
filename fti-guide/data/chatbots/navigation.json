@@ -48,7 +48,12 @@
                     "trigger": "location unwrap"
                 },
                 {
-                    "value": 5,
+                    "value": 4,
+                    "label": "Bouw & Codeer",
+                    "trigger": "location bouw&codeer"
+                },
+                {
+                    "value": 3,
                     "label": "Films",
                     "trigger": "location films"
                 }
@@ -57,25 +62,25 @@
         },
         {
             "id": "location futureED",
-            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>FuturED is te vinden in Broelkaai 6,</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0267106703764!2d3.2634136764487!3d50.83066915991469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2b7e3a531%3A0x356fa0ed0c08d1ad!2sBroelkaai%206%2C%208500%20Kortrijk!5e0!3m2!1snl!2sbe!4v1702541298094!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Broelkaai+6,+8500+Kortrijk/@50.8306692,3.2634137,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33ae2b7e3a531:0x356fa0ed0c08d1ad!8m2!3d50.8306658!4d3.2659886!16s%2Fg%2F11gfngy6v8?authuser=2&entry=ttu'>Open op Google Maps</a></div>",
-            "hideInput": true,
-            "trigger": "location futureED 2"
-        },
-        {
-            "id": "location futureED 2",
-            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>en ook in de Paardenstallen.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.01352634568!2d3.2629228765255305!3d50.83091337166742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33b5085192439%3A0x983cd5e1b89d35bb!2sPaardenstallen!5e0!3m2!1sen!2sbe!4v1710000959186!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Paardenstallen/@50.8309134,3.2629229,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33b5085192439:0x983cd5e1b89d35bb!8m2!3d50.8309134!4d3.2654978!16s%2Fg%2F11n7vszs21?entry=ttu'>Open op Google Maps</a></div>",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>FuturED is te vinden in <span class='event-title'>Broelkaai 6</span>,</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.0267106703764!2d3.2634136764487!3d50.83066915991469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2b7e3a531%3A0x356fa0ed0c08d1ad!2sBroelkaai%206%2C%208500%20Kortrijk!5e0!3m2!1snl!2sbe!4v1702541298094!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.be/maps/place/Broelkaai+6,+8500+Kortrijk/@50.8306658,3.2650873,18z/data=!3m1!4b1!4m6!3m5!1s0x47c33ae2b7e3a531:0x356fa0ed0c08d1ad!8m2!3d50.8306658!4d3.2659886!16s%2Fg%2F11gfngy6v8?hl=nl&authuser=0&entry=ttu'>Open op Google Maps</a><p style='margin-block-end: 0.5rem;  margin-block-start: 0.8rem; width: 223px;'>en ook in de <span class='event-title'>Paardenstallen</span>.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.01352634568!2d3.2629228765255305!3d50.83091337166742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33b5085192439%3A0x983cd5e1b89d35bb!2sPaardenstallen!5e0!3m2!1sen!2sbe!4v1710000959186!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.be/maps/place/Paardenstallen/@50.8309134,3.2642103,18z/data=!3m1!4b1!4m6!3m5!1s0x47c33b5085192439:0x983cd5e1b89d35bb!8m2!3d50.8309134!4d3.2654978!16s%2Fg%2F11n7vszs21?hl=nl&authuser=0&entry=ttu'>Open op Google Maps</a></div>",
             "hideInput": true,
             "trigger": "end options"
         },
         {
             "id": "location unwrap",
-            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De Unwrap Arena is te vinden in de Budafabriek.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1snl!2sbe!4v1702540963311!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/BUDAfabriek/@50.8315457,3.2630413,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33afcb2d35a69:0xb3e9316f20e0416a!8m2!3d50.8315457!4d3.2630413!16s%2Fg%2F11b7lg6lvg?authuser=2&entry=ttu'>Open op Google Maps</a></div>",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De Unwrap Arena is te vinden in de <span class='event-title'>Budafabriek</span>.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.9792070644253!2d3.260466376448733!3d50.831549059851184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33afcb2d35a69%3A0xb3e9316f20e0416a!2sBUDAfabriek!5e0!3m2!1snl!2sbe!4v1702540963311!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.be/maps/place/BUDAfabriek/@50.8311413,3.2622556,18.12z/data=!4m14!1m7!3m6!1s0x47c33bbe0708c49f:0x183e74bb02dbeba8!2sResidentie+Budalys!8m2!3d50.8313229!4d3.2624279!16s%2Fg%2F11fm6255w1!3m5!1s0x47c33afcb2d35a69:0xb3e9316f20e0416a!8m2!3d50.8315457!4d3.2630413!16s%2Fg%2F11b7lg6lvg?hl=nl&authuser=0&entry=ttu'>Open op Google Maps</a></div>",
             "hideInput": true,
             "trigger": "end options"
         },
         {
             "id": "location films",
-            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De films zijn te vinden in de Budascoop.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1260.0158609532045!2d3.263481682033209!3d50.83057633713478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2ddf66129%3A0x614bace16222e0c9!2sKunstencentrum%20BUDA%20%7C%20Budascoop!5e0!3m2!1snl!2sbe!4v1702541080009!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.com/maps/place/Kunstencentrum+BUDA+%7C+Budascoop/@50.8305747,3.2647309,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33ae2ddf66129:0x614bace16222e0c9!8m2!3d50.8305747!4d3.2647309!16s%2Fg%2F122_m9bh?authuser=2&entry=ttu'>Open op Google Maps</a></div>",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De films zijn te vinden in de <span class='event-title'>Budascoop</span>.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1260.0158609532045!2d3.263481682033209!3d50.83057633713478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33ae2ddf66129%3A0x614bace16222e0c9!2sKunstencentrum%20BUDA%20%7C%20Budascoop!5e0!3m2!1snl!2sbe!4v1702541080009!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.be/maps/place/Kunstencentrum+BUDA+%7C+Budascoop/@50.8307747,3.2641699,18.31z/data=!4m14!1m7!3m6!1s0x47c33bbe0708c49f:0x183e74bb02dbeba8!2sResidentie+Budalys!8m2!3d50.8313229!4d3.2624279!16s%2Fg%2F11fm6255w1!3m5!1s0x47c33ae2ddf66129:0x614bace16222e0c9!8m2!3d50.8305747!4d3.2647309!16s%2Fg%2F122_m9bh?hl=nl&authuser=0&entry=ttu'>Open op Google Maps</a></div>",
+            "hideInput": true,
+            "trigger": "end options"
+        },
+        {
+            "id": "location bouw&codeer",
+            "component": "<div><p style='margin-block-end: 0.5rem; width: 223px;'>De workshop 'Bouw & Codeer' is te vinden in <span class='event-title'>Budalys</span>.</p><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.991418457838!2d3.2598529765255297!3d50.831322871667425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33bbe0708c49f%3A0x183e74bb02dbeba8!2sResidentie%20Budalys!5e0!3m2!1sen!2sbe!4v1710063401140!5m2!1snl!2sbe' width='225' height='180' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe><a style='display: block; color: var(--white); height: 3rem; border: var(--white) 1px solid; display: flex; justify-content: center; align-items: center; width: 223px;' href='https://www.google.be/maps/place/Residentie+Budalys/@50.8313229,3.259853,17z/data=!3m1!4b1!4m6!3m5!1s0x47c33bbe0708c49f:0x183e74bb02dbeba8!8m2!3d50.8313229!4d3.2624279!16s%2Fg%2F11fm6255w1?hl=nl&authuser=0&entry=ttu'>Open op Google Maps</a></div>",
             "hideInput": true,
             "trigger": "end options"
         },
@@ -122,21 +127,26 @@
                     "trigger": "option educatie"
                 },
                 {
-                    "value": 5,
-                    "label": "Films",
-                    "trigger": "option films"
+                    "value": 3,
+                    "label": "Games en alles daarrond",
+                    "trigger": "option games"
+                },
+                {
+                    "value": 4,
+                    "label": "Coderen en Minecraft",
+                    "trigger": "option coding"
                 },
                 {
                     "value": 2,
-                    "label": "Games en alles daarrond",
-                    "trigger": "option games"
+                    "label": "Films",
+                    "trigger": "option films"
                 }
             ],
             "hideInput": true
         },
         {
             "id": "option educatie",
-            "component": "<p>Op <span class='event-title'>FuturED</span> maak je kennis met het onderwijs van de toekomst die niet zo veraf blijkt, en leer je hoe technologie in verschillende klassen kan worden geïntegreerd.</p>",
+            "component": "<p>Ontdek het onderwijs van de toekomst in <span class='event-title'>FuturED</span>, waar de toekomst van het onderwijs dichterbij is dan je denkt. Ontdek hier de impact van virtual reality, duik in interactieve leermodules en zie hoe innovaties zoals robotica en augmented reality het leren spannender, efficiënter en toegankelijker maken.<div style='height: 10px;'></div><span class='event-title'>FuturED</span> brengt je van het coderen van bewegende robotballen tot het beleven van ruimtereizen zonder de aarde te verlaten, en biedt een breed spectrum aan fascinerende en educatieve ervaringen voor alle leeftijden.</p>",
             "asMessage": true,
             "hideInput": true,
             "trigger": "option educatie options"
@@ -159,7 +169,7 @@
         },
         {
             "id": "option games",
-            "component": "<p>In de <span class='event-title'>Unwrap Arena</span> kan je de Vlaamse game-industrie ontdekken, meer leren over games van vroeger en nu en het zelfs opnemen tegen andere spelers in de esports arena.</p>",
+            "component": "<p>Ontdek de bruisende wereld van gaming in de <span class='event-title'>Unwrap Arena</span>, waar je een diepe duik neemt in de Vlaamse game-industrie. Ontdek de evolutie van games van vroeger tot nu, leer over de ontwikkeling achter je favoriete games, en ga de strijd aan in onze esports arena. <div style='height: 10px;'></div>Dit is je kans om de grenzen van gametechnologie te verkennen, kennis te maken met professionele gameontwikkelaars, en deel te nemen aan competitief gamen.</p>",
             "hideInput": true,
             "asMessage": true,
             "trigger": "option games options"
@@ -182,7 +192,7 @@
         },
         {
             "id": "option films",
-            "component": "<p>Tijdens het FTI festival worden verschillende <span class='event-title'>films</span> met een link met de game-industrie getoond op zaterdag, zondag en woensdag.</p>",
+            "component": "<p>Tijdens het FTI festival worden verschillende <span class='event-title'>films</span> met een link met de game-industrie getoond op zaterdag, zondag en woensdag. <div style='height: 10px;'></div>Een perfecte manier om even te ontspannen tussen de activiteiten door!</p>",
             "hideInput": true,
             "asMessage": true,
             "trigger": "option films options"
@@ -198,6 +208,29 @@
                 {
                     "value": 2,
                     "label": "Niet helemaal waar ik naar op zoek ben.",
+                    "trigger": "new search"
+                }
+            ],
+            "hideInput": true
+        },
+        {
+            "id": "option coding",
+            "component": "<p>Neem deel de open workshop <span class='event-title'>'Bouw & Codeer'</span> met Minecraft Education, waar je leert programmeren in een van de populairste games ter wereld. Perfect voor jonge tech-enthousiastelingen die hun vaardigheden willen aanscherpen. <div style='height: 10px;'></div>Niet alleen verbeter je je programmeervaardigheden, maar je leert ook logisch denken, probleemoplossend werken en creativiteit, allemaal essentiële vaardigheden voor de toekomst.</p>",
+            "hideInput": true,
+            "asMessage": true,
+            "trigger": "option coding options"
+        },
+        {
+            "id": "option coding options",
+            "options": [
+                {
+                    "value": 1,
+                    "label": "Dat klinkt interessant, waar kan ik dit vinden?",
+                    "trigger": "location bouw&codeer"
+                },
+                {
+                    "value": 2,
+                    "label": "Niet helemaal wat ik zoek.",
                     "trigger": "new search"
                 }
             ],

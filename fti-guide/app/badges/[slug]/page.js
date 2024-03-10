@@ -19,7 +19,7 @@ export default async function Badge({ params }) {
     const { slug } = params;
     const data = getLocationData(slug);
     const location = data.location;
-    const map = data.mapLink;
+    const maps = data.mapLink;
     const name = data.characterName;
     let fact;
     if (data.fact) {
@@ -35,7 +35,7 @@ export default async function Badge({ params }) {
     return (
         <main className={styles.main}>
 
-            <BadgeDetailTopBar location={location} link={map} />
+            <BadgeDetailTopBar location={location} links={maps} />
 
             <div className="margin">
                 <BadgeDetailBadge badgeData={badgeData} slug={slug} />

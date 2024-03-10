@@ -5,13 +5,13 @@ import Link from 'next/link';
 import MapPopUp from './MapPopUp';
 import { useState } from 'react';
 
-export default function BadgeDetailTopBar({ location, link }) {
+export default function BadgeDetailTopBar({ location, links }) {
 
     const [showMap, setShowMap] = useState(false);
 
     return (
         <>
-            {showMap && <MapPopUp onClose={() => setShowMap(false)} link={link} />}
+            {showMap && <MapPopUp onClose={() => setShowMap(false)} links={links} />}
             <div className={`margin ` + styles.topBar}>
                 <Link href="/badges" className={styles.button}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">

@@ -129,14 +129,14 @@
             "id": "question options",
             "options": [
                 {
-                    "value": 1,
-                    "label": "Vertel eens een leuk weetje over games",
-                    "trigger": "option fact 1"
-                },
-                {
                     "value": 2,
                     "label": "Wat kan ik leren in de Minecraft Education workshop? Waarom zou ik deelnemen?",
                     "trigger": "option location 1"
+                },
+                {
+                    "value": 5,
+                    "label": "Voor welke leeftijd is de Minecraft workshop bedoeld?",
+                    "trigger": "option age 1"
                 },
                 {
                     "value": 3,
@@ -144,9 +144,9 @@
                     "trigger": "option events 1"
                 },
                 {
-                    "value": 5,
-                    "label": "Voor welke leeftijd is de Minecraft workshop bedoeld?",
-                    "trigger": "option age 1"
+                    "value": 1,
+                    "label": "Vertel eens een leuk weetje over Minecraft als educatief hulpmiddel.",
+                    "trigger": "option fact 1"
                 },
                 {
                     "value": "badge",
@@ -223,14 +223,14 @@
             "id": "new question options",
             "options": [
                 {
-                    "value": 1,
-                    "label": "Vertel eens een leuk weetje over games",
-                    "trigger": "option fact 1"
-                },
-                {
                     "value": 2,
                     "label": "Wat kan ik leren in de Minecraft Education workshop? Waarom zou ik deelnemen?",
                     "trigger": "option location 1"
+                },
+                {
+                    "value": 5,
+                    "label": "Voor welke leeftijd is de Minecraft workshop bedoeld?",
+                    "trigger": "option age 1"
                 },
                 {
                     "value": 3,
@@ -238,9 +238,9 @@
                     "trigger": "option events 1"
                 },
                 {
-                    "value": 5,
-                    "label": "Voor welke leeftijd is de Minecraft workshop bedoeld?",
-                    "trigger": "option age 1"
+                    "value": 1,
+                    "label": "Vertel eens een leuk weetje over Minecraft als educatief hulpmiddel.",
+                    "trigger": "option fact 1"
                 },
                 {
                     "value": "badge",
@@ -273,7 +273,9 @@
     "characterName": "RoBob de Bouwer",
     "eventName": "Bouw & Codeer",
     "location": "Budalys",
-    "mapLink": "embed",
+    "mapLink": [
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.991418457838!2d3.2598529765255297!3d50.831322871667425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c33bbe0708c49f%3A0x183e74bb02dbeba8!2sResidentie%20Budalys!5e0!3m2!1sen!2sbe!4v1710063401140!5m2!1snl!2sbe"
+    ],
     "fact": "Een Zweedse school voerde in 2013 een <em>verplichte cursus Minecraft</em> in voor alle 13-jarige studenten, en niet de Education editie. Tijdens deze lessen leerden ze over plannen, over het bouwen van steden, en zelfs over milieu-problemen.",
     "badgeName": "Minecraft Coder",
     "world": "codeerwereld"
