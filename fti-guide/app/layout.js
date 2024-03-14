@@ -6,6 +6,7 @@ import { createMedia } from "@artsy/fresnel";
 import Nav from './(components)/Nav';
 import Header from './(components)/Header';
 import Desktop from './(components)/Desktop';
+import { Analytics } from '@vercel/analytics/react';
 
 const GTSuper = localFont({
   src: '../public/fonts/GT-Super-Text-Book.woff2',
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
             <Header />
             <Nav />
             {children}
+            <Analytics />
           </Media>
           <Media greaterThanOrEqual="desktop" className='desktop'>
             <Desktop />
