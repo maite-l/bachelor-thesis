@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from "react";
+import { track } from '@vercel/analytics';
 
 // import of the library
 import { ARView, ARAnchor } from "react-three-mind";
@@ -52,6 +53,8 @@ export default function ARFilter({ allBadges }) {
     };
 
     const handleTakeImage = async () => {
+
+        track('Foto genomen', { badges: selectedBadges.toString() });
 
         setIsLoadingImg(true);
 
