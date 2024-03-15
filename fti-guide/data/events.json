@@ -3,16 +3,40 @@
         "location": "budafabriek",
         "events": [
             {
-                "name": "de Retrodag",
-                "startTime": "2024-03-09T14:30:00",
-                "endTime": "2024-03-09T15:40:00",
-                "location": "de e-sports arena"
+                "name": "Street fighter 2",
+                "startTime": "2024-03-16T10:15:00",
+                "endTime": "2024-03-16T12:45:00",
+                "day": "retrodag"
             },
             {
-                "name": "de Vlaamse topgame-dag",
-                "startTime": "2024-03-07T10:00:00",
-                "endTime": "2024-03-07T13:00:00",
-                "location": "de e-sports arena"
+                "name": "Mario Kart N64",
+                "startTime": "2024-03-16T13:00:00",
+                "endTime": "2024-03-16T15:30:00",
+                "day": "retrodag"
+            },
+            {
+                "name": "Metal Slug 3 Xbox",
+                "startTime": "2024-03-16T15:45:00",
+                "endTime": "2024-03-16T18:00:00",
+                "day": "retrodag"
+            },
+            {
+                "name": "Gazzlers",
+                "startTime": "2024-03-17T10:15:00",
+                "endTime": "2024-03-17T12:45:00",
+                "day": "Vlaamse dag"
+            },
+            {
+                "name": "Baldur's Gate III",
+                "startTime": "2024-03-17T13:00:00",
+                "endTime": "2024-03-17T15:30:00",
+                "day": "Vlaamse dag"
+            },
+            {
+                "name": "Warhammer 40K Shootas, Blood & Teef",
+                "startTime": "2024-03-17T15:45:00",
+                "endTime": "2024-03-17T18:00:00",
+                "day": "Vlaamse dag"
             }
         ]
     },

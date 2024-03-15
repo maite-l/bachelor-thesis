@@ -171,6 +171,77 @@ const createMessageBudalys = (events) => {
     return eventMessage;
 }
 
+const createMessgeBudafabriek = (events) => {
+    let message = '';
+    const now = new Date();
+
+    // get all events that are currently happening
+    const currentEvents = getCurrentEvents(events, now);
+
+    // get all events that are happening later today
+    const todayEvents = getLaterTodayEvents(events, now);
+
+    if (currentEvents.length > 0 || todayEvents.length > 0) {
+        message = `Vandaag zijn is het ` + currentEvents[0].day + `! `;
+    }
+
+    // add text to message based on the amount of current events
+    if (currentEvents.length > 0) {
+        if (currentEvents.length === 1) {
+            const endTime = new Date(currentEvents[0].endTime);
+            const endTimeString = dateToTimeString(endTime);
+            message += `Momenteel is de ${currentEvents[0].name} competitie bezig. Het duurt nog tot ${endTimeString}u. `;
+        }
+        else {
+            message = `Momenteel zijn hier ${currentEvents.length} competities bezig: `;
+            currentEvents.forEach(event => {
+                const endTime = new Date(event.endTime);
+                const endTimeString = dateToTimeString(endTime);
+
+                if (currentEvents.indexOf(event) === currentEvents.length - 1) {
+                    message += `en ${event.name} tot ${endTimeString}u. `;
+                }
+                else {
+                    message += `${event.name} tot ${endTimeString}u, `;
+                }
+            });
+        }
+    }
+    // add text to message based on the amount of events later today
+    if (todayEvents.length > 0) {
+        if (todayEvents.length === 1) {
+            const startTime = new Date(todayEvents[0].startTime);
+            const startTimeString = dateToTimeString(startTime);
+            const endTime = new Date(todayEvents[0].endTime);
+            const endTimeString = dateToTimeString(endTime);
+            message += `Later vandaag vindt de ${todayEvents[0].name} competitie plaats van ${startTimeString}u tot ${endTimeString}u.`;
+        }
+        else {
+            message += `Later vandaag zijn er ${todayEvents.length} competities: `;
+            todayEvents.forEach(event => {
+                const startTime = new Date(event.startTime);
+                const startTimeString = dateToTimeString(startTime);
+                const endTime = new Date(event.endTime);
+                const endTimeString = dateToTimeString(endTime);
+
+                if (todayEvents.indexOf(event) === todayEvents.length - 1) {
+                    message += `en ${event.name} van ${startTimeString}u tot ${endTimeString}u. `;
+                }
+                else {
+                    message += `${event.name} van ${startTimeString}u tot ${endTimeString}u, `;
+                }
+            });
+        }
+    }
+
+    let eventMessage = { message: message, answer: message };
+
+    if (message === '') {
+        eventMessage.answer = 'Vandaag zijn er helaas geen evenementen.';
+    }
+    return eventMessage;
+}
+
 const adjustData = (eventMessage, originalData, stepData) => {
 
     if (eventMessage.message !== '') {
@@ -255,6 +326,8 @@ export default async function LocationConversation({ params }) {
             eventMessage = createMessageBudascoop(events);
         } else if (slug === 'budalys') {
             eventMessage = createMessageBudalys(events);
+        } else if (slug === 'budafabriek') {
+            eventMessage = createMessgeBudafabriek(events);
         } else {
             eventMessage = createMessage(events);
         }

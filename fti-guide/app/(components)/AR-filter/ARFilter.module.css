@@ -173,8 +173,8 @@
     margin-inline: auto;
 }
 .badge {
-    width: clamp(2.5rem, 12vw, 5rem);
-    height: clamp(2.5rem, 12vw, 5rem);
+    width: clamp(3.4rem, 12vw, 5rem);
+    height: clamp(3.4rem, 12vw, 5rem);
     display: grid;
     place-items: center;
 }
