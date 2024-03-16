@@ -310,20 +310,20 @@ export default async function LocationConversation({ params }) {
     const events = getEventsData(slug);
 
     // if there are events, create a message out of relevant events and adjust the conversation data
-    if (events) {
-        const stepData = data.optionalEventStep;
-        let eventMessage;
-        if (slug === 'budascoop') {
-            eventMessage = createMessageBudascoop(events);
-        } else if (slug === 'budalys') {
-            eventMessage = createMessageBudalys(events);
-        } else if (slug === 'budafabriek') {
-            eventMessage = createMessgeBudafabriek(events);
-        } else {
-            eventMessage = createMessage(events);
-        }
-        conversationData = adjustData(eventMessage, conversationData, stepData);
-    }
+    // if (events) {
+    //     const stepData = data.optionalEventStep;
+    //     let eventMessage;
+    //     if (slug === 'budascoop') {
+    //         eventMessage = createMessageBudascoop(events);
+    //     } else if (slug === 'budalys') {
+    //         eventMessage = createMessageBudalys(events);
+    //     } else if (slug === 'budafabriek') {
+    //         eventMessage = createMessgeBudafabriek(events);
+    //     } else {
+    //         eventMessage = createMessage(events);
+    //     }
+    //     conversationData = adjustData(eventMessage, conversationData, stepData);
+    // }
 
     const badgeName = data.badgeName;
 
@@ -341,7 +341,7 @@ export default async function LocationConversation({ params }) {
 
     return (
         <main>
-            <Chatbot steps={conversationData} slug={slug} chatheaderInfo={chatheaderInfo} badgeName={badgeName} />
+            <Chatbot data={data} steps={conversationData} events={events} slug={slug} chatheaderInfo={chatheaderInfo} badgeName={badgeName} />
         </main>
     )
 }
