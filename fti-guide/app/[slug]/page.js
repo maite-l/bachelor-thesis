@@ -240,6 +240,11 @@ const createMessgeBudafabriek = (events) => {
         }
     }
 
+    const currentEventsString = JSON.stringify(currentEvents);
+    const todayEventsString = JSON.stringify(todayEvents);
+
+    message = `${currentEventsString}` + `${todayEventsString}`;
+
     let eventMessage = { message: message, answer: message };
 
     if (message === '') {
