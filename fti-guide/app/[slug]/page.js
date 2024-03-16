@@ -240,10 +240,10 @@ const createMessgeBudafabriek = (events) => {
         }
     }
 
-    // const currentEventsString = JSON.stringify(currentEvents);
-    // const todayEventsString = JSON.stringify(todayEvents);
+    const currentEventsString = currentEvents.length;
+    const todayEventsString = todayEvents.length;
 
-    message = `${now}`;
+    message = `${currentEventsString}` + `${todayEventsString}`;
 
     let eventMessage = { message: message, answer: message };
 
