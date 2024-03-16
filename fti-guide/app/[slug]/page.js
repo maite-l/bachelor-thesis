@@ -43,7 +43,7 @@ const getTodayEvents = (events, now) => {
 }
 
 const createMessage = (events) => {
-    let message = '';
+    let message = 'Vandaag zijn er geen evenementen.';
     const now = new Date();
 
     // get all events that are currently happening
@@ -101,14 +101,11 @@ const createMessage = (events) => {
 
     let eventMessage = { message: message, answer: message };
 
-    if (message === '') {
-        eventMessage.answer = 'Vandaag zijn er geen evenementen.';
-    }
     return eventMessage;
 }
 
 const createMessageBudascoop = (events) => {
-    let message = '';
+    let message = 'Vandaag spelen er geen films.';
     const now = new Date();
 
     // get all events that are happening later today
@@ -140,15 +137,11 @@ const createMessageBudascoop = (events) => {
     }
 
     let eventMessage = { message: message, answer: message };
-
-    if (message === '') {
-        eventMessage.answer = 'Vandaag spelen er geen films.';
-    }
     return eventMessage;
 }
 
 const createMessageBudalys = (events) => {
-    let message = '';
+    let message = 'Vandaag zijn er helaas geen workshops.';
     const now = new Date();
 
     // get all events that are happening later today
@@ -164,10 +157,6 @@ const createMessageBudalys = (events) => {
     }
 
     let eventMessage = { message: message, answer: message };
-
-    if (message === '') {
-        eventMessage.answer = 'Vandaag zijn er helaas geen workshops.';
-    }
     return eventMessage;
 }
 
@@ -240,13 +229,7 @@ const createMessgeBudafabriek = (events) => {
         }
     }
 
-    const currentEventsString = currentEvents.length;
-    const todayEventsString = todayEvents.length;
-
-    // message = `${currentEventsString}` + `${todayEventsString}`;
-
     let eventMessage = { message: message, answer: message };
-
     return eventMessage;
 }
 
