@@ -5,37 +5,49 @@
             {
                 "name": "Street fighter 2",
                 "startTime": "2024-03-16T10:15:00",
+                "startTimeUTC": "2024-03-16T11:15:00",
                 "endTime": "2024-03-16T12:45:00",
+                "endTimeUTC": "2024-03-16T13:45:00",
                 "day": "retrodag"
             },
             {
                 "name": "Mario Kart N64",
                 "startTime": "2024-03-16T13:00:00",
+                "startTimeUTC": "2024-03-16T14:00:00",
                 "endTime": "2024-03-16T15:30:00",
+                "endTimeUTC": "2024-03-16T16:30:00",
                 "day": "retrodag"
             },
             {
                 "name": "Metal Slug 3 Xbox",
                 "startTime": "2024-03-16T15:45:00",
+                "startTimeUTC": "2024-03-16T16:45:00",
                 "endTime": "2024-03-16T18:00:00",
+                "endTimeUTC": "2024-03-16T19:00:00",
                 "day": "retrodag"
             },
             {
                 "name": "Gazzlers",
                 "startTime": "2024-03-17T10:15:00",
+                "startTimeUTC": "2024-03-17T11:15:00",
                 "endTime": "2024-03-17T12:45:00",
+                "endTimeUTC": "2024-03-17T13:45:00",
                 "day": "Vlaamse dag"
             },
             {
                 "name": "Baldur's Gate III",
                 "startTime": "2024-03-17T13:00:00",
+                "startTimeUTC": "2024-03-17T14:00:00",
                 "endTime": "2024-03-17T15:30:00",
+                "endTimeUTC": "2024-03-17T16:30:00",
                 "day": "Vlaamse dag"
             },
             {
                 "name": "Warhammer 40K Shootas, Blood & Teef",
                 "startTime": "2024-03-17T15:45:00",
+                "startTimeUTC": "2024-03-17T16:45:00",
                 "endTime": "2024-03-17T18:00:00",
+                "endTimeUTC": "2024-03-17T19:00:00",
                 "day": "Vlaamse dag"
             }
         ]
@@ -46,19 +58,25 @@
             {
                 "name": "Vos en Haas Redden het Bos",
                 "startTime": "2024-03-17T14:30:00",
+                "startTimeUTC": "2024-03-17T15:30:00",
                 "endTime": "2024-03-17T15:40:00",
+                "endTimeUTC": "2024-03-17T16:40:00",
                 "location": "zaal 3"
             },
             {
                 "name": "Jack & The Cuckoo-Clock Heart",
                 "startTime": "2024-03-17T16:00:00",
+                "startTimeUTC": "2024-03-17T17:00:00",
                 "endTime": "2024-03-17T17:35:00",
+                "endTimeUTC": "2024-03-17T18:35:00",
                 "location": "zaal 3"
             },
             {
                 "name": "Spider-Man: Into The Spider-Verse",
                 "startTime": "2024-03-17T18:30:00",
+                "startTimeUTC": "2024-03-17T19:30:00",
                 "endTime": "2024-03-17T20:30:00",
+                "endTimeUTC": "2024-03-17T21:30:00",
                 "location": "zaal 3"
             }
         ]
@@ -68,11 +86,15 @@
         "events": [
             {
                 "startTime": "2024-03-16T10:00:00",
-                "endTime": "2024-03-16T18:00:00"
+                "startTimeUTC": "2024-03-16T11:00:00",
+                "endTime": "2024-03-16T18:00:00",
+                "endTimeUTC": "2024-03-16T19:00:00"
             },
             {
                 "startTime": "2024-03-17T10:00:00",
-                "endTime": "2024-03-17T18:00:00"
+                "startTimeUTC": "2024-03-17T11:00:00",
+                "endTime": "2024-03-17T18:00:00",
+                "endTimeUTC": "2024-03-17T19:00:00"
             }
         ]
     }
