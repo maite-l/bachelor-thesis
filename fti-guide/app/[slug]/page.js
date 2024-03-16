@@ -182,7 +182,13 @@ const createMessgeBudafabriek = (events) => {
     const todayEvents = getLaterTodayEvents(events, now);
 
     if (currentEvents.length > 0 || todayEvents.length > 0) {
-        message = `Vandaag zijn is het ` + currentEvents[0].day + `! `;
+        let day;
+        if (currentEvents.length > 0) {
+            day = currentEvents[0].day;
+        } else {
+            day = todayEvents[0].day;
+        }
+        message = `Vandaag is het ` + day + `! `;
     }
 
     // add text to message based on the amount of current events

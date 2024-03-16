@@ -29,7 +29,7 @@
             "options": [
                 {
                     "value": 1,
-                    "label": "Wat leuk! Vertel me meer.",
+                    "label": "Wat leuk! Vertel me alles.",
                     "trigger": "conversation 1.0"
                 },
                 {
