@@ -50,7 +50,7 @@ export default function Chatbot({ data, steps, events, slug, chatheaderInfo, bad
 
     const getLaterTodayEvents = (events, now) => {
         const todayEvents = events.filter(event => {
-            const startTime = new Date(event.startTimeUTC);
+            const startTime = new Date(event.startTime);
             const startDate = (startTime.getFullYear()) + "/" + (startTime.getMonth() + 1) + "/" + (startTime.getDate());
             const nowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + (now.getDate());
             return startDate === nowDate && startTime >= now;
@@ -59,15 +59,15 @@ export default function Chatbot({ data, steps, events, slug, chatheaderInfo, bad
     }
     const getCurrentEvents = (events, now) => {
         const currentEvents = events.filter(event => {
-            const startTime = new Date(event.startTimeUTC);
-            const endTime = new Date(event.endTimeUTC);
+            const startTime = new Date(event.startTime);
+            const endTime = new Date(event.endTime);
             return now >= startTime && now <= endTime;
         });
         return currentEvents;
     }
     const getTodayEvents = (events, now) => {
         const todayEvents = events.filter(event => {
-            const startTime = new Date(event.startTimeUTC);
+            const startTime = new Date(event.startTime);
             const startDate = (startTime.getFullYear()) + "/" + (startTime.getMonth() + 1) + "/" + (startTime.getDate());
             const nowDate = (now.getFullYear()) + "/" + (now.getMonth() + 1) + "/" + (now.getDate());
             return startDate === nowDate;
