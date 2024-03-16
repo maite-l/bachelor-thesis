@@ -172,7 +172,7 @@ const createMessageBudalys = (events) => {
 }
 
 const createMessgeBudafabriek = (events) => {
-    let message = '';
+    let message = 'Vandaag zijn er helaas geen evenementen.';
     const now = new Date();
 
     // get all events that are currently happening
@@ -243,13 +243,10 @@ const createMessgeBudafabriek = (events) => {
     const currentEventsString = currentEvents.length;
     const todayEventsString = todayEvents.length;
 
-    message = `${currentEventsString}` + `${todayEventsString}`;
+    // message = `${currentEventsString}` + `${todayEventsString}`;
 
     let eventMessage = { message: message, answer: message };
 
-    if (message === '') {
-        eventMessage.answer = 'Vandaag zijn er helaas geen evenementen.';
-    }
     return eventMessage;
 }
 
